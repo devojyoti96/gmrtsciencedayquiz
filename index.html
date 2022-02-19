@@ -80,11 +80,11 @@ body{
 	margin-left: 0%;
 	font-size: var(--strFontSize);
 	padding-bottom: 10%;
-	background-repeat: no-repeat;
+	background-repeat: repeat-y;
 	background-size: cover;
 	background-attachment: scroll;
 	display: inline-block;
-	overflow: hidden;
+	overflow: auto;
 }
 
 
@@ -1912,7 +1912,7 @@ function DownTime(){
 
 <div class="NavButtonBar" id="TopNavBar">
 
-<a style="text-decoration:none; color:yellow" href="index.html" target="_self"> <font face="verdana" size="16">GMRT National Science Day 2022 - Astronomy Quiz Trivia</font></a>
+<a style="text-decoration:none; color:yellow; font-size:5vh" href="index.html" target="_self"> GMRT National Science Day 2022 - Astronomy Quiz Trivia</a>
 
 
 </div>
@@ -1926,32 +1926,48 @@ function DownTime(){
 <!-- EndTopNavButtons -->
 
 <div class="Titles">
-	<h2 class="ExerciseSubtitle" style="size:16" >Welcome !</h2><br><h2 class="ExerciseSubtitle">We have put together some fun physics and astronomy questions through this quiz for you trivia geeks! Test your knowledge and learn something new with every question.</h2> <br><h2 class="ExerciseSubtitle">Click the <font face="verdana"; size=250%; color=#A9E8F0>"Start Quiz"</font> button and get started!</h2><br><font face="verdana"; size=6px; color=white>Read the instructions before you start</font><br><br>
+	<h2 class="ExerciseSubtitle" style="font-size:5vh" >Welcome !</h2><br><h2 class="ExerciseSubtitle" style="font-size:5vh">We have put together some fun physics and astronomy questions through this quiz for you trivia geeks! Test your knowledge and learn something new with every question.</h2> <br><h2 class="ExerciseSubtitle" style="font-size:5vh">Click the <font face="verdana"; color=#A9E8F0>"Start Quiz"</font> button and get started!</h2><br><a style="font-size:5vh" href="javascript:ShowMessage('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use Next Question button and revisit the unattempted questions using Previous Question button. After each question some trivia facts about that question will be displayed. Select the Submit button to end the round. At the end it will show all the correct answers by filled circles and your answer by oval. Click on Next Round button to move on to the next round.');" target="_self"><font face="verdana"; color=white>Read the instructions before you start</font></a><br><br>
 
 
-<button class="NavButton" onclick="location='./science_day_quiz.html'; return false;">Start Quiz</button>
-
+<button class="NavButton" onclick="location='science_day_quiz.html'; return false;" style="font-size:3vh">Start Quiz</button>
 <style>
-.footer {
+.navbar {
+  overflow: hidden;
+  background-color:  #E8B214;
   position: fixed;
-  left: 0;
   bottom: 0;
-  width: 100%;
-  height: 2%;
-  background-color: #E8B214;
-  color: white;	
-  display: inline-block;
-  padding-top: -1.5%;
-  padding-bottom: 2.5%;
+  width: 100vw;
+   left: 0;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: brown;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #C37409;
+  color: black;
 }
 
 
+.main {
+  padding: 16px;
+  margin-bottom: 30px;
+}
 </style>
+</head>
+<body>
 
-<div class="footer" align="left"><br>
-<a style="text-decoration:none; color:brown; margin-left: 45%" href="http://gmrtscienceday.ncra.tifr.res.in/" target="_self"> <font face="verdana" size="5">Home</font></a><a style="text-decoration:none; color:brown; margin-left: 2%" href="javascript:ShowMessage('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use Next Question button and revisit the unattempted questions using Previous Question button. After each question some trivia facts about that question will be displayed. Select the Submit button to end the round. At the end it will show all the correct answers by filled circles and your answer by oval. Click on Next Round button to move on to the next round.');" target="_self"> <font face="verdana" size="5">Instructions</font></a>
+<div class="navbar">
+  <a href="http://gmrtscienceday.ncra.tifr.res.in/" target="_self">Home</a>
+  <a href="javascript:ShowMessage('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use Next Question button and revisit the unattempted questions using Previous Question button. After each question some trivia facts about that question will be displayed. Select the Submit button to end the round. At the end it will show all the correct answers by filled circles and your answer by oval. Click on Next Round button to move on to the next round.');" target="_self">Instructions</a>
 </div>
-
 
 
 </div>
