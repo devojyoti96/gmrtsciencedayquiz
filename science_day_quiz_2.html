@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" prefix="dc: http://purl.org/dc/elements/1.1/">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, maximum-scale=1.0, user-scalable=0"/>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" prefix="dc: http://purl.org/dc/elements/1.1/">
-<head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Devojyoti."/><meta name="keywords" content="Hot Potatoes, Hot Potatoes, Half-Baked Software, Windows, University of Victoria"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
 <meta name="dc:creator" content="Devojyoti" />
@@ -68,6 +67,8 @@ input[type="radio"] {
 input[type="radio"]:checked {
 	background-color: #555555;
 }
+
+
 
 
 body{
@@ -1240,7 +1241,7 @@ var ShuffleQs = true;
 var ShuffleAs = true;
 var DefaultRight = 'Correct!';
 var DefaultWrong = 'Sorry! Wrong Answer.';
-var QsToShow = 5;
+var QsToShow = 105;
 var Score = 0;
 var Finished = false;
 var Qs = null;
@@ -2211,7 +2212,7 @@ function DownTime(){
 
 <div class="NavButtonBar" id="TopNavBar">
 
-<a style="text-decoration:none; color:yellow" href="index.html" target="_self"> <font face="verdana" size="16">GMRT National Science Day 2022 - Astronomy Quiz Trivia</font></a>
+<a style="text-decoration:none; color:yellow; font-size:5vh; text-align: justify;" href="index.html" target="_self"> <font face="verdana">GMRT National Science Day 2022 Astronomy Quiz Trivia</font></a>
 
 </div>
 
@@ -2322,33 +2323,52 @@ function DownTime(){
         });
     });
 </script>
+
+
 <div id="Timer"><span id="TimerText" style="font-size:10mm"></span></div>
 
-<input type="submit" id="SubmitQuizButton" value="Submit" onclick="SubmitQuiz(); return false;" style="margin-left: 40%; margin-bottom:1%"/><input type="submit" id="SubmitQuizButton" value="Next Round" onclick="location='science_day_quiz.html'; return false;" style="margin-left: 1% "/>
-
+<input type="submit" id="SubmitQuizButton" value="Submit" onclick="SubmitQuiz(); return false;" style="margin-left: 44vw; margin-bottom:1vw; font-size:3vh; overflow: auto;"/>
 
 <style>
-.footer {
+.navbar {
+  overflow: hidden;
+  background-color:  #E8B214;
   position: fixed;
-  left: 0;
   bottom: 0;
-  width: 100%;
-  height: 2%;
-  background-color: #E8B214;
-  color: white;	
-  display: inline-block;
-  padding-top: -1.5%;
-  padding-bottom: 2.5%;
+  width: 100vw;
+   left: 0;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: brown;
+  text-align: center;
+  padding: 1.2vh 1.2vw;
+  text-decoration: none;
+  font-size: 3vh;
 }
 
 
+.navbar a:hover {
+  background: #C37409;
+  color: black;
+}
+
+
+.main {
+  padding: 16px;
+  margin-bottom: 30px;
+}
 </style>
+</head>
+<body>
 
-<div class="footer" align="left"><br>
-<a style="text-decoration:none; color:black; margin-left: 20%" href="index.html" target="_self"> <font face="verdana" size="5">Quiz Trivia</font></a><a style="text-decoration:none; color:brown; margin-left: 40%" href="http://gmrtscienceday.ncra.tifr.res.in/" target="_self"> <font face="verdana" size="5">Home</font></a><a style="text-decoration:none; color:brown; margin-left: 2%" href="javascript:ShowInstructions('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use Next Question button and revisit the unattempted questions using Previous Question button. After each question some trivia facts about that question will be displayed. Select the Submit button to end the round. At the end it will show all the correct answers by filled circles and your answer by oval. Click on Next Round button to move on to the next round.');" target="_self"> <font face="verdana" size="5">Instructions</font></a>
-</div>
-
-
+<div class="navbar">
+  <a href="http://gmrtscienceday.ncra.tifr.res.in/" target="_self">Home</a>
+  <a href="javascript:ShowInstruction('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use Next Question button and revisit the unattempted questions using Previous Question button. After each question some trivia facts about that question will be displayed. Select the Submit button to end the round. At the end it will show all the correct answers by filled circles and your answer by oval. Click on Next Round button to move on to the next round.');" target="_self">Instructions</a>
+  <a href="index.html" target="_self">Back to Quiz Trivia</a>
+   <a href="science_day_quiz.html" target="_self">Next Round</a>
 </div>
 
 
