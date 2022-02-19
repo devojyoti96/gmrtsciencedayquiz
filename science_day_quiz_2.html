@@ -1,0 +1,2364 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" prefix="dc: http://purl.org/dc/elements/1.1/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" prefix="dc: http://purl.org/dc/elements/1.1/">
+<head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Devojyoti."/><meta name="keywords" content="Hot Potatoes, Hot Potatoes, Half-Baked Software, Windows, University of Victoria"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<meta name="dc:creator" content="Devojyoti" />
+<meta name="dc:title" content="Round 1" />
+
+
+
+<title>
+
+</title>
+
+<!-- Made with executable version 7.0 Release 3 Build 0 -->
+
+<!-- The following insertion allows you to add your own code directly to this head tag from the configuration screen -->
+
+
+
+<style>
+
+
+/* This is the CSS stylesheet used in the exercise. */
+/* Elements in square brackets are replaced by data based on configuration settings when the exercise is built. */
+
+/* BeginCorePageCSS */
+
+/* Made with executable version 7.0 Release 3 Build 0 */
+
+
+
+/* CSS variables for colours. */
+:root{
+	--strFontFace:       Arial;
+	--strFontSize:       20px;
+	--strTextColor:      #000000;
+	--strTitleColor:     #000000;
+
+	--strFuncLightColor: #dfdfdf;
+	--strFuncShadeColor: #606060;
+	--strLinkColor:      #0000FF;
+	--strVLinkColor:     #0000CC;
+	
+	--strNavBarColor:    transparent;
+	--strNavLightColor:  #f9e6a6;
+	--strNavShadeColor:  #796727;
+	--strNavTextColor:   #000000;
+	
+	--strPageBGColor:    #BED1F8 ;
+	--strExBGColor:      #DCDFE6 ;
+	--form-control-color: rebeccapurple;
+}
+
+input[type="radio"] {
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #555555;
+	border-radius: 100%;
+	background-clip: content-box;
+	padding: 3px;
+}
+
+input[type="radio"]:checked {
+	background-color: #555555;
+}
+
+
+body{
+	font-family: var(--strFontFace);
+	background-color: var(--strPageBGColor);
+	color: var(--strTextColor);
+	background-image: url(./gmrt_backgroun.png); 
+	margin-right: 0%;
+	margin-left: 0%;
+	font-size: var(--strFontSize);
+	padding-bottom: 10%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: scroll;
+	display: inline-block;
+	overflow-x: hidden;
+}
+
+
+p{
+	text-align: left;
+	margin: 0px;
+	font-size: 1em;
+}
+
+table,div,span,td{
+	font-size: 1em;
+	color: var(--strTextColor);
+}
+
+div.Titles{
+	padding: 0.5em;;
+	text-align: center;
+	color: var(--strTitleColor);
+}
+
+button{
+	font-family: var(--strFontFace);
+	font-size: 1em;
+	display: inline;
+}
+
+.ExerciseTitle{
+	font-size: 140%;
+	color: var(--strTitleColor);
+}
+
+.ExerciseSubtitle{
+	font-size: 80%;
+	color: #D7EC03;
+	
+}
+
+div.StdDiv, div.ExerciseContainer, div.ReadingContainer{
+	background-color: var(--strExBGColor);
+	text-align: center;
+	font-size: 1em;
+	color: var(--strTextColor);
+	padding: 0.5em;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: var(--strTextColor);
+	margin-bottom: 1px;
+	opacity: 0.7;
+	font-size: 23px;
+}
+
+div.ReadingContainer, div.ExerciseContainer{
+	min-width: 15em;
+	width: 100vw;
+	height: 100%;
+}
+
+div#ContainerDiv{
+	margin: -1px;
+	padding: 0;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/* EndCorePageCSS */
+
+.RTLText{
+	text-align: right;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", var(--strFontFace); 
+}
+
+.CentredRTLText{
+	text-align: center;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", var(--strFontFace); 
+}
+
+button p.RTLText{
+	text-align: center;
+}
+
+.RTLGapBox{
+	text-align: right;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Times New Roman", var(--strFontFace);
+}
+
+.Guess{
+	font-weight: bold;
+}
+
+.CorrectAnswer{
+	font-weight: bold;
+}
+
+div#Timer{
+	padding: 0.25em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: var(--strTitleColor);
+}
+
+span#TimerText{
+	padding: 0.25em;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: bold;
+	display: none;
+	color: var(--strTitleColor);
+}
+
+span.Instructions{
+
+}
+
+div.ExerciseText{
+
+}
+
+.FeedbackText, .FeedbackText span.CorrectAnswer, .FeedbackText span.Guess, .FeedbackText span.Answer{
+	color: var(--strTitleColor);
+}
+
+.LeftItem{
+	font-size: 1em;
+	color: var(--strTextColor);
+	text-align: left;
+}
+
+.RightItem{
+	font-weight: bold;
+	font-size: 1em;
+	color: var(--strTextColor);
+	text-align: left;
+}
+
+span.CorrectMark{
+
+}
+
+input, textarea{
+	font-family: var(--strFontFace);
+	font-size: 120%;
+}
+
+select{
+	font-size: 1em;
+}
+
+div.Feedback {
+	background-color: #CAD3D9;
+	left: 33%;
+	width: 34%;
+	top: 33%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	text-align: center;
+	color: var(--strTitleColor);
+	position: absolute;
+	display: none;
+	font-size: 1em;
+}
+
+div.Instruct {
+	background-color: #CAD3D9;
+	left: 33%;
+	width: 34%;
+	top: 33%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	text-align: center;
+	color: var(--strTitleColor);
+	position: absolute;
+	display: none;
+	font-size: 1em;
+}
+
+div.TimeOutback{
+	background-color: var(--strPageBGColor);
+	left: 33%;
+	width: 34%;
+	top: 33%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	text-align: center;
+	color: var(--strTitleColor);
+	position: absolute;
+	display: none;
+	font-size: 1em;
+}
+
+
+
+div.ExerciseDiv{
+	color: var(--strTextColor);
+}
+
+/* JMatch standard output table. */
+table.MatchTable{
+	margin: 2em auto; 
+	border-width: 0;
+}
+
+/* JMatch flashcard styles */
+table.FlashcardTable{
+	background-color: transparent;
+	color: var(--strTextColor);
+	border-color: var(--strTextColor);
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	/*width: 90%;*/
+	position: relative;
+	text-align: center;
+	padding: 0px;
+}
+
+table.FlashcardTable tr{
+	border-style: none;
+	margin: 0px;
+	padding: 0px;
+	background-color: var(--strExBGColor);
+}
+
+table.FlashcardTable td.Showing{
+	font-size: 140%;
+	text-align: center;
+	width: 50%;
+	display: table-cell;
+	padding: 2em;
+	margin: 0px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0.5em;
+	color: var(--strTextColor);
+	box-shadow: 0.2em 0.3em 0.2em var(--strNavShadeColor);
+	background-color: var(--strPageBGColor);
+}
+
+table.FlashcardTable td.Hidden{
+	display: none;
+}
+
+/* JMix styles */
+div.JMixDrag, div.JMatchDrag{
+	padding: 0;
+	background-color: var(--strPageBGColor);
+	border-style: none;
+}
+
+div#GuessDiv{
+	padding: 0.5em;
+	margin-bottom: 2em;
+}
+
+div#SegmentDiv{
+	margin-top: 2em;
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+a.ExSegment{
+	font-size: 120%;
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--strTextColor);
+	display: inline-block;
+	padding: 0.5em;
+	border: solid 1pt gray;
+	margin-bottom: 0.5em;
+}
+
+span.RemainingWordList{
+	font-style: italic;
+}
+
+div.DropLine {
+	position: absolute;
+	text-align: left;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: var(--strTitleColor);
+	width: 80%;
+	left: 10%;
+}
+
+/* JCloze styles */
+
+.ClozeWordList{
+	text-align: center;
+	font-weight: bold;
+}
+
+div.ClozeBody{
+	text-align: left;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	line-height: 2.0
+}
+
+span.GapSpan{
+	font-weight: bold;
+}
+
+/* JCross styles */
+
+table.CrosswordGrid{
+	margin: auto auto 1em auto;
+	border-collapse: collapse;
+	padding: 0px;
+	background-color: #000000;
+}
+
+table.CrosswordGrid tbody tr td{
+	width: 1.5em;
+	height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 140%;
+	padding: 1px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	color: #000000;
+}
+
+table.CrosswordGrid span{
+	color: #000000;
+}
+
+table.CrosswordGrid td.BlankCell{
+	background-color: #000000;
+	color: #000000;
+}
+
+table.CrosswordGrid td.LetterOnlyCell{
+	text-align: center;
+	vertical-align: middle;
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: bold;
+}
+
+table.CrosswordGrid td.NumLetterCell{
+	text-align: left;
+	vertical-align: top;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 1px;
+	font-weight: bold;
+}
+
+.NumLetterCellText{
+	cursor: pointer;
+	color: #000000;
+}
+
+.GridNum{
+	vertical-align: super;
+	font-size: 66%;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000000;
+}
+
+.GridNum:hover, .GridNum:visited{
+	color: #000000;
+}
+
+table#Clues{
+	margin: auto;
+	vertical-align: top;
+}
+
+table#Clues td{
+	vertical-align: top;
+}
+
+table.ClueList{
+  margin: auto;
+}
+
+td.ClueNum{
+	text-align: right;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+td.Clue{
+	text-align: left;
+}
+
+div#ClueEntry{
+	text-align: left;
+	margin-bottom: 1em;
+}
+
+/* Keypad styles */
+
+div.Keypad{
+	text-align: center;
+	display: none; /* initially hidden, shown if needed */
+	margin-bottom: 0.5em;
+}
+
+div.Keypad button{
+	font-family: var(--strFontFace);
+	font-size: 120%;
+	background-color: #ffffff;
+	color: #000000;
+	width: 2em;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0.5em;
+	color: var(--strTextColor);
+	box-shadow: 0.2em 0.3em 0.2em var(--strTextColor);
+}
+
+/* JQuiz styles */
+
+
+div.QuestionNavigation{
+	text-align: center;
+}
+
+.QNum{
+	margin: 0em 1em 0.5em 1em;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+textarea{
+	font-family: var(--strFontFace);
+}
+
+.QuestionText{
+	text-align: left;
+	margin: 0px;
+	font-size: 1em;
+}
+
+.Answer{
+	font-size: 120%;
+}
+
+input[type=submit] {
+border-radius: 0.3em;
+padding: 0.7em;
+min-width: 3em;
+border-left-color: #07663B;
+border-top-color: #07663B;
+border-right-color: #044025;
+border-bottom-color: #044025; 
+background-color: #30B6A6;
+color: white;
+border-width: 1pt;
+cursor: pointer;	
+box-shadow: 0.2em 0.3em 0.2em #D3EBE0;
+margin: 0px 60px 0px;
+}
+
+input[type=submit]:hover {
+	border-left-color: #07663B;
+	border-top-color: #07663B;
+	border-right-color: #044025;
+	border-bottom-color: #044025; 
+	background-color: #1D8190;
+	transition: background-color 0.1s;
+	box-shadow: 0.2em 0.3em 0.2em #C5E4E8;
+	color: #C5E4E8;
+}
+
+.PartialAnswer{
+	font-size: 120%;
+	letter-spacing: 0.1em;
+	color: var(--strTitleColor);
+}
+
+.Highlight{
+	color: #000000;
+	background-color: #ffff00;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+ol.QuizQuestions{
+	text-align: left;
+	list-style-type: none;
+}
+
+li.QuizQuestion{
+	padding: 1em;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+}
+
+ol.MCAnswers{
+	text-align: left;
+	list-style-type: upper-alpha;
+	padding: 1em;
+}
+
+ol.MCAnswers li{
+	margin-bottom: 1em;
+}
+
+ol.MSelAnswers{
+	text-align: left;
+	list-style-type: lower-alpha;
+	padding: 1em;
+}
+
+div.ShortAnswer{
+	padding: 1em;
+}
+
+.FuncButton {
+	border-style: solid;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	min-width: 3em;
+	border-left-color: var(--strFuncLightColor);
+	border-top-color: var(--strFuncLightColor);
+	border-right-color: var(--strFuncShadeColor);
+	border-bottom-color: var(--strFuncShadeColor);
+	color: black;
+	background-color: #90979B;
+	border-width: 1pt;
+	cursor: pointer;	
+	box-shadow: 0.2em 0.3em 0.2em var(--strFuncShadeColor);
+}
+
+.FuncButton:active {
+	box-shadow: none;
+}
+
+.FuncButton:hover{
+	color: var(--strExBGColor);
+	background-color: var(--strTextColor);
+}
+
+/*BeginNavBarStyle*/
+
+
+div.NavButtonBar{
+	background-color: var(--strNavBarColor);
+	text-align: center;
+	margin: 0.25rem 0;
+	font-size: 1.0em;
+	padding: 1.2em;
+	clear: both;
+	width: auto;
+	display: block;
+}
+
+.NavButton {
+	border-style: solid;
+	border-radius: 0.3em;
+	padding: 0.7em;
+	min-width: 3em;
+	border-left-color: var(--strNavLightColor);
+	border-top-color: var(--strNavLightColor);
+	border-right-color: var(--strNavShadeColor);
+	border-bottom-color: var(--strNavShadeColor); 
+	background-color: #E8B217;
+	color: #692506;
+	border-width: 1pt;
+	cursor: pointer;	
+	box-shadow: 0.2em 0.3em 0.2em var(--strNavShadeColor);
+	margin: 0px 60px 0px;
+}
+
+.NavButton:active {
+	box-shadow: none;
+}
+
+.NavButton:hover{
+	 background-color: #977728;
+  	color: white;
+ 	 transition: background-color 0.1s;
+}
+
+/*EndNavBarStyle*/
+
+
+div.CardStyle {
+	position: absolute;
+	font-family: var(--strFontFace);
+	font-size: 1em;
+	border-style: solid;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	min-width: 2em;
+	border-width: 1pt;
+	color: var(--strTextColor);
+	box-shadow: 0.2em 0.3em 0.2em var(--strTextColor);
+	background-color: var(--strExBGColor);
+	left: -50px;
+	top: -50px;
+	touch-action: none;
+	user-select: none;
+	box-sizing: border-box;
+}
+
+div.CardStyleCentered{
+	text-align: center;
+}
+
+.rtl{
+	text-align: right;
+	font-size: 140%;
+}
+
+a:visited {
+  color: #925D02;
+  text-decoration: none;
+}
+a:hover {
+  color:#B28409 ;
+  text-decoration: underline;
+}
+
+</style>
+
+<script>
+
+//<![CDATA[
+
+<!--
+
+
+//MDH_SCORM modification to support SCORM 1.2 functionality on LMS
+/* JavaScript to find the SCORM API if it is available */
+/* Based on a model at <http://www.claroline.net/doc/en/index.php/How_do_I_create_SCORM_content%3F> */
+
+var API = null; /* SCORM API */
+
+/* look up through the frameset hierarchy for the SCORM API */
+function findAPI(win)
+{
+	while ((win.API == null) && (win.parent != null) && (win.parent != win))
+	{
+		win = win.parent;
+	}
+	API = win.API;
+}
+
+/* initialize the SCORM API */
+function initAPI(win)
+{
+	/* look for the SCORM API up in the frameset */
+	findAPI(win);
+
+	/* if we still have not found the API, look at the opener and its frameset */
+	if ((API == null) && (win.opener != null))
+	{
+		findAPI(win.opener);
+	}
+}
+
+var ScormSubmitted = false; //use this to check whether LMSFinish has been called later.
+
+function ScormStartUp(){
+	initAPI(window);
+	if (API != null){
+		API.LMSInitialize(''); 
+		API.LMSSetValue('cmi.core.lesson_status', 'browsed');
+		API.LMSSetValue('cmi.core.score.min', 0);
+		API.LMSSetValue('cmi.core.score.max', 100);
+		API.LMSCommit('');
+	}
+}
+
+function CheckLMSFinish(){
+	if (API != null){
+		if (ScormSubmitted == false){
+			API.LMSCommit('');
+			API.LMSFinish('');
+			ScormSubmitted = true;
+		}
+	}
+}
+
+function SetScormIncomplete(){
+	if (ScormSubmitted == true){
+		return;
+	}
+	SetScormScore();
+	if (API != null){
+		API.LMSSetValue('cmi.core.lesson_status', 'incomplete');
+		API.LMSSetValue('cmi.core.session_time', MillisecondsToTime((new Date()).getTime() - ScormStartTime));
+		API.LMSCommit('');
+	}
+}
+
+function SetScormComplete(){
+	if (API != null){
+		API.LMSSetValue('cmi.core.session_time', MillisecondsToTime((new Date()).getTime() - ScormStartTime));
+		API.LMSSetValue('cmi.core.lesson_status', 'completed');
+		SetScormScore();
+		API.LMSCommit('');
+		API.LMSFinish('');
+		ScormSubmitted = true;
+	}
+}
+
+var ScormStartTime = (new Date()).getTime();
+
+var SuspendData = '';
+
+function SetScormTimedOut(){
+	if (API != null){
+		if (ScormSubmitted == false){
+			SetScormScore();
+			API.LMSSetValue('cmi.core.exit', 'time-out'); 
+			API.LMSCommit('');
+			CheckLMSFinish();
+		}
+	}
+}
+
+//TIME RENDERING FUNCTION
+function MillisecondsToTime(Seconds){
+	Seconds = Math.round(Seconds/1000);
+	var S = Seconds % 60;
+	Seconds -= S;
+	if (S < 10){S = '0' + S;}
+	var M = (Seconds / 60) % 60;
+	if (M < 10){M = '0' + M;}
+	var H = Math.floor(Seconds / 3600);
+	if (H < 10){H = '0' + H;}
+	return H + ':' + M + ':' + S;
+}
+
+
+
+
+//CODE FOR HANDLING NAV BUTTONS AND FUNCTION BUTTONS
+
+function FocusAButton(){
+	if (document.getElementById('CheckButton1') != null){
+		document.getElementById('CheckButton1').focus();
+	}
+	else{
+		if (document.getElementById('CheckButton2') != null){
+			document.getElementById('CheckButton2').focus();
+		}
+		else{
+			document.getElementsByTagName('button')[0].focus();
+		}
+	}
+}
+
+
+
+
+//CODE FOR HANDLING DISPLAY OF POPUP FEEDBACK BOX
+
+var topZ = 1000;
+
+function ShowMessage(Feedback){
+	var Output = Feedback + '<br /><br />';
+	document.getElementById('FeedbackContent').innerHTML = Output;
+	var FDiv = document.getElementById('FeedbackDiv');
+	topZ++;
+	FDiv.style.zIndex = topZ;
+	FDiv.style.top = TopSettingWithScrollOffset(30) + 'px';
+
+	FDiv.style.display = 'block';
+
+	ShowElements(false, 'input');
+	ShowElements(false, 'select');
+	ShowElements(false, 'object');
+	ShowElements(true, 'object', 'FeedbackContent');
+
+//Focus the OK button
+	//setTimeout("document.getElementById('FeedbackButton').focus()", 50);
+	
+//
+}
+
+function ShowInstructions(Feedback){
+	var Output = '<font face="verdana"; size=250%; color=black>Instructions</font><br>' +Feedback + '<br /><br />';
+	document.getElementById('InstructContent').innerHTML = Output;
+	var FDiv = document.getElementById('InstructDiv');
+	topZ++;
+	FDiv.style.zIndex = topZ;
+	FDiv.style.top = TopSettingWithScrollOffset(30) + 'px';
+
+	FDiv.style.display = 'block';
+
+	ShowElements(false, 'input');
+	ShowElements(false, 'select');
+	ShowElements(false, 'object');
+	ShowElements(true, 'object', 'InstructContent');
+
+//Focus the OK button
+	//setTimeout("document.getElementById('FeedbackButton').focus()", 50);
+	
+//
+}
+
+function ShowElements(Show, TagName, ContainerToReverse){
+// added third argument to allow objects in the feedback box to appear
+//IE bug -- hide all the form elements that will show through the popup
+//FF on Mac bug : doesn't redisplay objects whose visibility is set to visible
+//unless the object's display property is changed
+
+	//get container object (by Id passed in, or use document otherwise)
+	TopNode = document.getElementById(ContainerToReverse);
+	var Els;
+	if (TopNode != null) {
+		Els = TopNode.getElementsByTagName(TagName);
+	} else {
+		Els = document.getElementsByTagName(TagName);
+	}
+
+	for (var i=0; i<Els.length; i++){
+		if (TagName == "object") {
+			//manipulate object elements in all browsers
+			if (Show == true){
+				Els[i].style.visibility = 'visible';
+			}
+			else{
+				Els[i].style.visibility = 'hidden';
+			}
+		} 
+	}
+}
+
+
+
+function HideFeedback(){
+	document.getElementById('FeedbackDiv').style.display = 'none';
+	ShowElements(true, 'input');
+	ShowElements(true, 'select');
+	ShowElements(true, 'object');
+	ChangeQ(1)
+}
+
+function HideInstruct(){
+	document.getElementById('InstructDiv').style.display = 'none';
+	ShowElements(true, 'input');
+	ShowElements(true, 'select');
+	ShowElements(true, 'object');
+	//ChangeQ(1)
+}
+
+
+//GENERAL UTILITY FUNCTIONS AND VARIABLES
+
+//PAGE DIMENSION FUNCTIONS
+function PageDim(){
+//Get the page width and height
+	this.W = 600;
+	this.H = 400;
+	this.W = document.getElementsByTagName('body')[0].offsetWidth;
+	this.H = document.getElementsByTagName('body')[0].offsetHeight;
+}
+
+var pg = null;
+
+function GetPageXY(El) {
+	var XY = {x: 0, y: 0};
+	while(El){
+		XY.x += El.offsetLeft;
+		XY.y += El.offsetTop;
+		El = El.offsetParent;
+	}
+	return XY;
+}
+
+function GetScrollTop(){
+	if (typeof(window.pageYOffset) == 'number'){
+		return window.pageYOffset;
+	}
+	else{
+		if ((document.body)&&(document.body.scrollTop)){
+			return document.body.scrollTop;
+		}
+		else{
+			if ((document.documentElement)&&(document.documentElement.scrollTop)){
+				return document.documentElement.scrollTop;
+			}
+			else{
+				return 0;
+			}
+		}
+	}
+}
+
+function GetViewportHeight(){
+	if (typeof window.innerHeight != 'undefined'){
+		return window.innerHeight;
+	}
+	else{
+		if (((typeof document.documentElement != 'undefined')&&(typeof document.documentElement.clientHeight !=
+     'undefined'))&&(document.documentElement.clientHeight != 0)){
+			return document.documentElement.clientHeight;
+		}
+		else{
+			return document.getElementsByTagName('body')[0].clientHeight;
+		}
+	}
+}
+
+function TopSettingWithScrollOffset(TopPercent){
+	var T = Math.floor(GetViewportHeight() * (TopPercent/100));
+	return GetScrollTop() + T; 
+}
+
+//CODE FOR AVOIDING LOSS OF DATA WHEN BACKSPACE KEY INVOKES history.back()
+var InTextBox = false;
+
+function SuppressBackspace(e){ 
+	if (InTextBox == true){return;}
+	thisKey = e.keyCode;
+
+	var Suppress = false;
+
+	if (thisKey == 8) {
+		Suppress = true;
+		e.preventDefault();
+	}
+}
+
+window.addEventListener('keypress',SuppressBackspace,false);
+
+function ReduceItems(InArray, ReduceToSize){
+	var ItemToDump=0;
+	var j=0;
+	while (InArray.length > ReduceToSize){
+		ItemToDump = Math.floor(InArray.length*Math.random());
+		InArray.splice(ItemToDump, 1);
+	}
+}
+
+function Shuffle(InArray){
+	var Num;
+	var Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < (j-1); k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+function WriteToInstructions(Feedback) {
+	document.getElementById('InstructionsDiv').innerHTML = Feedback;
+
+}
+
+Imgs = new Array();
+
+function PreloadImages(){
+	var a = PreloadImages.arguments;
+	for (var i=0; i<a.length; i++){
+		Imgs[i] = new Image();
+		Imgs[i].src = a[i];
+	}
+}
+
+function RefreshImages(){
+	for (var i=0; i<document.images.length; i++){
+		if (document.images[i].name.substring(0,6) != 'NavBar'){
+			document.images[i].src = document.images[i].src;
+		}
+	}
+}
+
+
+
+function EscapeDoubleQuotes(InString){
+	return InString.replace(/"/g, '&quot;')
+}
+
+function TrimString(InString){
+        var x = 0;
+
+        if (InString.length != 0) {
+                while ((InString.charAt(InString.length - 1) == '\u0020') || (InString.charAt(InString.length - 1) == '\u000A') || (InString.charAt(InString.length - 1) == '\u000D')){
+                        InString = InString.substring(0, InString.length - 1)
+                }
+
+                while ((InString.charAt(0) == '\u0020') || (InString.charAt(0) == '\u000A') || (InString.charAt(0) == '\u000D')){
+                        InString = InString.substring(1, InString.length)
+                }
+
+                while (InString.indexOf('  ') != -1) {
+                        x = InString.indexOf('  ')
+                        InString = InString.substring(0, x) + InString.substring(x+1, InString.length)
+                 }
+
+                return InString;
+        }
+
+        else {
+                return '';
+        }
+}
+
+function FindLongest(InArray){
+	if (InArray.length < 1){return -1;}
+
+	var Longest = 0;
+	for (var i=1; i<InArray.length; i++){
+		if (InArray[i].length > InArray[Longest].length){
+			Longest = i;
+		}
+	}
+	return Longest;
+}
+
+//SELECTION OBJECT FOR TYPING WITH KEYPAD
+var selObj = null;
+            
+SelObj = function(box){
+	this.box = box;
+	this.selStart = this.box.selectionStart;
+	this.selEnd = this.box.selectionEnd;
+	this.selText = this.box.value.substring(this.selStart, this.selEnd);
+	return this;
+}
+
+function setSelText(newText){
+	var caretPos = this.selStart + newText.length;
+	var newValue = this.box.value.substring(0, this.selStart);
+	newValue += newText;
+	newValue += this.box.value.substring(this.selEnd, this.box.value.length);
+	this.box.value = newValue;
+	this.box.setSelectionRange(caretPos, caretPos);
+	this.box.focus();
+}
+SelObj.prototype.setSelText = setSelText;
+
+function setSelSelectionRange(start, end){
+	this.box.setSelectionRange(start, end);
+}
+SelObj.prototype.setSelSelectionRange = setSelSelectionRange;
+
+//UNICODE CHARACTER FUNCTIONS
+function IsCombiningDiacritic(CharNum){
+	var Result = (((CharNum >= 0x0300)&&(CharNum <= 0x370))||((CharNum >= 0x20d0)&&(CharNum <= 0x20ff)));
+	Result = Result || (((CharNum >= 0x3099)&&(CharNum <= 0x309a))||((CharNum >= 0xfe20)&&(CharNum <= 0xfe23)));
+	return Result;
+}
+
+function IsCJK(CharNum){
+	return ((CharNum >= 0x3000)&&(CharNum < 0xd800));
+}
+
+//SETUP FUNCTIONS
+//BROWSER WILL REFILL TEXT BOXES FROM CACHE IF NOT PREVENTED
+function ClearTextBoxes(){
+	var NList = document.getElementsByTagName('input');
+	for (var i=0; i<NList.length; i++){
+		if ((NList[i].id.indexOf('Guess') > -1)||(NList[i].id.indexOf('Gap') > -1)){
+			NList[i].value = '';
+		}
+		if (NList[i].id.indexOf('Chk') > -1){
+			NList[i].checked = '';
+		}
+	}
+}
+
+
+
+
+
+
+//JQUIZ-SPECIFIC SCORM-RELATED JAVASCRIPT CODE
+
+function SetScormScore(){
+//Reports the current score and any other information back to the LMS
+	if (API != null){
+		API.LMSSetValue('cmi.core.score.raw', Score);
+//Now send detailed reports about each item
+		for (var i=0; i<State.length; i++){
+			if (State[i] != null){
+				var ItemLabel = 'Item_' + (i+1).toString();
+				var ThisItemScore = '';
+				var ThisItemStatus = '';
+				API.LMSSetValue('cmi.objectives.' + i + '.id', 'obj'+ItemLabel);
+				API.LMSSetValue('cmi.interactions.' + i + '.id', 'int'+ItemLabel);
+				API.LMSSetValue('cmi.objectives.' + i + '.score.min', '0');
+				API.LMSSetValue('cmi.objectives.' + i + '.score.max', '100');
+				if (State[i][2] > 0){
+					ThisItemScore = Math.floor(State[i][0] * 100) + '';
+					ThisItemStatus = 'completed';
+				}
+				else{
+					ThisItemScore = '0';
+					ThisItemStatus = 'incomplete';
+				}
+				API.LMSSetValue('cmi.objectives.' + i + '.score.raw', ThisItemScore);
+				API.LMSSetValue('cmi.objectives.' + i + '.status', ThisItemStatus);
+				API.LMSSetValue('cmi.interactions.' + i + '.weighting', I[i][0]);
+//We can only use the performance type, because we're storing multiple responses of various types.
+				API.LMSSetValue('cmi.interactions.' + i + '.type', 'performance');
+				API.LMSSetValue('cmi.interactions.' + i + '.student_response', State[i][5]);
+			}
+		}
+		
+		API.LMSCommit('');
+	}
+}
+
+
+//JQUIZ CORE JAVASCRIPT CODE
+
+var CurrQNum = 0;
+var CorrectIndicator = '&#x2714;';
+var IncorrectIndicator = '&#x2718;';
+var YourScoreIs = 'Your current score is ';
+
+//New for 6.2.2.0
+var CompletedSoFar = 'Correct answers so far : ';
+var ExerciseCompleted = 'You have completed the quiz';
+var ShowCompletedSoFar = true;
+
+var ContinuousScoring = false;
+var CorrectFirstTime = 'Questions answered correctly first time: ';
+var ShowCorrectFirstTime = false;
+var ShuffleQs = true;
+var ShuffleAs = true;
+var DefaultRight = 'Correct!';
+var DefaultWrong = 'Sorry! Wrong Answer.';
+var QsToShow = 5;
+var Score = 0;
+var Finished = false;
+var Qs = null;
+var QArray = new Array();
+var ShowingAllQuestions = false;
+var ShowAllQuestionsCaption = 'All questions';
+var ShowOneByOneCaption = 'Single question';
+var State = new Array();
+var Feedback = '';
+var TimeOver = false;
+var strInstructions = '';
+var Locked = false;
+var QsDone = '';
+//var AllDone = true;
+
+//The following variable can be used to add a message explaining that
+//the question is finished, so no further marking will take place.
+var strQuestionFinished = '';
+
+function CompleteEmptyFeedback(){
+	var QNum, ANum;
+	for (QNum=0; QNum<I.length; QNum++){
+//Only do this if not multi-select
+		if (I[QNum][2] != '3'){
+  		for (ANum = 0; ANum<I[QNum][3].length; ANum++){
+  			//if (I[QNum][3][ANum][1].length < 1){
+			tempvar = I[QNum][3][ANum][1];
+			if (I[QNum][3][ANum][2] > 0){
+				I[QNum][3][ANum][1] = '<font size="10">Correct!<br></font>' + tempvar;
+			}
+			else{
+				I[QNum][3][ANum][1] =  '<font size="10">Sorry! Wrong Answer <br></font>' + tempvar;
+			}
+  			//}
+  		}
+		}
+	}
+}
+
+function SetUpQuestions(){
+	var AList = new Array(); 
+	var QList = new Array();
+	var i, j;
+	Qs = document.getElementById('Questions');
+	while (Qs.getElementsByTagName('li').length > 0){
+		QList.push(Qs.removeChild(Qs.getElementsByTagName('li')[0]));
+	}
+	var DumpItem = 0;
+	if (QsToShow > QList.length){
+		QsToShow = QList.length;
+	}
+	while (QsToShow < QList.length){
+		DumpItem = Math.floor(QList.length*Math.random());
+		for (j=DumpItem; j<(QList.length-1); j++){
+			QList[j] = QList[j+1];
+		}
+		QList.length = QList.length-1;
+	}
+	if (ShuffleQs == true){
+		QList = Shuffle(QList);
+	}
+	if (ShuffleAs == true){
+		var As;
+		for (var i=0; i<QList.length; i++){
+			As = QList[i].getElementsByTagName('ol')[0];
+			if (As != null){
+  			AList.length = 0;
+				while (As.getElementsByTagName('li').length > 0){
+					AList.push(As.removeChild(As.getElementsByTagName('li')[0]));
+				}
+				AList = Shuffle(AList);
+				for (j=0; j<AList.length; j++){
+					As.appendChild(AList[j]);
+				}
+			}
+		}
+	}
+	
+	for (i=0; i<QList.length; i++){
+		Qs.appendChild(QList[i]);
+		QArray[QArray.length] = QList[i];
+	}
+
+//Show the first item
+	QArray[0].style.display = '';
+	
+//Now hide all except the first item
+	for (i=1; i<QArray.length; i++){
+		QArray[i].style.display = 'none';
+	}		
+	SetQNumReadout();
+	
+	SetFocusToTextbox();
+}
+
+function SetFocusToTextbox(){
+//if there's a textbox, set the focus in it
+	if (QArray[CurrQNum].getElementsByTagName('input')[0] != null){
+		QArray[CurrQNum].getElementsByTagName('input')[0].focus();
+//and show a keypad if there is one
+		if (document.getElementById('CharacterKeypad') != null){
+			document.getElementById('CharacterKeypad').style.display = 'block';
+		}
+	}
+	else{
+  	if (QArray[CurrQNum].getElementsByTagName('textarea')[0] != null){
+  		QArray[CurrQNum].getElementsByTagName('textarea')[0].focus();	
+//and show a keypad if there is one
+			if (document.getElementById('CharacterKeypad') != null){
+				document.getElementById('CharacterKeypad').style.display = 'block';
+			}
+		}
+//This added for 6.0.4.11: hide accented character buttons if no textbox
+		else{
+			if (document.getElementById('CharacterKeypad') != null){
+				document.getElementById('CharacterKeypad').style.display = 'none';
+			}
+		}
+	}
+}
+
+function ChangeQ(ChangeBy){
+//The following line prevents moving to another question until the current
+//question is answered correctly. Uncomment it to enable this behaviour. 
+//	if (State[CurrQNum][0] == -1){return;}
+	if (((CurrQNum + ChangeBy) < 0)||((CurrQNum + ChangeBy) >= QArray.length)){return;}
+	QArray[CurrQNum].style.display = 'none';
+	CurrQNum += ChangeBy;
+	QArray[CurrQNum].style.display = '';
+//Undocumented function added 10/12/2004
+	ShowSpecialReadingForQuestion();
+	SetQNumReadout();
+	SetFocusToTextbox();
+}
+
+var HiddenReadingShown = false;
+function ShowSpecialReadingForQuestion(){
+//Undocumented function for showing specific reading text elements which change with each question
+//Added on 10/12/2004
+	if (document.getElementById('ReadingDiv') != null){
+		if (HiddenReadingShown == true){
+			document.getElementById('ReadingDiv').innerHTML = '';
+		}
+		if (QArray[CurrQNum] != null){
+//Fix for 6.0.4.25
+			var Children = QArray[CurrQNum].getElementsByTagName('div');
+			for (var i=0; i<Children.length; i++){
+			if (Children[i].className=="HiddenReading"){
+					document.getElementById('ReadingDiv').innerHTML = Children[i].innerHTML;
+					HiddenReadingShown = true;
+//Hide the ShowAllQuestions button to avoid confusion
+					if (document.getElementById('ShowMethodButton') != null){
+						document.getElementById('ShowMethodButton').style.display = 'none';
+					}
+				}
+			}	
+		}
+	}
+}
+
+function SetQNumReadout(){
+	document.getElementById('QNumReadout').innerHTML = 'Question '+ (CurrQNum+1) + ' out of ' + QArray.length;
+	if ((CurrQNum+1) >= QArray.length){
+		if (document.getElementById('NextQButton') != null){
+			document.getElementById('NextQButton').style.visibility = 'hidden';
+		}
+	}
+	else{
+		if (document.getElementById('NextQButton') != null){
+			document.getElementById('NextQButton').style.visibility = 'visible';
+		}
+	}
+	if (CurrQNum <= 0){
+		if (document.getElementById('PrevQButton') != null){
+			document.getElementById('PrevQButton').style.visibility = 'hidden';
+		}
+	}
+	else{
+		if (document.getElementById('PrevQButton') != null){
+			document.getElementById('PrevQButton').style.visibility = 'visible';
+		}
+	}
+}
+
+var I=new Array();
+I[0]=new Array();I[0][0]=100;
+I[0][1]='';
+I[0][2]='0';
+I[0][3]=new Array();
+I[0][3][0]=new Array('Pinhole Camera','You need Pinhole Camera. Want to make your own pinhole camera to image the Sun during solar eclipse, <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=EGCYu7RMZLo\');return false;">take a look here.</a>',1,100,1);
+I[0][3][1]=new Array('Prisom','You need Pinhole Camera. Want to make your own pinhole camera to image the Sun during solar eclipse, <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=EGCYu7RMZLo\');return false;">take a look here.</a>',0,0,1);
+I[0][3][2]=new Array('Lens','You need Pinhole Camera. Want to make your own pinhole camera to image the Sun during solar eclipse, <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=EGCYu7RMZLo\');return false;">take a look here.</a>',0,0,1);
+I[0][3][3]=new Array('Glass Slab','You need Pinhole Camera. Want to make your own pinhole camera to image the Sun during solar eclipse, <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=EGCYu7RMZLo\');return false;">take a look here.</a>',0,0,1);
+I[1]=new Array();I[1][0]=100;
+I[1][1]='';
+I[1][2]='0';
+I[1][3]=new Array();
+I[1][3][0]=new Array('Equator','Earth is bulged at its equator.  It is because, it is an oblate spheroid. This means flatter at poles and bulged at equator. This is due to the anomalous centrifugal force on earth, from equator to pole.',1,100,1);
+I[1][3][1]=new Array('Pole','Earth is bulged at its equator.  It is because, it is an oblate spheroid. This means flatter at poles and bulged at equator. This is due to the anomalous centrifugal force on earth, from equator to pole.',0,0,1);
+I[1][3][2]=new Array('Marina Trench','Earth is bulged at its equator.  It is because, it is an oblate spheroid. This means flatter at poles and bulged at equator. This is due to the anomalous centrifugal force on earth, from equator to pole.',0,0,1);
+I[1][3][3]=new Array('The Everest','Earth is bulged at its equator.  It is because, it is an oblate spheroid. This means flatter at poles and bulged at equator. This is due to the anomalous centrifugal force on earth, from equator to pole.',0,0,1);
+I[2]=new Array();I[2][0]=100;
+I[2][1]='';
+I[2][2]='0';
+I[2][3]=new Array();
+I[2][3][0]=new Array('Raman Effect','National Science Day (NSD) is celebrated every year on 28 February to commemorate the discovery of the \'Raman Effect\'. Government of India designated 28 February as National Science Day (NSD) in 1986. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.britannica.com/science/Raman-effect\');return false;">Learn more about the Raman Effect.</a>',1,100,1);
+I[2][3][1]=new Array('Doppler Effect','National Science Day (NSD) is celebrated every year on 28 February to commemorate the discovery of the \'Raman Effect\'. Government of India designated 28 February as National Science Day (NSD) in 1986. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.britannica.com/science/Raman-effect\');return false;">Learn more about the Raman Effect.</a>',0,0,1);
+I[2][3][2]=new Array('Saha Ionization','National Science Day (NSD) is celebrated every year on 28 February to commemorate the discovery of the \'Raman Effect\'. Government of India designated 28 February as National Science Day (NSD) in 1986. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.britannica.com/science/Raman-effect\');return false;">Learn more about the Raman Effect.</a>',0,0,1);
+I[2][3][3]=new Array('Bose Condensation','National Science Day (NSD) is celebrated every year on 28 February to commemorate the discovery of the \'Raman Effect\'. Government of India designated 28 February as National Science Day (NSD) in 1986. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.britannica.com/science/Raman-effect\');return false;">Learn more about the Raman Effect.</a>',0,0,1);
+I[3]=new Array();I[3][0]=100;
+I[3][1]='';
+I[3][2]='0';
+I[3][3]=new Array();
+I[3][3][0]=new Array('Mercury','Both Mercury and Venus do not have any moons. Want to know the moons of other planets? <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://solarsystem.nasa.gov/moons/in-depth/\');return false;">Click here.</a>',1,100,1);
+I[3][3][1]=new Array('Earth','Both Mercury and Venus do not have any moons. Want to know the moons of other planets? <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://solarsystem.nasa.gov/moons/in-depth/\');return false;">Click here.</a>',0,0,1);
+I[3][3][2]=new Array('Jupiter','Both Mercury and Venus do not have any moons. Want to know the moons of other planets? <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://solarsystem.nasa.gov/moons/in-depth/\');return false;">Click here.</a>',0,0,1);
+I[3][3][3]=new Array('Mars','Both Mercury and Venus do not have any moons. Want to know the moons of other planets? <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://solarsystem.nasa.gov/moons/in-depth/\');return false;">Click here.</a>',0,0,1);
+I[4]=new Array();I[4][0]=100;
+I[4][1]='';
+I[4][2]='0';
+I[4][3]=new Array();
+I[4][3][0]=new Array('Chunk of rocky objects, between the orbit of Mars and Jupiter','Like the asteroid belt, Kuiper belt consists mainly of small bodies or remnants from when the Solar System formed. While many asteroids are composed primarily of rock and metal, most Kuiper belt objects are composed largely of frozen volatiles, such as methane, ammonia, and water. The Kuiper belt is home to most of the objects that astronomers generally accept as dwarf planets: Orcus, Pluto, Haumea, Quaoar, and Makemake.',0,0,1);
+I[4][3][1]=new Array('Ring of icy objects, beyond the orbit of Neptune','Like the asteroid belt, Kuiper belt consists mainly of small bodies or remnants from when the Solar System formed. While many asteroids are composed primarily of rock and metal, most Kuiper belt objects are composed largely of frozen volatiles, such as methane, ammonia, and water. The Kuiper belt is home to most of the objects that astronomers generally accept as dwarf planets: Orcus, Pluto, Haumea, Quaoar, and Makemake.',1,100,1);
+I[4][3][2]=new Array('Ring of icy objects, between the orbit of Mars and Jupiter','Like the asteroid belt, Kuiper belt consists mainly of small bodies or remnants from when the Solar System formed. While many asteroids are composed primarily of rock and metal, most Kuiper belt objects are composed largely of frozen volatiles, such as methane, ammonia, and water. The Kuiper belt is home to most of the objects that astronomers generally accept as dwarf planets: Orcus, Pluto, Haumea, Quaoar, and Makemake.',0,0,1);
+I[4][3][3]=new Array('Chunk of rocky objects, beyond the orbit of Neptune','Like the asteroid belt, Kuiper belt consists mainly of small bodies or remnants from when the Solar System formed. While many asteroids are composed primarily of rock and metal, most Kuiper belt objects are composed largely of frozen volatiles, such as methane, ammonia, and water. The Kuiper belt is home to most of the objects that astronomers generally accept as dwarf planets: Orcus, Pluto, Haumea, Quaoar, and Makemake.',0,0,1);
+I[5]=new Array();I[5][0]=100;
+I[5][1]='';
+I[5][2]='0';
+I[5][3]=new Array();
+I[5][3][0]=new Array('Neil Armstrong','Yuri Gagarin from the Soviet Union was the first human in space. His vehicle, Vostok 1 circled Earth at a speed of 27,400 kilometers per hour with the flight lasting 108 minutes. Want to take some glimpses of the first journey to space, <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=vkVAqNbX0Nw\');return false;">click here.</a>',0,0,1);
+I[5][3][1]=new Array('John Glenn','Yuri Gagarin from the Soviet Union was the first human in space. His vehicle, Vostok 1 circled Earth at a speed of 27,400 kilometers per hour with the flight lasting 108 minutes. Want to take some glimpses of the first journey to space, <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=vkVAqNbX0Nw\');return false;">click here.</a>',0,0,1);
+I[5][3][2]=new Array('Yuri gagarin','Yuri Gagarin from the Soviet Union was the first human in space. His vehicle, Vostok 1 circled Earth at a speed of 27,400 kilometers per hour with the flight lasting 108 minutes. Want to take some glimpses of the first journey to space, <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=vkVAqNbX0Nw\');return false;">click here.</a>',1,100,1);
+I[5][3][3]=new Array('Kalpana Chawla','Yuri Gagarin from the Soviet Union was the first human in space. His vehicle, Vostok 1 circled Earth at a speed of 27,400 kilometers per hour with the flight lasting 108 minutes. Want to take some glimpses of the first journey to space, <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=vkVAqNbX0Nw\');return false;">click here.</a>',0,0,1);
+I[6]=new Array();I[6][0]=100;
+I[6][1]='';
+I[6][2]='0';
+I[6][3]=new Array();
+I[6][3][0]=new Array('March 21','It is one March 20 and 21. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.britannica.com/science/vernal-equinox\');return false;">Look here to know more.</a>',1,100,1);
+I[6][3][1]=new Array('December 21','It is one March 20 and 21. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.britannica.com/science/vernal-equinox\');return false;">Look here to know more.</a>',0,0,1);
+I[6][3][2]=new Array('June 21','It is one March 20 and 21. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.britannica.com/science/vernal-equinox\');return false;">Look here to know more.</a>',0,0,1);
+I[6][3][3]=new Array('September 23','It is one March 20 and 21. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.britannica.com/science/vernal-equinox\');return false;">Look here to know more.</a>',0,0,1);
+I[7]=new Array();I[7][0]=100;
+I[7][1]='';
+I[7][2]='0';
+I[7][3]=new Array();
+I[7][3][0]=new Array('Ursa major','Polaris is a star in the northern circumpolar constellation of Ursa Minor. It is designated \u03B1 Ursae Minoris (Latinized to Alpha Ursae Minoris) and is commonly called the North Star or Pole Star. How do you find the pole star on the sky at your location? <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=EiO86p7fG5k\');return false;">Click here. </a>',1,100,1);
+I[7][3][1]=new Array('Orion','Polaris is a star in the northern circumpolar constellation of Ursa Minor. It is designated \u03B1 Ursae Minoris (Latinized to Alpha Ursae Minoris) and is commonly called the North Star or Pole Star. How do you find the pole star on the sky at your location? <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=EiO86p7fG5k\');return false;">Click here. </a>',0,0,1);
+I[7][3][2]=new Array('Ursa minor','Polaris is a star in the northern circumpolar constellation of Ursa Minor. It is designated \u03B1 Ursae Minoris (Latinized to Alpha Ursae Minoris) and is commonly called the North Star or Pole Star. How do you find the pole star on the sky at your location? <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=EiO86p7fG5k\');return false;">Click here. </a>',0,0,1);
+I[7][3][3]=new Array('Scorpius','Polaris is a star in the northern circumpolar constellation of Ursa Minor. It is designated \u03B1 Ursae Minoris (Latinized to Alpha Ursae Minoris) and is commonly called the North Star or Pole Star. How do you find the pole star on the sky at your location? <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=EiO86p7fG5k\');return false;">Click here. </a>',0,0,1);
+I[8]=new Array();I[8][0]=100;
+I[8][1]='';
+I[8][2]='0';
+I[8][3]=new Array();
+I[8][3][0]=new Array('Density','A light-year is a measurement of distance and not time (as the name might imply). A light-year is the distance a beam of light travels in a single Earth year, which equates to approximately 6 trillion miles (9.7 trillion kilometers). <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=aOjJj2VwnEY\');return false;">Look here</a> to know how large it actually means.',0,0,1);
+I[8][3][1]=new Array('Length','A light-year is a measurement of distance and not time (as the name might imply). A light-year is the distance a beam of light travels in a single Earth year, which equates to approximately 6 trillion miles (9.7 trillion kilometers). <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=aOjJj2VwnEY\');return false;">Look here</a> to know how large it actually means.',1,100,1);
+I[8][3][2]=new Array('Mass','A light-year is a measurement of distance and not time (as the name might imply). A light-year is the distance a beam of light travels in a single Earth year, which equates to approximately 6 trillion miles (9.7 trillion kilometers). <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=aOjJj2VwnEY\');return false;">Look here</a> to know how large it actually means.',0,0,1);
+I[8][3][3]=new Array('Time','A light-year is a measurement of distance and not time (as the name might imply). A light-year is the distance a beam of light travels in a single Earth year, which equates to approximately 6 trillion miles (9.7 trillion kilometers). <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=aOjJj2VwnEY\');return false;">Look here</a> to know how large it actually means.',0,0,1);
+I[9]=new Array();I[9][0]=100;
+I[9][1]='';
+I[9][2]='0';
+I[9][3]=new Array();
+I[9][3][0]=new Array('Full moon','Solar eclipses happen only at the new moon phase, when the Moon is between Earth and the Sun. During a solar eclipse, the Moon casts a shadow on Earth, and blocks or partially blocks our view of the Sun. But at not all new moon phases, we have solar eclipses. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://earthsky.org/astronomy-essentials/why-isnt-there-an-eclipse-every-full-moon/\');return false;">Want to know?</a>',0,0,1);
+I[9][3][1]=new Array('New moon','Solar eclipses happen only at the new moon phase, when the Moon is between Earth and the Sun. During a solar eclipse, the Moon casts a shadow on Earth, and blocks or partially blocks our view of the Sun. But at not all new moon phases, we have solar eclipses. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://earthsky.org/astronomy-essentials/why-isnt-there-an-eclipse-every-full-moon/\');return false;">Want to know?</a>',1,100,1);
+I[9][3][2]=new Array('Crescent','Solar eclipses happen only at the new moon phase, when the Moon is between Earth and the Sun. During a solar eclipse, the Moon casts a shadow on Earth, and blocks or partially blocks our view of the Sun. But at not all new moon phases, we have solar eclipses. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://earthsky.org/astronomy-essentials/why-isnt-there-an-eclipse-every-full-moon/\');return false;">Want to know?</a>',0,0,1);
+I[9][3][3]=new Array('First quarter','Solar eclipses happen only at the new moon phase, when the Moon is between Earth and the Sun. During a solar eclipse, the Moon casts a shadow on Earth, and blocks or partially blocks our view of the Sun. But at not all new moon phases, we have solar eclipses. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://earthsky.org/astronomy-essentials/why-isnt-there-an-eclipse-every-full-moon/\');return false;">Want to know?</a>',0,0,1);
+I[10]=new Array();I[10][0]=100;
+I[10][1]='';
+I[10][2]='0';
+I[10][3]=new Array();
+I[10][3][0]=new Array('Circular','It is spiral. Here is an example of such spiral galaxy <img src="https://www.nrao.edu/pr/2013/localarm/branch.jpg" width="100" height="100"/>',0,0,1);
+I[10][3][1]=new Array('Rectangular','It is spiral. Here is an example of such spiral galaxy <img src="https://www.nrao.edu/pr/2013/localarm/branch.jpg" width="100" height="100"/>',0,0,1);
+I[10][3][2]=new Array('Spiral','It is spiral. Here is an example of such spiral galaxy <img src="https://www.nrao.edu/pr/2013/localarm/branch.jpg" width="100" height="100"/>',1,100,1);
+I[10][3][3]=new Array('Triangular','It is spiral. Here is an example of such spiral galaxy <img src="https://www.nrao.edu/pr/2013/localarm/branch.jpg" width="100" height="100"/>',0,0,1);
+I[11]=new Array();I[11][0]=100;
+I[11][1]='';
+I[11][2]='0';
+I[11][3]=new Array();
+I[11][3][0]=new Array('Binary Star','Binary star is a system of two stars that are gravitationally bound to and in orbit around each other. Binary stars in the night sky that are seen as a single object to the naked eye are often resolved using a telescope as separate stars, in which case they are called visual binaries.',1,100,1);
+I[11][3][1]=new Array('Sister Star','Binary star is a system of two stars that are gravitationally bound to and in orbit around each other. Binary stars in the night sky that are seen as a single object to the naked eye are often resolved using a telescope as separate stars, in which case they are called visual binaries.',0,0,1);
+I[11][3][2]=new Array('Tertiary Star','Binary star is a system of two stars that are gravitationally bound to and in orbit around each other. Binary stars in the night sky that are seen as a single object to the naked eye are often resolved using a telescope as separate stars, in which case they are called visual binaries.',0,0,1);
+I[11][3][3]=new Array('Cousin Star','Binary star is a system of two stars that are gravitationally bound to and in orbit around each other. Binary stars in the night sky that are seen as a single object to the naked eye are often resolved using a telescope as separate stars, in which case they are called visual binaries.',0,0,1);
+I[12]=new Array();I[12][0]=100;
+I[12][1]='';
+I[12][2]='0';
+I[12][3]=new Array();
+I[12][3][0]=new Array('1','The 13 Constellations of the Zodiac. The Zodiac is the ring of constellations that the Sun seems to pass through each year as the Earth orbits around it. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.e-education.psu.edu/astro801/content/l1_p4.html\');return false;">Click here</a> to look how Sun is passing through these constellations.',0,0,1);
+I[12][3][1]=new Array('13','The 13 Constellations of the Zodiac. The Zodiac is the ring of constellations that the Sun seems to pass through each year as the Earth orbits around it. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.e-education.psu.edu/astro801/content/l1_p4.html\');return false;">Click here</a> to look how Sun is passing through these constellations.',1,100,1);
+I[12][3][2]=new Array('30','The 13 Constellations of the Zodiac. The Zodiac is the ring of constellations that the Sun seems to pass through each year as the Earth orbits around it. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.e-education.psu.edu/astro801/content/l1_p4.html\');return false;">Click here</a> to look how Sun is passing through these constellations.',0,0,1);
+I[12][3][3]=new Array('23','The 13 Constellations of the Zodiac. The Zodiac is the ring of constellations that the Sun seems to pass through each year as the Earth orbits around it. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.e-education.psu.edu/astro801/content/l1_p4.html\');return false;">Click here</a> to look how Sun is passing through these constellations.',0,0,1);
+I[13]=new Array();I[13][0]=100;
+I[13][1]='';
+I[13][2]='0';
+I[13][3]=new Array();
+I[13][3][0]=new Array('Hydrogen','Roughly three quarters of the Sun\'s mass consists of hydrogen (~73%); the rest is mostly helium (~25%), with much smaller quantities of heavier elements, including oxygen, carbon, neon and iron.',1,100,1);
+I[13][3][1]=new Array('Nitrogen','Roughly three quarters of the Sun\'s mass consists of hydrogen (~73%); the rest is mostly helium (~25%), with much smaller quantities of heavier elements, including oxygen, carbon, neon and iron.',0,0,1);
+I[13][3][2]=new Array('Helium','Roughly three quarters of the Sun\'s mass consists of hydrogen (~73%); the rest is mostly helium (~25%), with much smaller quantities of heavier elements, including oxygen, carbon, neon and iron.',0,0,1);
+I[13][3][3]=new Array('Carbon','Roughly three quarters of the Sun\'s mass consists of hydrogen (~73%); the rest is mostly helium (~25%), with much smaller quantities of heavier elements, including oxygen, carbon, neon and iron.',0,0,1);
+I[14]=new Array();I[14][0]=100;
+I[14][1]='';
+I[14][2]='0';
+I[14][3]=new Array();
+I[14][3][0]=new Array('Sputnik 1','Sputnik 1 was the first artificial Earth satellite. It was launched into an elliptical low Earth orbit by the Soviet Union on 4 October 1957 as part of the Soviet space program. It orbited for three weeks before its batteries ran out.<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Sputnik_asm.jpg/450px-Sputnik_asm.jpg" width="100" height="100"/>',1,100,1);
+I[14][3][1]=new Array('Voyager 1','Sputnik 1 was the first artificial Earth satellite. It was launched into an elliptical low Earth orbit by the Soviet Union on 4 October 1957 as part of the Soviet space program. It orbited for three weeks before its batteries ran out.<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Sputnik_asm.jpg/450px-Sputnik_asm.jpg" width="100" height="100"/>',0,0,1);
+I[14][3][2]=new Array('Apollo 11','Sputnik 1 was the first artificial Earth satellite. It was launched into an elliptical low Earth orbit by the Soviet Union on 4 October 1957 as part of the Soviet space program. It orbited for three weeks before its batteries ran out.<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Sputnik_asm.jpg/450px-Sputnik_asm.jpg" width="100" height="100"/>',0,0,1);
+I[14][3][3]=new Array('Soyuz','Sputnik 1 was the first artificial Earth satellite. It was launched into an elliptical low Earth orbit by the Soviet Union on 4 October 1957 as part of the Soviet space program. It orbited for three weeks before its batteries ran out.<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Sputnik_asm.jpg/450px-Sputnik_asm.jpg" width="100" height="100"/>',0,0,1);
+I[15]=new Array();I[15][0]=100;
+I[15][1]='';
+I[15][2]='0';
+I[15][3]=new Array();
+I[15][3][0]=new Array('Black','If there is no atmosphere, there will be no scattering of sunlight at all. In that case, no scattered light will enter our eyes from the sky and the sky will look black. Only the stars will appear as dots.',1,100,1);
+I[15][3][1]=new Array('Sky Blue','If there is no atmosphere, there will be no scattering of sunlight at all. In that case, no scattered light will enter our eyes from the sky and the sky will look black. Only the stars will appear as dots.',0,0,1);
+I[15][3][2]=new Array('Yellow','If there is no atmosphere, there will be no scattering of sunlight at all. In that case, no scattered light will enter our eyes from the sky and the sky will look black. Only the stars will appear as dots.',0,0,1);
+I[15][3][3]=new Array('White','If there is no atmosphere, there will be no scattering of sunlight at all. In that case, no scattered light will enter our eyes from the sky and the sky will look black. Only the stars will appear as dots.',0,0,1);
+I[16]=new Array();I[16][0]=100;
+I[16][1]='';
+I[16][2]='0';
+I[16][3]=new Array();
+I[16][3][0]=new Array('Aquarius','Ophiuchus the Serpent Bearer is sometimes called the 13th or forgotten constellation of the zodiac. That\'s because the sun passes in front of Ophiuchus from about November 30 to December 18 each year. <img src="https://earthsky.org/upl/2021/07/SQ-South-Antares-Serpens-Caput-Serpens-Cauda-Ophiuchus-July-2021.jpg" width="100" height="100"/>',0,0,1);
+I[16][3][1]=new Array('Orion','Ophiuchus the Serpent Bearer is sometimes called the 13th or forgotten constellation of the zodiac. That\'s because the sun passes in front of Ophiuchus from about November 30 to December 18 each year. <img src="https://earthsky.org/upl/2021/07/SQ-South-Antares-Serpens-Caput-Serpens-Cauda-Ophiuchus-July-2021.jpg" width="100" height="100"/>',0,0,1);
+I[16][3][2]=new Array('Cepheus','Ophiuchus the Serpent Bearer is sometimes called the 13th or forgotten constellation of the zodiac. That\'s because the sun passes in front of Ophiuchus from about November 30 to December 18 each year. <img src="https://earthsky.org/upl/2021/07/SQ-South-Antares-Serpens-Caput-Serpens-Cauda-Ophiuchus-July-2021.jpg" width="100" height="100"/>',0,0,1);
+I[16][3][3]=new Array('Ophiuchus','Ophiuchus the Serpent Bearer is sometimes called the 13th or forgotten constellation of the zodiac. That\'s because the sun passes in front of Ophiuchus from about November 30 to December 18 each year. <img src="https://earthsky.org/upl/2021/07/SQ-South-Antares-Serpens-Caput-Serpens-Cauda-Ophiuchus-July-2021.jpg" width="100" height="100"/>',1,100,1);
+I[17]=new Array();I[17][0]=100;
+I[17][1]='';
+I[17][2]='0';
+I[17][3]=new Array();
+I[17][3][0]=new Array('Yellow','If you think in terms of visible light, the hotter the blackbody, the bluer the wavelength of its peak emission. For example, the sun has a temperature of approximately 5800 Kelvin. A blackbody with this temperature has its peak at approximately 500 nanometers, which is the wavelength of the color yellow.',1,100,1);
+I[17][3][1]=new Array('Blue','If you think in terms of visible light, the hotter the blackbody, the bluer the wavelength of its peak emission. For example, the sun has a temperature of approximately 5800 Kelvin. A blackbody with this temperature has its peak at approximately 500 nanometers, which is the wavelength of the color yellow.',0,0,1);
+I[17][3][2]=new Array('Red','If you think in terms of visible light, the hotter the blackbody, the bluer the wavelength of its peak emission. For example, the sun has a temperature of approximately 5800 Kelvin. A blackbody with this temperature has its peak at approximately 500 nanometers, which is the wavelength of the color yellow.',0,0,1);
+I[17][3][3]=new Array('Orange','If you think in terms of visible light, the hotter the blackbody, the bluer the wavelength of its peak emission. For example, the sun has a temperature of approximately 5800 Kelvin. A blackbody with this temperature has its peak at approximately 500 nanometers, which is the wavelength of the color yellow.',0,0,1);
+I[18]=new Array();I[18][0]=100;
+I[18][1]='';
+I[18][2]='0';
+I[18][3]=new Array();
+I[18][3][0]=new Array('Spiral galaxy','M87 is an enormous elliptical galaxy \u2013 it consists mainly of older stars and does not exhibit the well-known spiral pattern of disk galaxies \u2013 that is located relatively nearby at 55 million light-years from us, in the Virgo galaxy cluster. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://earthsky.org/space/new-image-m87s-black-hole-magnetic-field/\');return false;">Take a look of M87\'s black hole.</a>',0,0,1);
+I[18][3][1]=new Array('Elliptical galaxy','M87 is an enormous elliptical galaxy \u2013 it consists mainly of older stars and does not exhibit the well-known spiral pattern of disk galaxies \u2013 that is located relatively nearby at 55 million light-years from us, in the Virgo galaxy cluster. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://earthsky.org/space/new-image-m87s-black-hole-magnetic-field/\');return false;">Take a look of M87\'s black hole.</a>',1,100,1);
+I[18][3][2]=new Array('Barred spiral galaxy','M87 is an enormous elliptical galaxy \u2013 it consists mainly of older stars and does not exhibit the well-known spiral pattern of disk galaxies \u2013 that is located relatively nearby at 55 million light-years from us, in the Virgo galaxy cluster. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://earthsky.org/space/new-image-m87s-black-hole-magnetic-field/\');return false;">Take a look of M87\'s black hole.</a>',0,0,1);
+I[18][3][3]=new Array('Lenticular galaxy','M87 is an enormous elliptical galaxy \u2013 it consists mainly of older stars and does not exhibit the well-known spiral pattern of disk galaxies \u2013 that is located relatively nearby at 55 million light-years from us, in the Virgo galaxy cluster. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://earthsky.org/space/new-image-m87s-black-hole-magnetic-field/\');return false;">Take a look of M87\'s black hole.</a>',0,0,1);
+I[19]=new Array();I[19][0]=100;
+I[19][1]='';
+I[19][2]='0';
+I[19][3]=new Array();
+I[19][3][0]=new Array('LIGO','The Laser Interferometer Gravitational-Wave Observatory (LIGO) is a large-scale physics experiment and observatory designed to detect cosmic gravitational waves and to develop gravitational-wave observations as an astronomical tool. India is also going to have LIGO - india in her own land.',1,100,1);
+I[19][3][1]=new Array('INO','The Laser Interferometer Gravitational-Wave Observatory (LIGO) is a large-scale physics experiment and observatory designed to detect cosmic gravitational waves and to develop gravitational-wave observations as an astronomical tool. India is also going to have LIGO - india in her own land.',0,0,1);
+I[19][3][2]=new Array('ASTROSAT','The Laser Interferometer Gravitational-Wave Observatory (LIGO) is a large-scale physics experiment and observatory designed to detect cosmic gravitational waves and to develop gravitational-wave observations as an astronomical tool. India is also going to have LIGO - india in her own land.',0,0,1);
+I[19][3][3]=new Array('HST','The Laser Interferometer Gravitational-Wave Observatory (LIGO) is a large-scale physics experiment and observatory designed to detect cosmic gravitational waves and to develop gravitational-wave observations as an astronomical tool. India is also going to have LIGO - india in her own land.',0,0,1);
+I[20]=new Array();I[20][0]=100;
+I[20][1]='';
+I[20][2]='0';
+I[20][3]=new Array();
+I[20][3][0]=new Array('Population III star','Population III stars, a type of hypothetical stars, were the first suns to form in our 13.8-billion-year-old universe, and they\'re identifiable by their unique composition: just hydrogen, helium and lithium, the only elements around immediately after the Big Bang. Heavier elements were forged in the cores of these stars and their successors. Population I stars have the highest amount of metals, then come population II stars and then population III (zero metal content stars).',1,100,1);
+I[20][3][1]=new Array('Population I star','Population III stars, a type of hypothetical stars, were the first suns to form in our 13.8-billion-year-old universe, and they\'re identifiable by their unique composition: just hydrogen, helium and lithium, the only elements around immediately after the Big Bang. Heavier elements were forged in the cores of these stars and their successors. Population I stars have the highest amount of metals, then come population II stars and then population III (zero metal content stars).',0,0,1);
+I[20][3][2]=new Array('Population II star','Population III stars, a type of hypothetical stars, were the first suns to form in our 13.8-billion-year-old universe, and they\'re identifiable by their unique composition: just hydrogen, helium and lithium, the only elements around immediately after the Big Bang. Heavier elements were forged in the cores of these stars and their successors. Population I stars have the highest amount of metals, then come population II stars and then population III (zero metal content stars).',0,0,1);
+I[20][3][3]=new Array('Magnetic star','Population III stars, a type of hypothetical stars, were the first suns to form in our 13.8-billion-year-old universe, and they\'re identifiable by their unique composition: just hydrogen, helium and lithium, the only elements around immediately after the Big Bang. Heavier elements were forged in the cores of these stars and their successors. Population I stars have the highest amount of metals, then come population II stars and then population III (zero metal content stars).',0,0,1);
+I[21]=new Array();I[21][0]=100;
+I[21][1]='';
+I[21][2]='0';
+I[21][3]=new Array();
+I[21][3][0]=new Array('Stars','A galaxy is a huge collection of gas, dust, and billions of stars and their solar systems, all held together by gravity.',0,0,1);
+I[21][3][1]=new Array('Dust','A galaxy is a huge collection of gas, dust, and billions of stars and their solar systems, all held together by gravity.',0,0,1);
+I[21][3][2]=new Array('Stellar remnants','A galaxy is a huge collection of gas, dust, and billions of stars and their solar systems, all held together by gravity.',0,0,1);
+I[21][3][3]=new Array('All of these','A galaxy is a huge collection of gas, dust, and billions of stars and their solar systems, all held together by gravity.',1,100,1);
+I[22]=new Array();I[22][0]=100;
+I[22][1]='';
+I[22][2]='0';
+I[22][3]=new Array();
+I[22][3][0]=new Array('Red sky paradox','Olbers\' paradox, in cosmology, paradox relating to the problem of why the sky is dark at night. If the universe is endless and uniformly populated with luminous stars, then every line of sight must eventually terminate at the surface of a star. The paradox is resolved by the fact that the universe is expanding, which means that distant light has not yet reached us.',0,0,1);
+I[22][3][1]=new Array('Olbers paradox','Olbers\' paradox, in cosmology, paradox relating to the problem of why the sky is dark at night. If the universe is endless and uniformly populated with luminous stars, then every line of sight must eventually terminate at the surface of a star. The paradox is resolved by the fact that the universe is expanding, which means that distant light has not yet reached us.',1,100,1);
+I[22][3][2]=new Array('Twin paradox','Olbers\' paradox, in cosmology, paradox relating to the problem of why the sky is dark at night. If the universe is endless and uniformly populated with luminous stars, then every line of sight must eventually terminate at the surface of a star. The paradox is resolved by the fact that the universe is expanding, which means that distant light has not yet reached us.',0,0,1);
+I[22][3][3]=new Array('The infinity paradox','Olbers\' paradox, in cosmology, paradox relating to the problem of why the sky is dark at night. If the universe is endless and uniformly populated with luminous stars, then every line of sight must eventually terminate at the surface of a star. The paradox is resolved by the fact that the universe is expanding, which means that distant light has not yet reached us.',0,0,1);
+I[23]=new Array();I[23][0]=100;
+I[23][1]='';
+I[23][2]='0';
+I[23][3]=new Array();
+I[23][3][0]=new Array('Dhruva Supercluster','Indian astronomers discover supercluster of galaxies, name it \'Saraswati\'. In a significant discovery, a team of Indian astronomers have identified a previously unknown, extremely large supercluster of galaxies located in the direction of constellation Pisces. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=1-Sne9L1aBY\');return false;">Click here</a> to more about this discovery.',0,0,1);
+I[23][3][1]=new Array('Kaveri Supercluster','Indian astronomers discover supercluster of galaxies, name it \'Saraswati\'. In a significant discovery, a team of Indian astronomers have identified a previously unknown, extremely large supercluster of galaxies located in the direction of constellation Pisces. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=1-Sne9L1aBY\');return false;">Click here</a> to more about this discovery.',0,0,1);
+I[23][3][2]=new Array('Saraswati Supercluster','Indian astronomers discover supercluster of galaxies, name it \'Saraswati\'. In a significant discovery, a team of Indian astronomers have identified a previously unknown, extremely large supercluster of galaxies located in the direction of constellation Pisces. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=1-Sne9L1aBY\');return false;">Click here</a> to more about this discovery.',1,100,1);
+I[23][3][3]=new Array('Bibha Supercluster','Indian astronomers discover supercluster of galaxies, name it \'Saraswati\'. In a significant discovery, a team of Indian astronomers have identified a previously unknown, extremely large supercluster of galaxies located in the direction of constellation Pisces. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=1-Sne9L1aBY\');return false;">Click here</a> to more about this discovery.',0,0,1);
+I[24]=new Array();I[24][0]=100;
+I[24][1]='';
+I[24][2]='0';
+I[24][3]=new Array();
+I[24][3][0]=new Array('Dark matter','You may look at the Dark matter and its releation to galaxies <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.bbvaopenmind.com/en/science/leading-figures/vera-rubin-and-dark-matter/\');return false;">here.</a>',1,100,1);
+I[24][3][1]=new Array('Black hole','You may look at the Dark matter and its releation to galaxies <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.bbvaopenmind.com/en/science/leading-figures/vera-rubin-and-dark-matter/\');return false;">here.</a>',0,0,1);
+I[24][3][2]=new Array('Dark enerygy','You may look at the Dark matter and its releation to galaxies <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.bbvaopenmind.com/en/science/leading-figures/vera-rubin-and-dark-matter/\');return false;">here.</a>',0,0,1);
+I[24][3][3]=new Array('Cosmic Microwave Background','You may look at the Dark matter and its releation to galaxies <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.bbvaopenmind.com/en/science/leading-figures/vera-rubin-and-dark-matter/\');return false;">here.</a>',0,0,1);
+I[25]=new Array();I[25][0]=100;
+I[25][1]='';
+I[25][2]='0';
+I[25][3]=new Array();
+I[25][3][0]=new Array('Chandrayaan 1','AstroSat is the first dedicated Indian astronomy mission aimed at studying celestial sources in X-ray, optical and UV spectral bands simultaneously. <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Astrosat-1_in_deployed_configuration_001.png/450px-Astrosat-1_in_deployed_configuration_001.png" width="100" height="100"/>',0,0,1);
+I[25][3][1]=new Array('Mangalyaan','AstroSat is the first dedicated Indian astronomy mission aimed at studying celestial sources in X-ray, optical and UV spectral bands simultaneously. <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Astrosat-1_in_deployed_configuration_001.png/450px-Astrosat-1_in_deployed_configuration_001.png" width="100" height="100"/>',0,0,1);
+I[25][3][2]=new Array('AstroSat','AstroSat is the first dedicated Indian astronomy mission aimed at studying celestial sources in X-ray, optical and UV spectral bands simultaneously. <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Astrosat-1_in_deployed_configuration_001.png/450px-Astrosat-1_in_deployed_configuration_001.png" width="100" height="100"/>',1,100,1);
+I[25][3][3]=new Array('Aryabhatta','AstroSat is the first dedicated Indian astronomy mission aimed at studying celestial sources in X-ray, optical and UV spectral bands simultaneously. <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Astrosat-1_in_deployed_configuration_001.png/450px-Astrosat-1_in_deployed_configuration_001.png" width="100" height="100"/>',0,0,1);
+I[26]=new Array();I[26][0]=100;
+I[26][1]='';
+I[26][2]='0';
+I[26][3]=new Array();
+I[26][3][0]=new Array('Vikram Saravai','Govind Swarup (March 23, 1929 \u2013 September 7, 2020) was a pioneer in radio astronomy. He was the father figure of Indian radio astronomy and the key idea of GMRT and Ooty Radio Telescope came from him. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'http://www.ncra.tifr.res.in/ncra/obituary-prof-govind-swaroop/\');return false;">Click here to know more about him.</a>',0,0,1);
+I[26][3][1]=new Array('Govind Swarup','Govind Swarup (March 23, 1929 \u2013 September 7, 2020) was a pioneer in radio astronomy. He was the father figure of Indian radio astronomy and the key idea of GMRT and Ooty Radio Telescope came from him. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'http://www.ncra.tifr.res.in/ncra/obituary-prof-govind-swaroop/\');return false;">Click here to know more about him.</a>',1,100,1);
+I[26][3][2]=new Array('Homi Bhaba','Govind Swarup (March 23, 1929 \u2013 September 7, 2020) was a pioneer in radio astronomy. He was the father figure of Indian radio astronomy and the key idea of GMRT and Ooty Radio Telescope came from him. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'http://www.ncra.tifr.res.in/ncra/obituary-prof-govind-swaroop/\');return false;">Click here to know more about him.</a>',0,0,1);
+I[26][3][3]=new Array('S. Chandrasekhar','Govind Swarup (March 23, 1929 \u2013 September 7, 2020) was a pioneer in radio astronomy. He was the father figure of Indian radio astronomy and the key idea of GMRT and Ooty Radio Telescope came from him. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'http://www.ncra.tifr.res.in/ncra/obituary-prof-govind-swaroop/\');return false;">Click here to know more about him.</a>',0,0,1);
+I[27]=new Array();I[27][0]=100;
+I[27][1]='';
+I[27][2]='0';
+I[27][3]=new Array();
+I[27][3][0]=new Array('Hubble Space Telescope','NASA\'s James Webb Space Telescope, built to give the world a glimpse of the universe as it existed when the first galaxies formed, was launched by rocket early on December 25 from South America\'s northeastern coast, opening a new era of astronomy. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=9tXlqWldVVk\');return false;">Click here to look at the launch of this telescope.</a>',0,0,1);
+I[27][3][1]=new Array('Aditya-L1','NASA\'s James Webb Space Telescope, built to give the world a glimpse of the universe as it existed when the first galaxies formed, was launched by rocket early on December 25 from South America\'s northeastern coast, opening a new era of astronomy. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=9tXlqWldVVk\');return false;">Click here to look at the launch of this telescope.</a>',0,0,1);
+I[27][3][2]=new Array('AstroSat','NASA\'s James Webb Space Telescope, built to give the world a glimpse of the universe as it existed when the first galaxies formed, was launched by rocket early on December 25 from South America\'s northeastern coast, opening a new era of astronomy. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=9tXlqWldVVk\');return false;">Click here to look at the launch of this telescope.</a>',0,0,1);
+I[27][3][3]=new Array('James Webb Space Telescope','NASA\'s James Webb Space Telescope, built to give the world a glimpse of the universe as it existed when the first galaxies formed, was launched by rocket early on December 25 from South America\'s northeastern coast, opening a new era of astronomy. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=9tXlqWldVVk\');return false;">Click here to look at the launch of this telescope.</a>',1,100,1);
+I[28]=new Array();I[28][0]=100;
+I[28][1]='';
+I[28][2]='0';
+I[28][3]=new Array();
+I[28][3][0]=new Array('Planet similar to Earth','All of the planets in our solar system orbit around the Sun. Planets that orbit around other stars are called exoplanets. A large number of exoplanets has been discovered so far. You may take a look <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://spaceplace.nasa.gov/all-about-exoplanets/en/\');return false;">here to</a> know more.',0,0,1);
+I[28][3][1]=new Array('Planet outside solar system','All of the planets in our solar system orbit around the Sun. Planets that orbit around other stars are called exoplanets. A large number of exoplanets has been discovered so far. You may take a look <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://spaceplace.nasa.gov/all-about-exoplanets/en/\');return false;">here to</a> know more.',1,100,1);
+I[28][3][2]=new Array('Planet smaller than Earth','All of the planets in our solar system orbit around the Sun. Planets that orbit around other stars are called exoplanets. A large number of exoplanets has been discovered so far. You may take a look <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://spaceplace.nasa.gov/all-about-exoplanets/en/\');return false;">here to</a> know more.',0,0,1);
+I[28][3][3]=new Array('Extremely large planet','All of the planets in our solar system orbit around the Sun. Planets that orbit around other stars are called exoplanets. A large number of exoplanets has been discovered so far. You may take a look <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://spaceplace.nasa.gov/all-about-exoplanets/en/\');return false;">here to</a> know more.',0,0,1);
+I[29]=new Array();I[29][0]=100;
+I[29][1]='';
+I[29][2]='0';
+I[29][3]=new Array();
+I[29][3][0]=new Array('AstroSat','The Aditya-1 mission was conceived as a 400kg class satellite carrying several instruments to observe the Sun. It is expected to be launched this year.',0,0,1);
+I[29][3][1]=new Array('Aditya-L1','The Aditya-1 mission was conceived as a 400kg class satellite carrying several instruments to observe the Sun. It is expected to be launched this year.',1,100,1);
+I[29][3][2]=new Array('Mangalyaan','The Aditya-1 mission was conceived as a 400kg class satellite carrying several instruments to observe the Sun. It is expected to be launched this year.',0,0,1);
+I[29][3][3]=new Array('Chandrayaan-2','The Aditya-1 mission was conceived as a 400kg class satellite carrying several instruments to observe the Sun. It is expected to be launched this year.',0,0,1);
+
+function StartUp(){
+
+//If there's only one question, no need for question navigation controls
+	if (QsToShow < 2){
+		document.getElementById('QNav').style.display = 'none';
+	}
+	
+//Stash the instructions so they can be redisplayed
+	strInstructions = document.getElementById('InstructionsDiv').innerHTML;
+	
+
+
+
+	PreloadImages('https://s.w-x.co/util/image/w/in-marsplanet.jpg?v=at&w=400&h=400','https://static01.nyt.com/images/2020/09/22/science/19SCI-OUTTHERE-VENUS1/19SCI-OUTTHERE-VENUS1-mediumSquareAt3X.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mercury_in_true_color.jpg/330px-Mercury_in_true_color.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/330px-FullMoon2010.jpg','https://tse1.mm.bing.net/th?id=OIP.8I66h2HceqityyG8jalYlQHaEo&pid=Api&P=0&w=316&h=197','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/NASA-Apollo8-Dec24-Earthrise.jpg/800px-NASA-Apollo8-Dec24-Earthrise.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/330px-OSIRIS_Mars_true_color.jpg','https://media.nationalgeographic.org/assets/photos/000/261/26166.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg/450px-Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMJixMFMZimVVJFNtqs69WomzRqcsoZ4iERQ&usqp=CAU','https://www.sciencealert.com/images/2020-06/saturn-hexagon-false-colour.jpg','https://www.universetoday.com/wp-content/uploads/2010/01/Io_Feat-e1433786196804.jpg','https://www.scienceabc.com/wp-content/uploads/2019/08/3d-rendered-illustration-of-the-mars-olympus-mons-Illustration-Sebastian-KaulitzkiS.jpg','https://nineplanets.org/wp-content/uploads/2020/09/318-Earth-masses.jpg','https://c.tadst.com/gfx/900x506/new-moon-phase.png?1');
+
+	//ScormStartUp();
+
+	CompleteEmptyFeedback();
+
+	SetUpQuestions();
+	ClearTextBoxes();
+	CreateStatusArray();
+	
+
+	//setTimeout('StartTimer()', 50);
+
+	
+//Check search string for q parameter
+	if (document.location.search.length > 0){
+		if (ShuffleQs == false){
+			var JumpTo = parseInt(document.location.search.substring(1,document.location.search.length))-1;
+			if (JumpTo <= QsToShow){
+				ChangeQ(JumpTo);
+			}
+		}
+	}
+//Undocumented function added 10/12/2004
+	ShowSpecialReadingForQuestion();
+}
+
+function ShowHideQuestions(){
+	document.getElementById('ShowMethodButton').style.display = 'none';
+	if (ShowingAllQuestions == false){
+		for (var i=0; i<QArray.length; i++){
+				QArray[i].style.display = '';
+			}
+		document.getElementById('Questions').style.listStyleType = 'decimal';
+		document.getElementById('OneByOneReadout').style.display = 'none';
+		document.getElementById('ShowMethodButton').innerHTML = ShowOneByOneCaption;
+		ShowingAllQuestions = true;
+	}
+	else{
+		for (var i=0; i<QArray.length; i++){
+				if (i != CurrQNum){
+					QArray[i].style.display = 'none';
+				}
+			}
+		document.getElementById('Questions').style.listStyleType = 'none';
+		document.getElementById('OneByOneReadout').style.display = '';
+		document.getElementById('ShowMethodButton').innerHTML = ShowAllQuestionsCaption;
+		ShowingAllQuestions = false;	
+	}
+	document.getElementById('ShowMethodButton').style.display = 'inline';
+}
+
+function ShowHideQuestionsatEnd(){
+	//WriteToInstructions(CompletedSoFar + ' ' + QsCompleted + ' out of ' + QArray.length);
+	if (ShowingAllQuestions == false){
+		for (var i=0; i<QArray.length; i++){
+				QArray[i].style.display = '';
+			}
+		ShowingAllQuestions = true;
+	}
+	else{
+		for (var i=0; i<QArray.length; i++){
+				if (i != CurrQNum){
+					QArray[i].style.display = 'none';
+				}
+			}
+		ShowingAllQuestions = false;	
+	}
+}
+
+function CreateStatusArray(){
+	var QNum, ANum;
+//For each item in the item array
+	for (QNum=0; QNum<I.length; QNum++){
+//Check if the question still exists (hasn't been nuked by showing a random selection)
+		if (document.getElementById('Q_' + QNum) != null){
+			State[QNum] = new Array();
+			State[QNum][0] = -1; //Score for this q; -1 shows question not done yet
+			State[QNum][1] = new Array(); //answers
+			for (ANum = 0; ANum<I[QNum][3].length; ANum++){
+				State[QNum][1][ANum] = 0; //answer not chosen yet; when chosen, will store its position in the series of choices
+			}
+			State[QNum][2] = 0; //tries at this q so far
+			State[QNum][3] = 0; //incrementing percent-correct values of selected answers
+			State[QNum][4] = 0; //penalties incurred for hints
+			State[QNum][5] = ''; //Sequence of answers chosen by number
+		}
+		else{
+			State[QNum] = null;
+		}
+	}
+}
+
+
+
+function CheckMCAnswer(QNum, ANum, Btn){
+//if question doesn't exist, bail
+	var tempid, totalANum;
+	if (State[QNum].length < 1){return;}
+	
+//Get the feedback
+	Feedback = I[QNum][3][ANum][1];
+	
+//Now show feedback and bail if question already complete
+	if (State[QNum][0] > -1){
+//Add an extra message explaining that the question
+// is finished if defined by the user
+		if (strQuestionFinished.length > 0){Feedback += '<br />' + strQuestionFinished;}
+//Show the feedback
+		ShowMessage(Feedback);
+//New for 6.2.2.1: If you want to mark an answer as correct even when it's the final choice, uncomment this line.
+//		if (I[QNum][3][ANum][2] >= 1){Btn.innerHTML = CorrectIndicator;}else{Btn.innerHTML = IncorrectIndicator;}	
+		return;
+	}
+	
+//Hide the button while processing
+	Btn.style.display = 'none';
+
+//Increment the number of tries
+	State[QNum][2]++;
+	
+//Add the percent-correct value of this answer
+	State[QNum][3] += I[QNum][3][ANum][3];
+	
+//Store the try number in the answer part of the State array, for tracking purposes
+	State[QNum][1][ANum] = State[QNum][2];
+	if (State[QNum][5].length > 0){State[QNum][5] += ' | ';}
+	State[QNum][5] += String.fromCharCode(65+ANum);
+	
+//Should this answer be accepted as correct?
+	if (I[QNum][3][ANum][2] < 1){
+//It's wrong
+
+//Mark the answer
+		Btn.innerHTML = IncorrectIndicator;
+		
+//Remove any previous score unless exercise is finished (6.0.3.8+)
+		if (Finished == false){
+			WriteToInstructions(strInstructions);
+		}	
+		
+//Check whether this leaves just one MC answer unselected, in which case the Q is terminated
+		var RemainingAnswer = FinalAnswer(QNum);
+		if (RemainingAnswer > -1){
+//Behave as if the last answer had been selected, but give no credit for it
+//Increment the number of tries
+			//State[QNum][2]++;		
+		
+//Calculate the score for this question
+			CalculateMCQuestionScore(QNum);
+			
+//Get the overall score and add it to the feedback
+			CalculateOverallScore();
+//New for 6.2.2.1
+			QsDone = CheckQuestionsCompleted();
+			if ((ContinuousScoring == true)||(Finished == true)){
+				Feedback += '<br />' + YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone;
+				WriteToInstructions(YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone);
+			}
+			else{
+				WriteToInstructions(QsDone);
+			}
+		}
+	if (typeof(QsDone) == 'undefined'){
+		WriteToInstructions(YourScoreIs + ' ' + Score + ' out of 5' + '<br />'+'0 out of 4');
+	}
+	else{
+		WriteToInstructions(YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone);
+		}
+	}
+	else{
+//It's right
+//Mark the answer
+		Btn.innerHTML = CorrectIndicator;
+				
+//Calculate the score for this question
+		CalculateMCQuestionScore(QNum);
+		
+//New for 6.2.2.0
+		QsDone = CheckQuestionsCompleted();
+
+//Get the overall score and add it to the feedback
+		if (ContinuousScoring == true){
+			CalculateOverallScore();
+			if ((ContinuousScoring == true)||(Finished == true)){
+				Feedback += '<br />' + YourScoreIs + ' ' + Score +  'out of 5.' + '<br />' + QsDone;
+				WriteToInstructions(YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone);
+			}
+		}
+		else{
+			WriteToInstructions(QsDone);
+		}
+	}
+	
+//Show the button again
+	totalANum=I[QNum][3].length;
+	for (ANum = 0; ANum<totalANum; ANum++){
+		tempid='Q_'+QNum.toString()+'_'+ANum.toString()+'_Btn';
+		disablebyid(tempid);
+	}
+	Btn.style.display = 'inline';
+	
+//Finally, show the feedback	
+	ShowMessage(Feedback);	
+	
+	
+//Check whether all questions are now done
+	CheckFinished();
+	//if (CurrQNum==4){
+	//	SubmitQuiz();
+	//}
+}
+
+function CalculateMCQuestionScore(QNum){
+	var Tries = State[QNum][2] + State[QNum][4]; //include tries and hint penalties
+	var PercentCorrect = State[QNum][3];
+	var TotAns = GetTotalMCAnswers(QNum);
+	var HintPenalties = State[QNum][4];
+	
+//Make sure it's not already complete
+
+	if (State[QNum][0] < 0){
+//Allow for Hybrids
+		if (HintPenalties >= 1){
+			State[QNum][0] = 0;
+		}
+		else{
+//This line calculates the score for this question
+			State[QNum][0] = 1;
+			//if (TotAns == 1){
+			//	State[QNum][0] = 1;
+			//}
+			//else{
+				State[QNum][0] = ((TotAns-((Tries*100)/State[QNum][3]))/(TotAns-1));
+			//}
+		}
+//Fix for Safari bug added for version 6.0.3.42 (negative infinity problem)
+		if ((State[QNum][0] < 0)||(State[QNum][0] == Number.NEGATIVE_INFINITY)){
+			State[QNum][0] = 0;
+		}
+	}
+}
+
+function GetTotalMCAnswers(QNum){
+	var Result = 0;
+	for (var ANum=0; ANum<I[QNum][3].length; ANum++){
+		if (I[QNum][3][ANum][4] == 1){ //This is an MC answer
+			Result++;
+		}
+	}
+	return Result;
+}
+
+function FinalAnswer(QNum){
+	var UnchosenAnswers = 0;
+	var FinalAnswer = -1;
+	for (var ANum=0; ANum<I[QNum][3].length; ANum++){
+		if (I[QNum][3][ANum][4] == 1){ //This is an MC answer
+			if (State[QNum][1][ANum] < 1){ //This answer hasn't been chosen yet
+				UnchosenAnswers++;
+				FinalAnswer = ANum;
+			}
+		}
+	}
+	if (UnchosenAnswers == 1){
+		return FinalAnswer;
+	}
+	else{
+		return -1;
+	}
+}
+
+
+
+
+
+function CalculateOverallScore(){
+	var TotalWeighting = 0;
+	var TotalScore = 0;
+	
+	for (var QNum=0; QNum<State.length; QNum++){
+		if (State[QNum] != null){
+			if (State[QNum][0] > -1){
+				TotalWeighting += I[QNum][0];
+				TotalScore += (State[QNum][0]);
+			}
+		}
+	}
+	if (TotalWeighting > 0){
+		Score = TotalScore;//Math.floor((TotalScore/TotalWeighting)*100);
+	}
+	else{
+//if TotalWeighting is 0, no questions so far have any value, so 
+//no penalty should be shown.
+		Score = 100; 
+	}
+}
+
+//New for 6.2.2.0
+function CheckQuestionsCompleted(){
+	if (ShowCompletedSoFar == false){return '';}
+	var QsCompleted = 0;
+	for (var QNum=0; QNum<State.length; QNum++){
+		if (State[QNum] != null){
+			if (State[QNum][0] >= 0){
+				QsCompleted++;
+			}
+		}
+	}
+//Fixes for 6.2.2.2
+	if (QsCompleted >= QArray.length){
+		return ExerciseCompleted;
+	}
+	else{
+		return CompletedSoFar + ' ' + QsCompleted + ' out of ' + QArray.length ;
+	}
+}
+
+function CheckFinished(){
+	var FB = '';
+	var AllDone = true;
+	for (var QNum=0; QNum<State.length; QNum++){
+		if (State[QNum] != null){
+			if (State[QNum][0] < 0){
+				AllDone = false;
+			}
+		}
+	}
+	if (AllDone == true){
+	
+//Report final score and submit if necessary
+		CalculateOverallScore();
+		FB = 'Your final score is ' + Score +' out of 5';
+		if (ShowCorrectFirstTime == true){
+			var CFT = 0;
+			for (QNum=0; QNum<State.length; QNum++){
+				if (State[QNum] != null){
+					if (State[QNum][0] >= 1){
+						CFT++;
+					}
+				}
+			}
+			FB += '<br />' + CorrectFirstTime + ' ' + CFT + '/' + QsToShow;
+		}
+		
+//New for 6.2.2.0
+		FB += '<br />' + ExerciseCompleted;
+		
+		WriteToInstructions(FB);
+		
+		Finished == true;
+
+		window.clearInterval(Interval);
+
+
+
+		if (TimeOver == true){
+			SetScormTimedOut();
+		}
+		else{
+			SetScormComplete();
+		}
+
+
+		TimeOver = true;
+		Locked = true;
+		
+
+
+		Finished = true;
+		Detail = '<?xml version="1.0"?><hpnetresult><fields>';
+		for (QNum=0; QNum<State.length; QNum++){
+			if (State[QNum] != null){
+				if (State[QNum][5].length > 0){
+					Detail += '<field><fieldname>Question #' + (QNum+1) + '</fieldname><fieldtype>question-tracking</fieldtype><fieldlabel>Q ' + (QNum+1) + '</fieldlabel><fieldlabelid>QuestionTrackingField</fieldlabelid><fielddata>' + State[QNum][5] + '</fielddata></field>';
+				}
+			}
+		}
+		Detail += '</fields></hpnetresult>';
+	}
+
+	else{
+		SetScormIncomplete();
+	}
+
+}
+
+
+function TimesUp(){
+	document.getElementById('Timer').innerHTML = 'Your time is over!';
+
+	TimeOver = true;
+	Finished = true;
+	//ShowMessage('Your time is over!');
+	
+//Set all remaining scores to 0
+	for (var QNum=0; QNum<State.length; QNum++){
+		if (State[QNum] != null){
+			if (State[QNum][0] < 0){
+				State[QNum][0] = 0;
+			}
+		}
+	}
+	CheckFinished();
+	//SubmitQuiz();
+}
+
+function closebyid(id){
+	var elem = document.getElementById(id);
+	elem.parentNode.removeChild(elem);
+	//if (typeof(elem) != 'undefined' && elem != null){
+		
+	//}
+}
+
+function disablebyid(id){
+	var elem = document.getElementById(id);
+	//console.log(typeof(elem));
+	if (typeof(elem) != 'undefined' && elem != null){
+		//console.log('disabling');
+		elem.disabled = true;	
+	}
+}
+
+
+function checkedbyid(id){
+	var elem = document.getElementById(id);
+	if (typeof(elem) != 'undefined' && elem != null){
+		elem.checked = true;
+	}
+		
+}
+
+function CompleteEmptyCheckBoxes(){
+	var QNum, ANum, tempid, totalANum;
+	for (QNum=0; QNum<I.length; QNum++){
+		totalANum=I[QNum][3].length;
+  		for (ANum = 0; ANum<totalANum; ANum++){
+		if (I[QNum][3][ANum][2] > 0){
+			tempid='Q_'+QNum.toString()+'_'+ANum.toString()+'_Btn';
+			checkedbyid(tempid);
+		}
+		else{
+		}
+
+  		}
+	}
+}
+
+function SubmitQuiz(){
+	document.getElementById('Timer').innerHTML = '';
+
+	TimeOver = true;
+	Finished = true;
+	//ShowMessage('You have submitted your answers.');
+	
+//Set all remaining scores to 0
+	for (var QNum=0; QNum<State.length; QNum++){
+		if (State[QNum] != null){
+			if (State[QNum][0] < 0){
+				State[QNum][0] = 0;
+			}
+		}
+	}
+
+	ShowHideQuestionsatEnd();
+	CheckFinished();
+	CompleteEmptyCheckBoxes();
+	var x = document.querySelectorAll('input[type=radio]');
+	     var i;
+	     for (i = 0; i < x.length; i++) {
+		x[i].disabled = true;
+	     }
+	closebyid('QNumReadout');
+	closebyid('NextQButton');
+	closebyid('PrevQButton');
+}
+
+
+//CODE FOR HANDLING TIMER
+//Timer code
+var Seconds = 60;
+var Interval = null;
+
+function StartTimer(){
+	Interval = window.setInterval('DownTime()',1000);
+	document.getElementById('TimerText').style.display = 'inline';
+}
+
+function DownTime(){
+	var ss = Seconds % 60;
+	if (ss<10){
+		ss='0' + ss + '';
+	}
+
+	var mm = Math.floor(Seconds / 60);
+
+	if (document.getElementById('Timer') == null){
+		return;
+	}
+
+	document.getElementById('TimerText').innerHTML = mm + ':' + ss;
+	if (Seconds < 1){
+		window.clearInterval(Interval);
+		TimeOver = true;
+		TimesUp();
+	}
+	Seconds--;
+}
+
+
+
+
+
+
+//-->
+
+//]]>
+
+</script>
+
+
+</head>
+
+<body onload="StartUp()" id="TheBody" onunload="CheckLMSFinish()">
+
+<!-- BeginTopNavButtons -->
+
+
+<div class="NavButtonBar" id="TopNavBar">
+
+<a style="text-decoration:none; color:yellow" href="./quiz_home_page.html" target="_self"> <font face="verdana" size="16">GMRT National Science Day 2022 - Astronomy Quiz Trivia</font></a>
+
+</div>
+
+
+
+<!-- EndTopNavButtons -->
+
+<div class="Titles">
+
+
+</div>
+
+<div id="InstructionsDiv" class="StdDiv">
+	<div id="Instructions"> </div>
+</div>
+
+
+<div id="ContainerDiv">
+
+
+
+<div class="ExerciseContainer">
+
+<div id="QNav" class="QuestionNavigation">
+
+
+<div id="OneByOneReadout">
+<button id="PrevQButton" class="FuncButton" onclick="ChangeQ(-1); return false;" name="prequestion">Previous Question</button>
+
+<span id="QNumReadout" class="QNum" style="color:#406378; font-size: 100%"></span>
+
+<button id="NextQButton" class="FuncButton" onclick="ChangeQ(1); return false; " name="nextquestion">Next Question</button>
+<br />
+</div>
+
+</div>
+<ol class="QuizQuestions" id="Questions">
+<li class="QuizQuestion" id="Q_0" style="display: none;"><div class="QuestionText">Which device is used to image the Sun?<br /></div><ol class="MCAnswers"><li id="Q_0_0"><input type="radio" id="Q_0_0_Btn" onclick="CheckMCAnswer(0,0,this)">Pinhole Camera</li><li id="Q_0_1"><input type="radio" id="Q_0_1_Btn" onclick="CheckMCAnswer(0,1,this)">Prisom</li><li id="Q_0_2"><input type="radio" id="Q_0_2_Btn" onclick="CheckMCAnswer(0,2,this)">Lens</li><li id="Q_0_3"><input type="radio" id="Q_0_3_Btn" onclick="CheckMCAnswer(0,3,this)">Glass Slab</li></ol></li>
+<li class="QuizQuestion" id="Q_1" style="display: none;"><div class="QuestionText">The shape of the earth is not a sphere exactly. It is bulging along</div><ol class="MCAnswers"><li id="Q_1_0"><input type="radio" id="Q_1_0_Btn" onclick="CheckMCAnswer(1,0,this)">Equator</li><li id="Q_1_1"><input type="radio" id="Q_1_1_Btn" onclick="CheckMCAnswer(1,1,this)">Pole</li><li id="Q_1_2"><input type="radio" id="Q_1_2_Btn" onclick="CheckMCAnswer(1,2,this)">Marina Trench</li><li id="Q_1_3"><input type="radio" id="Q_1_3_Btn" onclick="CheckMCAnswer(1,3,this)">The Everest</li></ol></li>
+<li class="QuizQuestion" id="Q_2" style="display: none;"><div class="QuestionText">National science day is celebrated to commemorate the discovery of</div><ol class="MCAnswers"><li id="Q_2_0"><input type="radio" id="Q_2_0_Btn" onclick="CheckMCAnswer(2,0,this)">Raman Effect</li><li id="Q_2_1"><input type="radio" id="Q_2_1_Btn" onclick="CheckMCAnswer(2,1,this)">Doppler Effect</li><li id="Q_2_2"><input type="radio" id="Q_2_2_Btn" onclick="CheckMCAnswer(2,2,this)">Saha Ionization</li><li id="Q_2_3"><input type="radio" id="Q_2_3_Btn" onclick="CheckMCAnswer(2,3,this)">Bose Condensation</li></ol></li>
+<li class="QuizQuestion" id="Q_3" style="display: none;"><div class="QuestionText">The planet which has no moon is<br /></div><ol class="MCAnswers"><li id="Q_3_0"><input type="radio" id="Q_3_0_Btn" onclick="CheckMCAnswer(3,0,this)">Mercury</li><li id="Q_3_1"><input type="radio" id="Q_3_1_Btn" onclick="CheckMCAnswer(3,1,this)">Earth</li><li id="Q_3_2"><input type="radio" id="Q_3_2_Btn" onclick="CheckMCAnswer(3,2,this)">Jupiter</li><li id="Q_3_3"><input type="radio" id="Q_3_3_Btn" onclick="CheckMCAnswer(3,3,this)">Mars</li></ol></li>
+<li class="QuizQuestion" id="Q_4" style="display: none;"><div class="QuestionText">What is the Kuiper belt and where is it found?<br /></div><ol class="MCAnswers"><li id="Q_4_0"><input type="radio" id="Q_4_0_Btn" onclick="CheckMCAnswer(4,0,this)">Chunk of rocky objects, between the orbit of Mars and Jupiter</li><li id="Q_4_1"><input type="radio" id="Q_4_1_Btn" onclick="CheckMCAnswer(4,1,this)">Ring of icy objects, beyond the orbit of Neptune</li><li id="Q_4_2"><input type="radio" id="Q_4_2_Btn" onclick="CheckMCAnswer(4,2,this)">Ring of icy objects, between the orbit of Mars and Jupiter</li><li id="Q_4_3"><input type="radio" id="Q_4_3_Btn" onclick="CheckMCAnswer(4,3,this)">Chunk of rocky objects, beyond the orbit of Neptune</li></ol></li>
+<li class="QuizQuestion" id="Q_5" style="display: none;"><div class="QuestionText">First human being to travel into space is<br /></div><ol class="MCAnswers"><li id="Q_5_0"><input type="radio" id="Q_5_0_Btn" onclick="CheckMCAnswer(5,0,this)">Neil Armstrong</li><li id="Q_5_1"><input type="radio" id="Q_5_1_Btn" onclick="CheckMCAnswer(5,1,this)">John Glenn</li><li id="Q_5_2"><input type="radio" id="Q_5_2_Btn" onclick="CheckMCAnswer(5,2,this)">Yuri gagarin</li><li id="Q_5_3"><input type="radio" id="Q_5_3_Btn" onclick="CheckMCAnswer(5,3,this)">Kalpana Chawla</li></ol></li>
+<li class="QuizQuestion" id="Q_6" style="display: none;"><div class="QuestionText">When does the Vernal Equinox happen?</div><ol class="MCAnswers"><li id="Q_6_0"><input type="radio" id="Q_6_0_Btn" onclick="CheckMCAnswer(6,0,this)">March 21</li><li id="Q_6_1"><input type="radio" id="Q_6_1_Btn" onclick="CheckMCAnswer(6,1,this)">December 21</li><li id="Q_6_2"><input type="radio" id="Q_6_2_Btn" onclick="CheckMCAnswer(6,2,this)">June 21</li><li id="Q_6_3"><input type="radio" id="Q_6_3_Btn" onclick="CheckMCAnswer(6,3,this)">September 23</li></ol></li>
+<li class="QuizQuestion" id="Q_7" style="display: none;"><div class="QuestionText">The pole star is in the constellation of<br /></div><ol class="MCAnswers"><li id="Q_7_0"><input type="radio" id="Q_7_0_Btn" onclick="CheckMCAnswer(7,0,this)">Ursa major</li><li id="Q_7_1"><input type="radio" id="Q_7_1_Btn" onclick="CheckMCAnswer(7,1,this)">Orion</li><li id="Q_7_2"><input type="radio" id="Q_7_2_Btn" onclick="CheckMCAnswer(7,2,this)">Ursa minor</li><li id="Q_7_3"><input type="radio" id="Q_7_3_Btn" onclick="CheckMCAnswer(7,3,this)">Scorpius</li></ol></li>
+<li class="QuizQuestion" id="Q_8" style="display: none;"><div class="QuestionText">Lightyear is the unit of<br /></div><ol class="MCAnswers"><li id="Q_8_0"><input type="radio" id="Q_8_0_Btn" onclick="CheckMCAnswer(8,0,this)">Density</li><li id="Q_8_1"><input type="radio" id="Q_8_1_Btn" onclick="CheckMCAnswer(8,1,this)">Length</li><li id="Q_8_2"><input type="radio" id="Q_8_2_Btn" onclick="CheckMCAnswer(8,2,this)">Mass</li><li id="Q_8_3"><input type="radio" id="Q_8_3_Btn" onclick="CheckMCAnswer(8,3,this)">Time</li></ol></li>
+<li class="QuizQuestion" id="Q_9" style="display: none;"><div class="QuestionText">Solar eclipse can take place in which phase of moon</div><ol class="MCAnswers"><li id="Q_9_0"><input type="radio" id="Q_9_0_Btn" onclick="CheckMCAnswer(9,0,this)">Full moon</li><li id="Q_9_1"><input type="radio" id="Q_9_1_Btn" onclick="CheckMCAnswer(9,1,this)">New moon</li><li id="Q_9_2"><input type="radio" id="Q_9_2_Btn" onclick="CheckMCAnswer(9,2,this)">Crescent</li><li id="Q_9_3"><input type="radio" id="Q_9_3_Btn" onclick="CheckMCAnswer(9,3,this)">First quarter</li></ol></li>
+<li class="QuizQuestion" id="Q_10" style="display: none;"><div class="QuestionText">What is the shape of our galaxy?</div><ol class="MCAnswers"><li id="Q_10_0"><input type="radio" id="Q_10_0_Btn" onclick="CheckMCAnswer(10,0,this)">Circular</li><li id="Q_10_1"><input type="radio" id="Q_10_1_Btn" onclick="CheckMCAnswer(10,1,this)">Rectangular</li><li id="Q_10_2"><input type="radio" id="Q_10_2_Btn" onclick="CheckMCAnswer(10,2,this)">Spiral</li><li id="Q_10_3"><input type="radio" id="Q_10_3_Btn" onclick="CheckMCAnswer(10,3,this)">Triangular</li></ol></li>
+<li class="QuizQuestion" id="Q_11" style="display: none;"><div class="QuestionText">What do you call a system where two stars are close enough to each other to significantly affect each other's orbits?</div><ol class="MCAnswers"><li id="Q_11_0"><input type="radio" id="Q_11_0_Btn" onclick="CheckMCAnswer(11,0,this)">Binary Star</li><li id="Q_11_1"><input type="radio" id="Q_11_1_Btn" onclick="CheckMCAnswer(11,1,this)">Sister Star</li><li id="Q_11_2"><input type="radio" id="Q_11_2_Btn" onclick="CheckMCAnswer(11,2,this)">Tertiary Star</li><li id="Q_11_3"><input type="radio" id="Q_11_3_Btn" onclick="CheckMCAnswer(11,3,this)">Cousin Star</li></ol></li>
+<li class="QuizQuestion" id="Q_12" style="display: none;"><div class="QuestionText">How many star constellations does the sun seem to pass through in year?</div><ol class="MCAnswers"><li id="Q_12_0"><input type="radio" id="Q_12_0_Btn" onclick="CheckMCAnswer(12,0,this)">1</li><li id="Q_12_1"><input type="radio" id="Q_12_1_Btn" onclick="CheckMCAnswer(12,1,this)">13</li><li id="Q_12_2"><input type="radio" id="Q_12_2_Btn" onclick="CheckMCAnswer(12,2,this)">30</li><li id="Q_12_3"><input type="radio" id="Q_12_3_Btn" onclick="CheckMCAnswer(12,3,this)">23</li></ol></li>
+<li class="QuizQuestion" id="Q_13" style="display: none;"><div class="QuestionText">Which of these chemical elements is the most abundant in the<br />sun?</div><ol class="MCAnswers"><li id="Q_13_0"><input type="radio" id="Q_13_0_Btn" onclick="CheckMCAnswer(13,0,this)">Hydrogen</li><li id="Q_13_1"><input type="radio" id="Q_13_1_Btn" onclick="CheckMCAnswer(13,1,this)">Nitrogen</li><li id="Q_13_2"><input type="radio" id="Q_13_2_Btn" onclick="CheckMCAnswer(13,2,this)">Helium</li><li id="Q_13_3"><input type="radio" id="Q_13_3_Btn" onclick="CheckMCAnswer(13,3,this)">Carbon</li></ol></li>
+<li class="QuizQuestion" id="Q_14" style="display: none;"><div class="QuestionText">What is the name of the first satellite sent into space?</div><ol class="MCAnswers"><li id="Q_14_0"><input type="radio" id="Q_14_0_Btn" onclick="CheckMCAnswer(14,0,this)">Sputnik 1</li><li id="Q_14_1"><input type="radio" id="Q_14_1_Btn" onclick="CheckMCAnswer(14,1,this)">Voyager 1</li><li id="Q_14_2"><input type="radio" id="Q_14_2_Btn" onclick="CheckMCAnswer(14,2,this)">Apollo 11</li><li id="Q_14_3"><input type="radio" id="Q_14_3_Btn" onclick="CheckMCAnswer(14,3,this)">Soyuz</li></ol></li>
+<li class="QuizQuestion" id="Q_15" style="display: none;"><div class="QuestionText">If there were no atmosphere, what would be the color of sky?</div><ol class="MCAnswers"><li id="Q_15_0"><input type="radio" id="Q_15_0_Btn" onclick="CheckMCAnswer(15,0,this)">Black</li><li id="Q_15_1"><input type="radio" id="Q_15_1_Btn" onclick="CheckMCAnswer(15,1,this)">Sky Blue</li><li id="Q_15_2"><input type="radio" id="Q_15_2_Btn" onclick="CheckMCAnswer(15,2,this)">Yellow</li><li id="Q_15_3"><input type="radio" id="Q_15_3_Btn" onclick="CheckMCAnswer(15,3,this)">White</li></ol></li>
+<li class="QuizQuestion" id="Q_16" style="display: none;"><div class="QuestionText">Which is the 13th zodiac constellation?</div><ol class="MCAnswers"><li id="Q_16_0"><input type="radio" id="Q_16_0_Btn" onclick="CheckMCAnswer(16,0,this)">Aquarius</li><li id="Q_16_1"><input type="radio" id="Q_16_1_Btn" onclick="CheckMCAnswer(16,1,this)">Orion</li><li id="Q_16_2"><input type="radio" id="Q_16_2_Btn" onclick="CheckMCAnswer(16,2,this)">Cepheus</li><li id="Q_16_3"><input type="radio" id="Q_16_3_Btn" onclick="CheckMCAnswer(16,3,this)">Ophiuchus</li></ol></li>
+<li class="QuizQuestion" id="Q_17" style="display: none;"><div class="QuestionText">Where does the sun&#x2019;s black body spectrum peak? </div><ol class="MCAnswers"><li id="Q_17_0"><input type="radio" id="Q_17_0_Btn" onclick="CheckMCAnswer(17,0,this)">Yellow</li><li id="Q_17_1"><input type="radio" id="Q_17_1_Btn" onclick="CheckMCAnswer(17,1,this)">Blue</li><li id="Q_17_2"><input type="radio" id="Q_17_2_Btn" onclick="CheckMCAnswer(17,2,this)">Red</li><li id="Q_17_3"><input type="radio" id="Q_17_3_Btn" onclick="CheckMCAnswer(17,3,this)">Orange</li></ol></li>
+<li class="QuizQuestion" id="Q_18" style="display: none;"><div class="QuestionText">Astronomers recently imaged a black hole of the M87 galaxy. This galaxy is a type of:</div><ol class="MCAnswers"><li id="Q_18_0"><input type="radio" id="Q_18_0_Btn" onclick="CheckMCAnswer(18,0,this)">Spiral galaxy</li><li id="Q_18_1"><input type="radio" id="Q_18_1_Btn" onclick="CheckMCAnswer(18,1,this)">Elliptical galaxy</li><li id="Q_18_2"><input type="radio" id="Q_18_2_Btn" onclick="CheckMCAnswer(18,2,this)">Barred spiral galaxy</li><li id="Q_18_3"><input type="radio" id="Q_18_3_Btn" onclick="CheckMCAnswer(18,3,this)">Lenticular galaxy</li></ol></li>
+<li class="QuizQuestion" id="Q_19" style="display: none;"><div class="QuestionText">Which one among these is a facility to detect gravitational waves?</div><ol class="MCAnswers"><li id="Q_19_0"><input type="radio" id="Q_19_0_Btn" onclick="CheckMCAnswer(19,0,this)">LIGO</li><li id="Q_19_1"><input type="radio" id="Q_19_1_Btn" onclick="CheckMCAnswer(19,1,this)">INO</li><li id="Q_19_2"><input type="radio" id="Q_19_2_Btn" onclick="CheckMCAnswer(19,2,this)">ASTROSAT</li><li id="Q_19_3"><input type="radio" id="Q_19_3_Btn" onclick="CheckMCAnswer(19,3,this)">HST</li></ol></li>
+<li class="QuizQuestion" id="Q_20" style="display: none;"><div class="QuestionText">The first stars that were born in the universe </div><ol class="MCAnswers"><li id="Q_20_0"><input type="radio" id="Q_20_0_Btn" onclick="CheckMCAnswer(20,0,this)">Population III star</li><li id="Q_20_1"><input type="radio" id="Q_20_1_Btn" onclick="CheckMCAnswer(20,1,this)">Population I star</li><li id="Q_20_2"><input type="radio" id="Q_20_2_Btn" onclick="CheckMCAnswer(20,2,this)">Population II star</li><li id="Q_20_3"><input type="radio" id="Q_20_3_Btn" onclick="CheckMCAnswer(20,3,this)">Magnetic star</li></ol></li>
+<li class="QuizQuestion" id="Q_21" style="display: none;"><div class="QuestionText">A galaxy is made of </div><ol class="MCAnswers"><li id="Q_21_0"><input type="radio" id="Q_21_0_Btn" onclick="CheckMCAnswer(21,0,this)">Stars</li><li id="Q_21_1"><input type="radio" id="Q_21_1_Btn" onclick="CheckMCAnswer(21,1,this)">Dust</li><li id="Q_21_2"><input type="radio" id="Q_21_2_Btn" onclick="CheckMCAnswer(21,2,this)">Stellar remnants</li><li id="Q_21_3"><input type="radio" id="Q_21_3_Btn" onclick="CheckMCAnswer(21,3,this)">All of these</li></ol></li>
+<li class="QuizQuestion" id="Q_22" style="display: none;"><div class="QuestionText">A famous paradox, &#x201C;the night sky is dark&#x201D;. What is the name of this?</div><ol class="MCAnswers"><li id="Q_22_0"><input type="radio" id="Q_22_0_Btn" onclick="CheckMCAnswer(22,0,this)">Red sky paradox</li><li id="Q_22_1"><input type="radio" id="Q_22_1_Btn" onclick="CheckMCAnswer(22,1,this)">Olbers paradox</li><li id="Q_22_2"><input type="radio" id="Q_22_2_Btn" onclick="CheckMCAnswer(22,2,this)">Twin paradox</li><li id="Q_22_3"><input type="radio" id="Q_22_3_Btn" onclick="CheckMCAnswer(22,3,this)">The infinity paradox</li></ol></li>
+<li class="QuizQuestion" id="Q_23" style="display: none;"><div class="QuestionText">Write the name of the galaxy supercluster that was discovred by Indian astronomers ?</div><ol class="MCAnswers"><li id="Q_23_0"><input type="radio" id="Q_23_0_Btn" onclick="CheckMCAnswer(23,0,this)">Dhruva Supercluster</li><li id="Q_23_1"><input type="radio" id="Q_23_1_Btn" onclick="CheckMCAnswer(23,1,this)">Kaveri Supercluster</li><li id="Q_23_2"><input type="radio" id="Q_23_2_Btn" onclick="CheckMCAnswer(23,2,this)">Saraswati Supercluster</li><li id="Q_23_3"><input type="radio" id="Q_23_3_Btn" onclick="CheckMCAnswer(23,3,this)">Bibha Supercluster</li></ol></li>
+<li class="QuizQuestion" id="Q_24" style="display: none;"><div class="QuestionText">Vera Rubin looked at the rotation curve of many galaxies and then hinted about the existence of</div><ol class="MCAnswers"><li id="Q_24_0"><input type="radio" id="Q_24_0_Btn" onclick="CheckMCAnswer(24,0,this)">Dark matter</li><li id="Q_24_1"><input type="radio" id="Q_24_1_Btn" onclick="CheckMCAnswer(24,1,this)">Black hole</li><li id="Q_24_2"><input type="radio" id="Q_24_2_Btn" onclick="CheckMCAnswer(24,2,this)">Dark enerygy</li><li id="Q_24_3"><input type="radio" id="Q_24_3_Btn" onclick="CheckMCAnswer(24,3,this)">Cosmic Microwave Background</li></ol></li>
+<li class="QuizQuestion" id="Q_25" style="display: none;"><div class="QuestionText">What is the India's first space astronomy observatory?</div><ol class="MCAnswers"><li id="Q_25_0"><input type="radio" id="Q_25_0_Btn" onclick="CheckMCAnswer(25,0,this)">Chandrayaan 1</li><li id="Q_25_1"><input type="radio" id="Q_25_1_Btn" onclick="CheckMCAnswer(25,1,this)">Mangalyaan</li><li id="Q_25_2"><input type="radio" id="Q_25_2_Btn" onclick="CheckMCAnswer(25,2,this)">AstroSat</li><li id="Q_25_3"><input type="radio" id="Q_25_3_Btn" onclick="CheckMCAnswer(25,3,this)">Aryabhatta</li></ol></li>
+<li class="QuizQuestion" id="Q_26" style="display: none;"><div class="QuestionText">Who is the father of Indian radio astronomy?</div><ol class="MCAnswers"><li id="Q_26_0"><input type="radio" id="Q_26_0_Btn" onclick="CheckMCAnswer(26,0,this)">Vikram Saravai</li><li id="Q_26_1"><input type="radio" id="Q_26_1_Btn" onclick="CheckMCAnswer(26,1,this)">Govind Swarup</li><li id="Q_26_2"><input type="radio" id="Q_26_2_Btn" onclick="CheckMCAnswer(26,2,this)">Homi Bhaba</li><li id="Q_26_3"><input type="radio" id="Q_26_3_Btn" onclick="CheckMCAnswer(26,3,this)">S. Chandrasekhar</li></ol></li>
+<li class="QuizQuestion" id="Q_27" style="display: none;"><div class="QuestionText">Which space telescope has launched recently to look the very early universe?</div><ol class="MCAnswers"><li id="Q_27_0"><input type="radio" id="Q_27_0_Btn" onclick="CheckMCAnswer(27,0,this)">Hubble Space Telescope</li><li id="Q_27_1"><input type="radio" id="Q_27_1_Btn" onclick="CheckMCAnswer(27,1,this)">Aditya-L1</li><li id="Q_27_2"><input type="radio" id="Q_27_2_Btn" onclick="CheckMCAnswer(27,2,this)">AstroSat</li><li id="Q_27_3"><input type="radio" id="Q_27_3_Btn" onclick="CheckMCAnswer(27,3,this)">James Webb Space Telescope</li></ol></li>
+<li class="QuizQuestion" id="Q_28" style="display: none;"><div class="QuestionText">What is an exoplanet?</div><ol class="MCAnswers"><li id="Q_28_0"><input type="radio" id="Q_28_0_Btn" onclick="CheckMCAnswer(28,0,this)">Planet similar to Earth</li><li id="Q_28_1"><input type="radio" id="Q_28_1_Btn" onclick="CheckMCAnswer(28,1,this)">Planet outside solar system</li><li id="Q_28_2"><input type="radio" id="Q_28_2_Btn" onclick="CheckMCAnswer(28,2,this)">Planet smaller than Earth</li><li id="Q_28_3"><input type="radio" id="Q_28_3_Btn" onclick="CheckMCAnswer(28,3,this)">Extremely large planet</li></ol></li>
+<li class="QuizQuestion" id="Q_29" style="display: none;"><div class="QuestionText">Which is going to be India's first space based solar observatory?</div><ol class="MCAnswers"><li id="Q_29_0"><input type="radio" id="Q_29_0_Btn" onclick="CheckMCAnswer(29,0,this)">AstroSat</li><li id="Q_29_1"><input type="radio" id="Q_29_1_Btn" onclick="CheckMCAnswer(29,1,this)">Aditya-L1</li><li id="Q_29_2"><input type="radio" id="Q_29_2_Btn" onclick="CheckMCAnswer(29,2,this)">Mangalyaan</li><li id="Q_29_3"><input type="radio" id="Q_29_3_Btn" onclick="CheckMCAnswer(29,3,this)">Chandrayaan-2</li></ol></li></ol>
+
+</div>
+
+</div>
+
+<div class="Feedback" id="FeedbackDiv">
+<div class="FeedbackText" id="FeedbackContent"></div>
+<button id="FeedbackOKButton" class="FuncButton" onclick="HideFeedback(); return false;">&#160;Continue&#160;</button>
+</div>
+</div>
+
+<div class="Instruct" id="InstructDiv">
+<div class="InstructText" id="InstructContent"></div>
+<button id="InstructOKButton" class="FuncButton" onclick="HideInstruct(); return false;">&#160;Ok&#160;</button>
+</div>
+</div>
+
+<div class="TimeOutback" id="TimeOutDiv">
+<div class="TimeOutText" id="TimeOutContent"></div>
+<button id="TimeOutButton" class="FuncButton" onclick="SubmitQuiz(); return false;">&#160;OK&#160;</button>
+</div>
+</div>
+
+<!-- BeginBottomNavButtons -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $("#formABC").submit(function (e) {
+
+            //stop submitting the form to see the disabled button effect
+            e.preventDefault();
+
+            //disable the submit button
+            $("#SubmitQuizButton").attr("disabled", true);
+
+            //disable a normal button
+            return true;
+
+        });
+    });
+</script>
+<div id="Timer"><span id="TimerText" style="font-size:10mm"></span></div>
+
+<input type="submit" id="SubmitQuizButton" value="Submit" onclick="SubmitQuiz(); return false;" style="margin-left: 40%; margin-bottom:1%"/><input type="submit" id="SubmitQuizButton" value="Next Round" onclick="location='./science_day_quiz.html'; return false;" style="margin-left: 1% "/>
+
+
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2%;
+  background-color: #E8B214;
+  color: white;	
+  display: inline-block;
+  padding-top: -1.5%;
+  padding-bottom: 2.5%;
+}
+
+
+</style>
+
+<div class="footer" align="left"><br>
+<a style="text-decoration:none; color:black; margin-left: 20%" href="./quiz_home_page.html" target="_self"> <font face="verdana" size="5">Quiz Trivia</font></a><a style="text-decoration:none; color:brown; margin-left: 40%" href="http://gmrtscienceday.ncra.tifr.res.in/" target="_self"> <font face="verdana" size="5">Home</font></a><a style="text-decoration:none; color:brown; margin-left: 2%" href="javascript:ShowInstructions('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use Next Question button and revisit the unattempted questions using Previous Question button. After each question some trivia facts about that question will be displayed. Select the Submit button to end the round. At the end it will show all the correct answers by filled circles and your answer by oval. Click on Next Round button to move on to the next round.');" target="_self"> <font face="verdana" size="5">Instructions</font></a>
+</div>
+
+
+</div>
+
+
+
+<!-- EndBottomNavButtons -->
+
+<!-- BeginSubmissionForm -->
+
+<!-- EndSubmissionForm -->
+
+</body>
+
+</html>
