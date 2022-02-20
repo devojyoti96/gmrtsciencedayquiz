@@ -245,20 +245,22 @@ select{
 }
 
 div.Feedback {
-	background-color: #CAD3D9;
-	left: 33%;
-	width: 34%;
-	top: 33%;
+	background-image: linear-gradient(to bottom right, #666699 11%, #ffffff 100%);
+	left: 25vw;
+	width: 50vw;
+	height: 40vh;
 	z-index: 1;
-	border-style: solid;
-	border-width: 1px;
-	padding: 5px;
+	border-style: shadow;
+	border-width: 0.1vw;
+	border-radius: 4%;
+	padding: 0.5vh;
 	text-align: center;
 	color: var(--strTitleColor);
 	position: absolute;
 	display: none;
-	font-size: 1em;
 }
+
+
 
 div.TimeOutback{
 	background-color: var(--strPageBGColor);
@@ -847,7 +849,7 @@ function FocusAButton(){
 var topZ = 1000;
 
 function ShowMessage(Feedback){
-	var Output = '<h1 style="color:blac; font-size: 2vw;"> Instructions</h1><br>' +Feedback + '<br /><br />';
+	var Output = '<h1 style="color:blac; font-size: 5vmin;"> Instructions</h1><h2 style="font-size: 2vmin;">'+Feedback + '</h2>';
 	document.getElementById('FeedbackContent').innerHTML = Output;
 	var FDiv = document.getElementById('FeedbackDiv');
 	topZ++;
@@ -1946,7 +1948,7 @@ function DownTime(){
   text-align: center;
   padding: 1.2vh 1.2vw;
   text-decoration: none;
-  font-size: calc((3vw+3vh)/2.0);
+  font-size: 3vh;
 }
 
 .navbar a:hover {
