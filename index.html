@@ -847,7 +847,7 @@ function FocusAButton(){
 var topZ = 1000;
 
 function ShowMessage(Feedback){
-	var Output = '<font face="verdana"; size=250%; color=black>Instructions</font><br>' +Feedback + '<br /><br />';
+	var Output = '<h1 style="color:blac; font-size: 2vw;"> Instructions</h1><br>' +Feedback + '<br /><br />';
 	document.getElementById('FeedbackContent').innerHTML = Output;
 	var FDiv = document.getElementById('FeedbackDiv');
 	topZ++;
@@ -1911,14 +1911,14 @@ function DownTime(){
 
 <div class="NavButtonBar" id="TopNavBar">
 
-<a style="text-decoration:none; color:yellow; font-size:5vh" href="index.html" target="_self"> GMRT National Science Day 2022 - Astronomy Quiz Trivia</a>
+<a style="text-decoration:none; color:yellow; font-size:5vh;  font-family: 'Lucida Console', 'Courier New'; " href="index.html" target="_self"> GMRT National Science Day 2022 - Astronomy Quiz Trivia</a>
 
 
 </div>
 
 <div class="Feedback" id="FeedbackDiv">
 <div class="FeedbackText" id="FeedbackContent"></div>
-<button id="FeedbackOKButton" class="FuncButton" onclick="HideFeedback(); return false;" style="font-size: 1vw">&#160;Ok&#160;</button>
+<button id="FeedbackOKButton" class="FuncButton" onclick="HideFeedback(); return false;" style="font-size: 3vh">&#160;Ok&#160;</button>
 </div>
 </div>
 
@@ -1946,7 +1946,7 @@ function DownTime(){
   text-align: center;
   padding: 1.2vh 1.2vw;
   text-decoration: none;
-  font-size: 1.5vw;
+  font-size: calc((3vw+3vh)/2.0);
 }
 
 .navbar a:hover {
