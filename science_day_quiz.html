@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" prefix="dc: http://purl.org/dc/elements/1.1/">
-<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, maximum-scale=1.0, user-scalable=0"/>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" prefix="dc: http://purl.org/dc/elements/1.1/">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -54,8 +54,6 @@
 	--form-control-color: rebeccapurple;
 }
 
-
-
 input[type="radio"] {
 	appearance: none;
 	width: 2vmin;
@@ -70,6 +68,10 @@ input[type="radio"]:checked {
 	background-color: #555555;
 }
 
+
+body::-webkit-scrollbar {
+  display: none;
+}
 
 body{
 	font-family: var(--strFontFace);
@@ -91,10 +93,6 @@ body{
  	scrollbar-width: none;
 }
 
-
-body::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
-}
 
 p{
 	text-align: left;
@@ -148,7 +146,7 @@ div.StdDiv, div.ExerciseContainer, div.ReadingContainer{
 div.ReadingContainer, div.ExerciseContainer{
 	min-width: 15em;
 	width: 100vw;
-	height: 100%;
+	height: fit-content;
 }
 
 div#ContainerDiv{
@@ -253,9 +251,9 @@ select{
 
 div.Feedback {
 	background-image: linear-gradient(to bottom right, #666699 11%, #ffffff 100%);
-	min-width: 97.5vw;
-	max-width: 100vw;
-	width: fit-content;
+	min-width: 98vw;
+	max-width: 98vw;
+	width: 98vw;
 	height: fit-content;
 	z-index: 1;
 	border-style: shadow;
@@ -269,13 +267,14 @@ div.Feedback {
 	display: none;
 	clear: both;
 	word-break: break-word;
+	white-space: break-space;
+	margin-right:1vw;
 }
-
 div.Instruct {
 	background-image: linear-gradient(to bottom right, #666699 11%, #ffffff 100%);
-	min-width: 97vw;
-	max-width: 100vw;
-	width: fit-content;
+	min-width: 97.5vw;
+	max-width: 99vw;
+	width:  fit-content;
 	height: fit-content;
 	z-index: 1;
 	border-style: shadow;
@@ -289,23 +288,29 @@ div.Instruct {
 	display: none;
 	clear: both;
 	white-space: break-spaces;
+	white-space: break-space;
 }
 
-
 div.TimeOutback{
-	background-color: var(--strPageBGColor);
-	left: 33%;
-	width: 34%;
-	top: 33%;
+	background-image: linear-gradient(to bottom right, #666699 11%, #ffffff 100%);
+	min-width: 98vw;
+	max-width: 98vw;
+	width: 98vw;
+	height: fit-content;
 	z-index: 1;
-	border-style: solid;
-	border-width: 1px;
-	padding: 5px;
+	border-style: shadow;
+	border-width: 0.1vw;
+	border-radius: 1%;
+	padding: 1%;
 	text-align: center;
 	color: var(--strTitleColor);
 	position: absolute;
+	justify-content: center;
 	display: none;
-	font-size: 1em;
+	clear: both;
+	word-break: break-word;
+	white-space: break-space;
+	margin-right:1vw;
 }
 
 
@@ -661,7 +666,6 @@ div.ShortAnswer{
 	background-color: var(--strTextColor);
 }
 
-
 /*BeginNavBarStyle*/
 
 
@@ -681,15 +685,15 @@ div.NavButtonBar{
 	border-radius: 0.3em;
 	padding: 0.7em;
 	min-width: 3em;
-	border-left-color: #0D6915;
-	border-top-color: #0D6915);
-	border-right-color: #AFE9E6;
-	border-bottom-color: #AFE9E6; 
-	background-image: linear-gradient(to right bottom, #0d6915, #00753b, #007f5b, #008978, #0e9290, #369c9e, #50a5ab, #67afb7, #79bdc2, #8bccce, #9ddada, #afe9e6);
-	color: white;
+	border-left-color: var(--strNavLightColor);
+	border-top-color: var(--strNavLightColor);
+	border-right-color: var(--strNavShadeColor);
+	border-bottom-color: var(--strNavShadeColor); 
+	background-color: #E8B217;
+	color: #692506;
 	border-width: 1pt;
 	cursor: pointer;	
-	box-shadow: 0.15em 0.15em 0.15em #A9E8F0;
+	box-shadow: 0.2em 0.3em 0.2em var(--strNavShadeColor);
 	margin: 0px 60px 0px;
 }
 
@@ -698,13 +702,9 @@ div.NavButtonBar{
 }
 
 .NavButton:hover{
-	color: white;
-	border-left-color:#8052B3;
-	border-top-color: #8052B3);
-	border-right-color: #BDB8C0;
-	border-bottom-color: #BDB8C0;
-	box-shadow: 0.15em 0.15em 0.15em #EAD5F9; 
-	background-image: linear-gradient(to right bottom, #8052b3, #845cb3, #8866b2, #8d70b1, #9179b0, #9781b1, #9c89b1, #a191b2, #a89bb5, #b0a4b9, #b6aebc, #bdb8c0);
+	 background-color: #977728;
+  	color: white;
+ 	 transition: background-color 0.1s;
 }
 
 /*EndNavBarStyle*/
@@ -748,6 +748,7 @@ a:hover {
 }
 
 </style>
+
 <script>
 
 //<![CDATA[
@@ -905,6 +906,26 @@ function ShowMessage(Feedback){
 //
 }
 
+var topZ1 = 1000;
+
+function ShowEndMessage(Feedback){
+	var Output = Feedback + '<br /><br />';
+	document.getElementById('TimeOutContent').innerHTML = Output;
+	var FDiv = document.getElementById('TimeOutDiv');
+	topZ1++;
+	FDiv.style.zIndex = topZ1;
+	FDiv.style.top = TopSettingWithScrollOffset(30) + 'px';
+	FDiv.style.display = 'block';
+	ShowElements(false, 'input');
+	ShowElements(false, 'select');
+	ShowElements(false, 'object');
+	//ShowElements(true, 'object', 'FeedbackContent');
+
+//Focus the OK button
+	//setTimeout("document.getElementById('FeedbackButton').focus()", 50);
+	
+//
+}
 
 function ShowInstructions(Feedback){
 	var Output = '<h1 style="font-size: 5vmin;"> Instructions</h1><h2 style="font-size: 3vmin">'+Feedback + '</h2>';
@@ -926,6 +947,7 @@ function ShowInstructions(Feedback){
 	
 //
 }
+
 function ShowElements(Show, TagName, ContainerToReverse){
 // added third argument to allow objects in the feedback box to appear
 //IE bug -- hide all the form elements that will show through the popup
@@ -962,6 +984,14 @@ function HideFeedback(){
 	ShowElements(true, 'select');
 	ShowElements(true, 'object');
 	ChangeQ(1)
+}
+
+function HideFeedbackEnd(){
+	document.getElementById('TimeOutDiv').style.display = 'none';
+	ShowElements(true, 'input');
+	ShowElements(true, 'select');
+	ShowElements(true, 'object');
+	//ChangeQ(1)
 }
 
 function HideInstruct(){
@@ -1084,7 +1114,7 @@ function Shuffle(InArray){
 	return InArray;
 }
 
-function WriteToInstructions(Feedback) {
+function WriteToInstructions(Feedback) {	
 	document.getElementById('InstructionsDiv').style.fontSize='3vmin'
 	document.getElementById('InstructionsDiv').innerHTML = Feedback;
 
@@ -1265,7 +1295,7 @@ var ShuffleQs = true;
 var ShuffleAs = true;
 var DefaultRight = 'Correct!';
 var DefaultWrong = 'Sorry! Wrong Answer.';
-var QsToShow = 5;
+var QsToShow =5;
 var Score = 0;
 var Finished = false;
 var Qs = null;
@@ -1398,7 +1428,7 @@ function ChangeQ(ChangeBy){
 //Undocumented function added 10/12/2004
 	ShowSpecialReadingForQuestion();
 	SetQNumReadout();
-	SetFocusToTextbox();
+	SetFocusToTextbox();	
 }
 
 var HiddenReadingShown = false;
@@ -1424,9 +1454,11 @@ function ShowSpecialReadingForQuestion(){
 			}	
 		}
 	}
+
 }
 
 function SetQNumReadout(){
+	
 	document.getElementById('QNumReadout').innerHTML = 'Question '+ (CurrQNum+1) + ' out of ' + QArray.length;
 	if ((CurrQNum+1) >= QArray.length){
 		if (document.getElementById('NextQButton') != null){
@@ -1848,9 +1880,12 @@ I[49][3][1]=new Array('Io','Ganymede is the largest moon in the solar system (la
 I[49][3][2]=new Array('Juno','Ganymede is the largest moon in the solar system (larger than the planet Mercury), and is the only moon known to have its own internally generated magnetic field.  If you want to more about moons of other planets, <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://solarsystem.nasa.gov/moons/in-depth/\');return false;">click here.</a>',0,0,1);
 I[49][3][3]=new Array('Titan','Ganymede is the largest moon in the solar system (larger than the planet Mercury), and is the only moon known to have its own internally generated magnetic field.  If you want to more about moons of other planets, <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://solarsystem.nasa.gov/moons/in-depth/\');return false;">click here.</a>',0,0,1);
 
-function StartUp(){
 
+
+var I_copy = JSON.parse(JSON.stringify(I));
+function StartUp(){
 //If there's only one question, no need for question navigation controls
+	closebyid('ShowtriviaButton');
 	if (QsToShow < 2){
 		document.getElementById('QNav').style.display = 'none';
 	}
@@ -1861,7 +1896,7 @@ function StartUp(){
 
 
 
-	//PreloadImages('mars.jpg','https://static01.nyt.com/images/2020/09/22/science/19SCI-OUTTHERE-VENUS1/19SCI-OUTTHERE-VENUS1-mediumSquareAt3X.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mercury_in_true_color.jpg/330px-Mercury_in_true_color.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/330px-FullMoon2010.jpg','saturn_ring.jpeg','earth_rise.jpg','mars.jpg','mercury.jpg','orion.jpg','redspot.jpeg','https://www.sciencealert.com/images/2020-06/saturn-hexagon-false-colour.jpg','https://www.universetoday.com/wp-content/uploads/2010/01/Io_Feat-e1433786196804.jpg','https://www.scienceabc.com/wp-content/uploads/2019/08/3d-rendered-illustration-of-the-mars-olympus-mons-Illustration-Sebastian-KaulitzkiS.jpg','https://nineplanets.org/wp-content/uploads/2020/09/318-Earth-masses.jpg','new-moon-phase.png');
+	//PreloadImages('https://s.w-x.co/util/image/w/in-marsplanet.jpg?v=at&w=400&h=400','https://static01.nyt.com/images/2020/09/22/science/19SCI-OUTTHERE-VENUS1/19SCI-OUTTHERE-VENUS1-mediumSquareAt3X.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mercury_in_true_color.jpg/330px-Mercury_in_true_color.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/330px-FullMoon2010.jpg','https://tse1.mm.bing.net/th?id=OIP.8I66h2HceqityyG8jalYlQHaEo&pid=Api&P=0&w=316&h=197','https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/NASA-Apollo8-Dec24-Earthrise.jpg/800px-NASA-Apollo8-Dec24-Earthrise.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/330px-OSIRIS_Mars_true_color.jpg','https://media.nationalgeographic.org/assets/photos/000/261/26166.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg/450px-Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMJixMFMZimVVJFNtqs69WomzRqcsoZ4iERQ&usqp=CAU','https://www.sciencealert.com/images/2020-06/saturn-hexagon-false-colour.jpg','https://www.universetoday.com/wp-content/uploads/2010/01/Io_Feat-e1433786196804.jpg','https://www.scienceabc.com/wp-content/uploads/2019/08/3d-rendered-illustration-of-the-mars-olympus-mons-Illustration-Sebastian-KaulitzkiS.jpg','https://nineplanets.org/wp-content/uploads/2020/09/318-Earth-masses.jpg','https://c.tadst.com/gfx/900x506/new-moon-phase.png?1');
 
 	//ScormStartUp();
 
@@ -1886,6 +1921,7 @@ function StartUp(){
 	}
 //Undocumented function added 10/12/2004
 	ShowSpecialReadingForQuestion();
+	
 }
 
 function ShowHideQuestions(){
@@ -1952,6 +1988,12 @@ function CreateStatusArray(){
 			State[QNum] = null;
 		}
 	}
+}
+
+
+function showtriviaatend(QNum){
+	Feedback = I_copy[QNum][3][0][1];
+	ShowEndMessage(Feedback);
 }
 
 
@@ -2104,6 +2146,7 @@ function CalculateMCQuestionScore(QNum){
 	}
 }
 
+
 function GetTotalMCAnswers(QNum){
 	var Result = 0;
 	for (var ANum=0; ANum<I[QNum][3].length; ANum++){
@@ -2113,6 +2156,7 @@ function GetTotalMCAnswers(QNum){
 	}
 	return Result;
 }
+
 
 function FinalAnswer(QNum){
 	var UnchosenAnswers = 0;
@@ -2269,13 +2313,20 @@ function TimesUp(){
 }
 
 function closebyid(id){
-	var elem = document.getElementById(id);
-	elem.parentNode.removeChild(elem);
-	//if (typeof(elem) != 'undefined' && elem != null){
-		
-	//}
+	var a='[id='
+	var c=']'
+	id=a.concat(id)
+	id=id.concat(c)
+	$(id).hide();
 }
 
+function openbyid(id){
+	var a='[id='
+	var c=']'
+	id=a.concat(id)
+	id=id.concat(c)
+	$(id).show();
+}
 function disablebyid(id){
 	var elem = document.getElementById(id);
 	//console.log(typeof(elem));
@@ -2328,7 +2379,7 @@ function SubmitQuiz(){
 			}
 		}
 	}
-
+	openbyid('ShowtriviaButton');
 	ShowHideQuestionsatEnd();
 	CheckFinished();
 	CompleteEmptyCheckBoxes();
@@ -2341,7 +2392,6 @@ function SubmitQuiz(){
 	closebyid('NextQButton');
 	closebyid('PrevQButton');
 	closebyid('SubmitQuizButton');
-	
 }
 
 
@@ -2387,6 +2437,7 @@ function DownTime(){
 
 </script>
 
+
 </head>
 
 <body onload="StartUp()" id="TheBody" onunload="CheckLMSFinish()">
@@ -2430,71 +2481,73 @@ function DownTime(){
 
 <button id="NextQButton" class="FuncButton" onclick="ChangeQ(1); return false; " name="nextquestion" style="font-size: 3vmin;">Next Question</button>
 <br />
+</div>
 
 </div>
- 
 <ol class="QuizQuestions" id="Questions">
-<li class="QuizQuestion" id="Q_0" style="display: none;"><div class="QuestionText">What is the name of the 5th planet in our solar system?</div><ol class="MCAnswers"><li id="Q_0_0"><input type="radio" id="Q_0_0_Btn" onclick="CheckMCAnswer(0,0,this)">Mercury</li><li id="Q_0_1"><input type="radio" id="Q_0_1_Btn" onclick="CheckMCAnswer(0,1,this)">Mars</li><li id="Q_0_2"><input type="radio" id="Q_0_2_Btn" onclick="CheckMCAnswer(0,2,this)">Saturn</li><li id="Q_0_3"><input type="radio" id="Q_0_3_Btn" onclick="CheckMCAnswer(0,3,this)">Jupiter</li></ol></li>
-<li class="QuizQuestion" id="Q_1" style="display: none;"><div class="QuestionText">How does a solar eclipse occur?</div><ol class="MCAnswers"><li id="Q_1_0"><input type="radio" id="Q_1_0_Btn" onclick="CheckMCAnswer(1,0,this)">Sun comes between the Moon and Earth</li><li id="Q_1_1"><input type="radio" id="Q_1_1_Btn" onclick="CheckMCAnswer(1,1,this)">Earth comes between the Moon and Sun</li><li id="Q_1_2"><input type="radio" id="Q_1_2_Btn" onclick="CheckMCAnswer(1,2,this)">Sun is hidden by the Earth's shadow</li><li id="Q_1_3"><input type="radio" id="Q_1_3_Btn" onclick="CheckMCAnswer(1,3,this)">Moon comes between the Sun and Earth</li></ol></li>
-<li class="QuizQuestion" id="Q_2" style="display: none;"><div class="QuestionText">Who discovered Earth rotates around the Sun?</div><ol class="MCAnswers"><li id="Q_2_0"><input type="radio" id="Q_2_0_Btn" onclick="CheckMCAnswer(2,0,this)">Galileo Galilei</li><li id="Q_2_1"><input type="radio" id="Q_2_1_Btn" onclick="CheckMCAnswer(2,1,this)">Nicolaus Copernicus</li><li id="Q_2_2"><input type="radio" id="Q_2_2_Btn" onclick="CheckMCAnswer(2,2,this)">Johannes Kepler</li><li id="Q_2_3"><input type="radio" id="Q_2_3_Btn" onclick="CheckMCAnswer(2,3,this)">Ptolemy</li></ol></li>
-<li class="QuizQuestion" id="Q_3" style="display: none;"><div class="QuestionText">Who proposed that planets move in elliptical orbits?</div><ol class="MCAnswers"><li id="Q_3_0"><input type="radio" id="Q_3_0_Btn" onclick="CheckMCAnswer(3,0,this)">Nicolaus Copernicus</li><li id="Q_3_1"><input type="radio" id="Q_3_1_Btn" onclick="CheckMCAnswer(3,1,this)">Johannes Kepler</li><li id="Q_3_2"><input type="radio" id="Q_3_2_Btn" onclick="CheckMCAnswer(3,2,this)">Galileo Galilei</li><li id="Q_3_3"><input type="radio" id="Q_3_3_Btn" onclick="CheckMCAnswer(3,3,this)">Ptolemy</li></ol></li>
-<li class="QuizQuestion" id="Q_4" style="display: none;"><div class="QuestionText">What is the size of the Moon relative to Earth?</div><ol class="MCAnswers"><li id="Q_4_0"><input type="radio" id="Q_4_0_Btn" onclick="CheckMCAnswer(4,0,this)">1/4</li><li id="Q_4_1"><input type="radio" id="Q_4_1_Btn" onclick="CheckMCAnswer(4,1,this)">1/5</li><li id="Q_4_2"><input type="radio" id="Q_4_2_Btn" onclick="CheckMCAnswer(4,2,this)">1/3</li><li id="Q_4_3"><input type="radio" id="Q_4_3_Btn" onclick="CheckMCAnswer(4,3,this)">1/6</li></ol></li>
-<li class="QuizQuestion" id="Q_5" style="display: none;"><div class="QuestionText">What fraction of Earth's gravity does the moon have?</div><ol class="MCAnswers"><li id="Q_5_0"><input type="radio" id="Q_5_0_Btn" onclick="CheckMCAnswer(5,0,this)">1/4</li><li id="Q_5_1"><input type="radio" id="Q_5_1_Btn" onclick="CheckMCAnswer(5,1,this)">1/5</li><li id="Q_5_2"><input type="radio" id="Q_5_2_Btn" onclick="CheckMCAnswer(5,2,this)">1/6</li><li id="Q_5_3"><input type="radio" id="Q_5_3_Btn" onclick="CheckMCAnswer(5,3,this)">1/9</li></ol></li>
-<li class="QuizQuestion" id="Q_6" style="display: none;"><div class="QuestionText">What is the difference between ``Meteoroids" and ``Meteorites"?</div><ol class="MCAnswers"><li id="Q_6_0"><input type="radio" id="Q_6_0_Btn" onclick="CheckMCAnswer(6,0,this)">Meteoroids are space rocks once they hit Earth</li><li id="Q_6_1"><input type="radio" id="Q_6_1_Btn" onclick="CheckMCAnswer(6,1,this)">Meteorites are space rocks once they hit Earth</li><li id="Q_6_2"><input type="radio" id="Q_6_2_Btn" onclick="CheckMCAnswer(6,2,this)">Both are the same</li><li id="Q_6_3"><input type="radio" id="Q_6_3_Btn" onclick="CheckMCAnswer(6,3,this)">Meteoroids are made of rocks and meteorites are made of ice.</li></ol></li>
-<li class="QuizQuestion" id="Q_7" style="display: none;"><div class="QuestionText"> What are comets mainly composed of ? </div><ol class="MCAnswers"><li id="Q_7_0"><input type="radio" id="Q_7_0_Btn" onclick="CheckMCAnswer(7,0,this)">Ice and Rocks</li><li id="Q_7_1"><input type="radio" id="Q_7_1_Btn" onclick="CheckMCAnswer(7,1,this)">Liquid Water and Ice</li><li id="Q_7_2"><input type="radio" id="Q_7_2_Btn" onclick="CheckMCAnswer(7,2,this)">Hydrogen gas and Rocks</li><li id="Q_7_3"><input type="radio" id="Q_7_3_Btn" onclick="CheckMCAnswer(7,3,this)">Liquid Methene</li></ol></li>
-<li class="QuizQuestion" id="Q_8" style="display: none;"><div class="QuestionText">What is the nearest star to the Sun?</div><ol class="MCAnswers"><li id="Q_8_0"><input type="radio" id="Q_8_0_Btn" onclick="CheckMCAnswer(8,0,this)">Sirius A</li><li id="Q_8_1"><input type="radio" id="Q_8_1_Btn" onclick="CheckMCAnswer(8,1,this)">Proxima Centauri</li><li id="Q_8_2"><input type="radio" id="Q_8_2_Btn" onclick="CheckMCAnswer(8,2,this)">Alpha Centauri</li><li id="Q_8_3"><input type="radio" id="Q_8_3_Btn" onclick="CheckMCAnswer(8,3,this)">Pole Star</li></ol></li>
-<li class="QuizQuestion" id="Q_9" style="display: none;"><div class="QuestionText">Which are the two planets between which asteroid belt located?</div><ol class="MCAnswers"><li id="Q_9_0"><input type="radio" id="Q_9_0_Btn" onclick="CheckMCAnswer(9,0,this)">Mars and Jupiter</li><li id="Q_9_1"><input type="radio" id="Q_9_1_Btn" onclick="CheckMCAnswer(9,1,this)">Earth and Venus</li><li id="Q_9_2"><input type="radio" id="Q_9_2_Btn" onclick="CheckMCAnswer(9,2,this)">Earth and Mars</li><li id="Q_9_3"><input type="radio" id="Q_9_3_Btn" onclick="CheckMCAnswer(9,3,this)">Jupiter and Saturn</li></ol></li>
-<li class="QuizQuestion" id="Q_10" style="display: none;"><div class="QuestionText">Which one is the Mars?</div><ol class="MCAnswers"><li id="Q_10_0"><input type="radio" id="Q_10_0_Btn" onclick="CheckMCAnswer(10,0,this)"><img src="mars.jpg" width="100" height="100"/></li><li id="Q_10_1"><input type="radio" id="Q_10_1_Btn" onclick="CheckMCAnswer(10,1,this)"><img src="venus.jpg" width="100" height="100"/></li><li id="Q_10_2"><input type="radio" id="Q_10_2_Btn" onclick="CheckMCAnswer(10,2,this)"><img src="mercury.jpg" width="100" height="100"/></li><li id="Q_10_3"><input type="radio" id="Q_10_3_Btn" onclick="CheckMCAnswer(10,3,this)"><img src="moon.jpg" width="100" height="100"/></li></ol></li>
-<li class="QuizQuestion" id="Q_11" style="display: none;"><div class="QuestionText">Pluto is a</div><ol class="MCAnswers"><li id="Q_11_0"><input type="radio" id="Q_11_0_Btn" onclick="CheckMCAnswer(11,0,this)">Planet</li><li id="Q_11_1"><input type="radio" id="Q_11_1_Btn" onclick="CheckMCAnswer(11,1,this)">Moon</li><li id="Q_11_2"><input type="radio" id="Q_11_2_Btn" onclick="CheckMCAnswer(11,2,this)">Dwarf Planet</li><li id="Q_11_3"><input type="radio" id="Q_11_3_Btn" onclick="CheckMCAnswer(11,3,this)">Astroid</li></ol></li>
-<li class="QuizQuestion" id="Q_12" style="display: none;"><div class="QuestionText">Electromagnetic spectrum in increasing order of wavelength</div><ol class="MCAnswers"><li id="Q_12_0"><input type="radio" id="Q_12_0_Btn" onclick="CheckMCAnswer(12,0,this)">Gamma-ray, UV, Visible, Infrared</li><li id="Q_12_1"><input type="radio" id="Q_12_1_Btn" onclick="CheckMCAnswer(12,1,this)">Visible, Gamma-ray, X-ray, Radio</li><li id="Q_12_2"><input type="radio" id="Q_12_2_Btn" onclick="CheckMCAnswer(12,2,this)">Infrared, Radio, Microwave, Visible</li><li id="Q_12_3"><input type="radio" id="Q_12_3_Btn" onclick="CheckMCAnswer(12,3,this)">X-ray, Infrared, Visible, Radio</li></ol></li>
-<li class="QuizQuestion" id="Q_13" style="display: none;"><div class="QuestionText">What is the fuel of most of the stars?</div><ol class="MCAnswers"><li id="Q_13_0"><input type="radio" id="Q_13_0_Btn" onclick="CheckMCAnswer(13,0,this)">Hydrogen fusion in their cores</li><li id="Q_13_1"><input type="radio" id="Q_13_1_Btn" onclick="CheckMCAnswer(13,1,this)">Uranium fusion in their cores</li><li id="Q_13_2"><input type="radio" id="Q_13_2_Btn" onclick="CheckMCAnswer(13,2,this)">Hydrogen burning in their cores</li><li id="Q_13_3"><input type="radio" id="Q_13_3_Btn" onclick="CheckMCAnswer(13,3,this)">Oxygen burning in their cores</li></ol></li>
-<li class="QuizQuestion" id="Q_14" style="display: none;"><div class="QuestionText">What is our own galaxy?</div><ol class="MCAnswers"><li id="Q_14_0"><input type="radio" id="Q_14_0_Btn" onclick="CheckMCAnswer(14,0,this)">Milky Way</li><li id="Q_14_1"><input type="radio" id="Q_14_1_Btn" onclick="CheckMCAnswer(14,1,this)">M87</li><li id="Q_14_2"><input type="radio" id="Q_14_2_Btn" onclick="CheckMCAnswer(14,2,this)">Andromeda</li><li id="Q_14_3"><input type="radio" id="Q_14_3_Btn" onclick="CheckMCAnswer(14,3,this)">Small Magellanic Cloud</li></ol></li>
-<li class="QuizQuestion" id="Q_15" style="display: none;"><div class="QuestionText">How are the stars formed?</div><ol class="MCAnswers"><li id="Q_15_0"><input type="radio" id="Q_15_0_Btn" onclick="CheckMCAnswer(15,0,this)">Gravitational accumulation of gas and dust</li><li id="Q_15_1"><input type="radio" id="Q_15_1_Btn" onclick="CheckMCAnswer(15,1,this)">By colliding planets</li><li id="Q_15_2"><input type="radio" id="Q_15_2_Btn" onclick="CheckMCAnswer(15,2,this)">By colliding gas and dust clouds</li><li id="Q_15_3"><input type="radio" id="Q_15_3_Btn" onclick="CheckMCAnswer(15,3,this)">Condensation of hydrogen gas</li></ol></li>
-<li class="QuizQuestion" id="Q_16" style="display: none;"><div class="QuestionText">What is the age of the observable universe approximately?</div><ol class="MCAnswers"><li id="Q_16_0"><input type="radio" id="Q_16_0_Btn" onclick="CheckMCAnswer(16,0,this)">12 billion years</li><li id="Q_16_1"><input type="radio" id="Q_16_1_Btn" onclick="CheckMCAnswer(16,1,this)">10 billion years</li><li id="Q_16_2"><input type="radio" id="Q_16_2_Btn" onclick="CheckMCAnswer(16,2,this)">14 billion years</li><li id="Q_16_3"><input type="radio" id="Q_16_3_Btn" onclick="CheckMCAnswer(16,3,this)">11 billion years</li></ol></li>
-<li class="QuizQuestion" id="Q_17" style="display: none;"><div class="QuestionText">How old is the Sun?</div><ol class="MCAnswers"><li id="Q_17_0"><input type="radio" id="Q_17_0_Btn" onclick="CheckMCAnswer(17,0,this)">4.6 million years</li><li id="Q_17_1"><input type="radio" id="Q_17_1_Btn" onclick="CheckMCAnswer(17,1,this)">4.6 billion years</li><li id="Q_17_2"><input type="radio" id="Q_17_2_Btn" onclick="CheckMCAnswer(17,2,this)">6.4 billion years</li><li id="Q_17_3"><input type="radio" id="Q_17_3_Btn" onclick="CheckMCAnswer(17,3,this)">6.4 million years</li></ol></li>
-<li class="QuizQuestion" id="Q_18" style="display: none;"><div class="QuestionText">How old is the Earth?</div><ol class="MCAnswers"><li id="Q_18_0"><input type="radio" id="Q_18_0_Btn" onclick="CheckMCAnswer(18,0,this)">5.4 million years</li><li id="Q_18_1"><input type="radio" id="Q_18_1_Btn" onclick="CheckMCAnswer(18,1,this)">4.5 billion years</li><li id="Q_18_2"><input type="radio" id="Q_18_2_Btn" onclick="CheckMCAnswer(18,2,this)">4.5 million years</li><li id="Q_18_3"><input type="radio" id="Q_18_3_Btn" onclick="CheckMCAnswer(18,3,this)">5.4 billion years</li></ol></li>
-<li class="QuizQuestion" id="Q_19" style="display: none;"><div class="QuestionText">If a planet goes very near a black hole it will....</div><ol class="MCAnswers"><li id="Q_19_0"><input type="radio" id="Q_19_0_Btn" onclick="CheckMCAnswer(19,0,this)">Get sucked in by its gravity</li><li id="Q_19_1"><input type="radio" id="Q_19_1_Btn" onclick="CheckMCAnswer(19,1,this)">Orbit around it faster and faster until it reaches the speed of light</li><li id="Q_19_2"><input type="radio" id="Q_19_2_Btn" onclick="CheckMCAnswer(19,2,this)">Get torn apart by tidal forces while orbiting it</li><li id="Q_19_3"><input type="radio" id="Q_19_3_Btn" onclick="CheckMCAnswer(19,3,this)">Become a star</li></ol></li>
-<li class="QuizQuestion" id="Q_20" style="display: none;"><div class="QuestionText">How the size of universe is changing?</div><ol class="MCAnswers"><li id="Q_20_0"><input type="radio" id="Q_20_0_Btn" onclick="CheckMCAnswer(20,0,this)">Contracting</li><li id="Q_20_1"><input type="radio" id="Q_20_1_Btn" onclick="CheckMCAnswer(20,1,this)">Expanding</li><li id="Q_20_2"><input type="radio" id="Q_20_2_Btn" onclick="CheckMCAnswer(20,2,this)">Not changing</li><li id="Q_20_3"><input type="radio" id="Q_20_3_Btn" onclick="CheckMCAnswer(20,3,this)">Oscillating</li></ol></li>
-<li class="QuizQuestion" id="Q_21" style="display: none;"><div class="QuestionText">How do you differentiate between planets and stars with the naked eye?<br /></div><ol class="MCAnswers"><li id="Q_21_0"><input type="radio" id="Q_21_0_Btn" onclick="CheckMCAnswer(21,0,this)">Stars twinkle planets don't</li><li id="Q_21_1"><input type="radio" id="Q_21_1_Btn" onclick="CheckMCAnswer(21,1,this)">Planets twinkle stars don't</li><li id="Q_21_2"><input type="radio" id="Q_21_2_Btn" onclick="CheckMCAnswer(21,2,this)">There is no way to do so</li><li id="Q_21_3"><input type="radio" id="Q_21_3_Btn" onclick="CheckMCAnswer(21,3,this)">Planets are colored while stars are white</li></ol></li>
-<li class="QuizQuestion" id="Q_22" style="display: none;"><div class="QuestionText">How far is the Sun from the center of the Milky Way?</div><ol class="MCAnswers"><li id="Q_22_0"><input type="radio" id="Q_22_0_Btn" onclick="CheckMCAnswer(22,0,this)">8 Kiloparsec</li><li id="Q_22_1"><input type="radio" id="Q_22_1_Btn" onclick="CheckMCAnswer(22,1,this)">8 Megaparsec</li><li id="Q_22_2"><input type="radio" id="Q_22_2_Btn" onclick="CheckMCAnswer(22,2,this)">4 Kiloparsec</li><li id="Q_22_3"><input type="radio" id="Q_22_3_Btn" onclick="CheckMCAnswer(22,3,this)">4 Parsec</li></ol></li>
-<li class="QuizQuestion" id="Q_23" style="display: none;"><div class="QuestionText">Why the stars twinkle in the night sky?</div><ol class="MCAnswers"><li id="Q_23_0"><input type="radio" id="Q_23_0_Btn" onclick="CheckMCAnswer(23,0,this)">Refraction of light through Earth's turbulent atmosphere</li><li id="Q_23_1"><input type="radio" id="Q_23_1_Btn" onclick="CheckMCAnswer(23,1,this)">Reflection of light through Earth's turbulent atmosphere</li><li id="Q_23_2"><input type="radio" id="Q_23_2_Btn" onclick="CheckMCAnswer(23,2,this)">Blinking of eyes</li><li id="Q_23_3"><input type="radio" id="Q_23_3_Btn" onclick="CheckMCAnswer(23,3,this)">Stars brighting and dimming</li></ol></li>
-<li class="QuizQuestion" id="Q_24" style="display: none;"><div class="QuestionText">Who was the first person to land on the moon?</div><ol class="MCAnswers"><li id="Q_24_0"><input type="radio" id="Q_24_0_Btn" onclick="CheckMCAnswer(24,0,this)">Alan Shepard</li><li id="Q_24_1"><input type="radio" id="Q_24_1_Btn" onclick="CheckMCAnswer(24,1,this)">Neil Armstrong</li><li id="Q_24_2"><input type="radio" id="Q_24_2_Btn" onclick="CheckMCAnswer(24,2,this)">Yuri Gagarin</li><li id="Q_24_3"><input type="radio" id="Q_24_3_Btn" onclick="CheckMCAnswer(24,3,this)">Rakesh Sharma</li></ol></li>
-<li class="QuizQuestion" id="Q_25" style="display: none;"><div class="QuestionText">How many moons does Jupiter have?</div><ol class="MCAnswers"><li id="Q_25_0"><input type="radio" id="Q_25_0_Btn" onclick="CheckMCAnswer(25,0,this)">79</li><li id="Q_25_1"><input type="radio" id="Q_25_1_Btn" onclick="CheckMCAnswer(25,1,this)">16</li><li id="Q_25_2"><input type="radio" id="Q_25_2_Btn" onclick="CheckMCAnswer(25,2,this)">26</li><li id="Q_25_3"><input type="radio" id="Q_25_3_Btn" onclick="CheckMCAnswer(25,3,this)">82</li></ol></li>
-<li class="QuizQuestion" id="Q_26" style="display: none;"><div class="QuestionText">What are Saturn's rings made of?</div><ol class="MCAnswers"><li id="Q_26_0"><input type="radio" id="Q_26_0_Btn" onclick="CheckMCAnswer(26,0,this)">Particles of rock</li><li id="Q_26_1"><input type="radio" id="Q_26_1_Btn" onclick="CheckMCAnswer(26,1,this)">Ice of Methene</li><li id="Q_26_2"><input type="radio" id="Q_26_2_Btn" onclick="CheckMCAnswer(26,2,this)">Particles of water ice</li><li id="Q_26_3"><input type="radio" id="Q_26_3_Btn" onclick="CheckMCAnswer(26,3,this)">Debris of satellites</li></ol></li>
-<li class="QuizQuestion" id="Q_27" style="display: none;"><div class="QuestionText">Who invented the astronomical telescope?</div><ol class="MCAnswers"><li id="Q_27_0"><input type="radio" id="Q_27_0_Btn" onclick="CheckMCAnswer(27,0,this)">Galileo Galilei</li><li id="Q_27_1"><input type="radio" id="Q_27_1_Btn" onclick="CheckMCAnswer(27,1,this)">Nicolaus Copernicus</li><li id="Q_27_2"><input type="radio" id="Q_27_2_Btn" onclick="CheckMCAnswer(27,2,this)">Johannes Kepler</li><li id="Q_27_3"><input type="radio" id="Q_27_3_Btn" onclick="CheckMCAnswer(27,3,this)">Ptolemy</li></ol></li>
-<li class="QuizQuestion" id="Q_28" style="display: none;"><div class="QuestionText">What is the brightest star in the night sky seen from a naked eye?</div><ol class="MCAnswers"><li id="Q_28_0"><input type="radio" id="Q_28_0_Btn" onclick="CheckMCAnswer(28,0,this)">Pole Star</li><li id="Q_28_1"><input type="radio" id="Q_28_1_Btn" onclick="CheckMCAnswer(28,1,this)">Sirius A</li><li id="Q_28_2"><input type="radio" id="Q_28_2_Btn" onclick="CheckMCAnswer(28,2,this)">Proxima Centauri</li><li id="Q_28_3"><input type="radio" id="Q_28_3_Btn" onclick="CheckMCAnswer(28,3,this)">Vega</li></ol></li>
-<li class="QuizQuestion" id="Q_29" style="display: none;"><div class="QuestionText">Which planet is known "morning star" ?</div><ol class="MCAnswers"><li id="Q_29_0"><input type="radio" id="Q_29_0_Btn" onclick="CheckMCAnswer(29,0,this)">Venus</li><li id="Q_29_1"><input type="radio" id="Q_29_1_Btn" onclick="CheckMCAnswer(29,1,this)">Mars</li><li id="Q_29_2"><input type="radio" id="Q_29_2_Btn" onclick="CheckMCAnswer(29,2,this)">Jupiter</li><li id="Q_29_3"><input type="radio" id="Q_29_3_Btn" onclick="CheckMCAnswer(29,3,this)">Saturn</li></ol></li>
-<li class="QuizQuestion" id="Q_30" style="display: none;"><div class="QuestionText">If you were standing on the moon, what color would the sky be?</div><ol class="MCAnswers"><li id="Q_30_0"><input type="radio" id="Q_30_0_Btn" onclick="CheckMCAnswer(30,0,this)">Sky blue</li><li id="Q_30_1"><input type="radio" id="Q_30_1_Btn" onclick="CheckMCAnswer(30,1,this)">Yellow</li><li id="Q_30_2"><input type="radio" id="Q_30_2_Btn" onclick="CheckMCAnswer(30,2,this)">Red</li><li id="Q_30_3"><input type="radio" id="Q_30_3_Btn" onclick="CheckMCAnswer(30,3,this)">Black</li></ol></li>
-<li class="QuizQuestion" id="Q_31" style="display: none;"><div class="QuestionText">Which planet is called the Red Planet?</div><ol class="MCAnswers"><li id="Q_31_0"><input type="radio" id="Q_31_0_Btn" onclick="CheckMCAnswer(31,0,this)">Mars</li><li id="Q_31_1"><input type="radio" id="Q_31_1_Btn" onclick="CheckMCAnswer(31,1,this)">Venus</li><li id="Q_31_2"><input type="radio" id="Q_31_2_Btn" onclick="CheckMCAnswer(31,2,this)">Mercury</li><li id="Q_31_3"><input type="radio" id="Q_31_3_Btn" onclick="CheckMCAnswer(31,3,this)">Neptune</li></ol></li>
-<li class="QuizQuestion" id="Q_32" style="display: none;"><div class="QuestionText">What is the planet closest to the sun?</div><ol class="MCAnswers"><li id="Q_32_0"><input type="radio" id="Q_32_0_Btn" onclick="CheckMCAnswer(32,0,this)">Mercury</li><li id="Q_32_1"><input type="radio" id="Q_32_1_Btn" onclick="CheckMCAnswer(32,1,this)">Earth</li><li id="Q_32_2"><input type="radio" id="Q_32_2_Btn" onclick="CheckMCAnswer(32,2,this)">Mars</li><li id="Q_32_3"><input type="radio" id="Q_32_3_Btn" onclick="CheckMCAnswer(32,3,this)">Venus</li></ol></li>
-<li class="QuizQuestion" id="Q_33" style="display: none;"><div class="QuestionText">Saturn is the second largest planet in our solar system. Why is it famous for?</div><ol class="MCAnswers"><li id="Q_33_0"><input type="radio" id="Q_33_0_Btn" onclick="CheckMCAnswer(33,0,this)">Beautiful rainbow</li><li id="Q_33_1"><input type="radio" id="Q_33_1_Btn" onclick="CheckMCAnswer(33,1,this)">Beautiful ring</li><li id="Q_33_2"><input type="radio" id="Q_33_2_Btn" onclick="CheckMCAnswer(33,2,this)">Water</li><li id="Q_33_3"><input type="radio" id="Q_33_3_Btn" onclick="CheckMCAnswer(33,3,this)">Diamonds</li></ol></li>
-<li class="QuizQuestion" id="Q_34" style="display: none;"><div class="QuestionText">What do we call scientists who focus on observations of the skies?</div><ol class="MCAnswers"><li id="Q_34_0"><input type="radio" id="Q_34_0_Btn" onclick="CheckMCAnswer(34,0,this)">Astronauts</li><li id="Q_34_1"><input type="radio" id="Q_34_1_Btn" onclick="CheckMCAnswer(34,1,this)">Astronomers</li><li id="Q_34_2"><input type="radio" id="Q_34_2_Btn" onclick="CheckMCAnswer(34,2,this)">Physicists</li><li id="Q_34_3"><input type="radio" id="Q_34_3_Btn" onclick="CheckMCAnswer(34,3,this)">Mathematicians</li></ol></li>
-<li class="QuizQuestion" id="Q_35" style="display: none;"><div class="QuestionText">What is the highest mountain on Mars?</div><ol class="MCAnswers"><li id="Q_35_0"><input type="radio" id="Q_35_0_Btn" onclick="CheckMCAnswer(35,0,this)">Olympus Mons</li><li id="Q_35_1"><input type="radio" id="Q_35_1_Btn" onclick="CheckMCAnswer(35,1,this)">Ascraeus Mons</li><li id="Q_35_2"><input type="radio" id="Q_35_2_Btn" onclick="CheckMCAnswer(35,2,this)">Mons Ardeshir</li><li id="Q_35_3"><input type="radio" id="Q_35_3_Btn" onclick="CheckMCAnswer(35,3,this)">Mons Blanc</li></ol></li>
-<li class="QuizQuestion" id="Q_36" style="display: none;"><div class="QuestionText"> Which one of these is the brightest nebula in the sky?</div><ol class="MCAnswers"><li id="Q_36_0"><input type="radio" id="Q_36_0_Btn" onclick="CheckMCAnswer(36,0,this)">Eagle Nebula</li><li id="Q_36_1"><input type="radio" id="Q_36_1_Btn" onclick="CheckMCAnswer(36,1,this)">Eta Carinae Nebula</li><li id="Q_36_2"><input type="radio" id="Q_36_2_Btn" onclick="CheckMCAnswer(36,2,this)">Orion Nebula</li><li id="Q_36_3"><input type="radio" id="Q_36_3_Btn" onclick="CheckMCAnswer(36,3,this)">Dumbbell Nebula</li></ol></li>
-<li class="QuizQuestion" id="Q_37" style="display: none;"><div class="QuestionText">Which one is the The Great Red Spot of Jupiter?</div><ol class="MCAnswers"><li id="Q_37_0"><input type="radio" id="Q_37_0_Btn" onclick="CheckMCAnswer(37,0,this)"><img src="redspot.jpeg" width="100" height="100"/></li><li id="Q_37_1"><input type="radio" id="Q_37_1_Btn" onclick="CheckMCAnswer(37,1,this)"><img src="saturn_hexagon.webp" width="100" height="100"/></li><li id="Q_37_2"><input type="radio" id="Q_37_2_Btn" onclick="CheckMCAnswer(37,2,this)"><img src="io.jpg" width="100" height="100"/></li><li id="Q_37_3"><input type="radio" id="Q_37_3_Btn" onclick="CheckMCAnswer(37,3,this)"><img src="olympus.webp" width="100" height="100"/></li></ol></li>
-<li class="QuizQuestion" id="Q_38" style="display: none;"><div class="QuestionText">Astrophysicists sometimes study the temperature of stars. Which of these stars would be the hottest?</div><ol class="MCAnswers"><li id="Q_38_0"><input type="radio" id="Q_38_0_Btn" onclick="CheckMCAnswer(38,0,this)">Red</li><li id="Q_38_1"><input type="radio" id="Q_38_1_Btn" onclick="CheckMCAnswer(38,1,this)">Yellow</li><li id="Q_38_2"><input type="radio" id="Q_38_2_Btn" onclick="CheckMCAnswer(38,2,this)">Blue</li><li id="Q_38_3"><input type="radio" id="Q_38_3_Btn" onclick="CheckMCAnswer(38,3,this)">White</li></ol></li>
-<li class="QuizQuestion" id="Q_39" style="display: none;"><div class="QuestionText">What is a nebula?</div><ol class="MCAnswers"><li id="Q_39_0"><input type="radio" id="Q_39_0_Btn" onclick="CheckMCAnswer(39,0,this)">A cloud of gas and dust</li><li id="Q_39_1"><input type="radio" id="Q_39_1_Btn" onclick="CheckMCAnswer(39,1,this)">Collection of planets</li><li id="Q_39_2"><input type="radio" id="Q_39_2_Btn" onclick="CheckMCAnswer(39,2,this)">A cloud of water and methene ice</li><li id="Q_39_3"><input type="radio" id="Q_39_3_Btn" onclick="CheckMCAnswer(39,3,this)">Collection of Stars</li></ol></li>
-<li class="QuizQuestion" id="Q_40" style="display: none;"><div class="QuestionText">For how many days of the year in Pune the Sun is exactly overhead casting no shadows? <br /></div><ol class="MCAnswers"><li id="Q_40_0"><input type="radio" id="Q_40_0_Btn" onclick="CheckMCAnswer(40,0,this)">2 days</li><li id="Q_40_1"><input type="radio" id="Q_40_1_Btn" onclick="CheckMCAnswer(40,1,this)">7 days</li><li id="Q_40_2"><input type="radio" id="Q_40_2_Btn" onclick="CheckMCAnswer(40,2,this)">1 day</li><li id="Q_40_3"><input type="radio" id="Q_40_3_Btn" onclick="CheckMCAnswer(40,3,this)">3 days</li></ol></li>
-<li class="QuizQuestion" id="Q_41" style="display: none;"><div class="QuestionText">On which planet humans can never land because there is no land surface?<br /></div><ol class="MCAnswers"><li id="Q_41_0"><input type="radio" id="Q_41_0_Btn" onclick="CheckMCAnswer(41,0,this)">Mars</li><li id="Q_41_1"><input type="radio" id="Q_41_1_Btn" onclick="CheckMCAnswer(41,1,this)">Jupiter</li><li id="Q_41_2"><input type="radio" id="Q_41_2_Btn" onclick="CheckMCAnswer(41,2,this)">Mercury</li><li id="Q_41_3"><input type="radio" id="Q_41_3_Btn" onclick="CheckMCAnswer(41,3,this)">Venus</li></ol></li>
-<li class="QuizQuestion" id="Q_42" style="display: none;"><div class="QuestionText">What is the maximum number of earth you can fit inside a sun?</div><ol class="MCAnswers"><li id="Q_42_0"><input type="radio" id="Q_42_0_Btn" onclick="CheckMCAnswer(42,0,this)">10</li><li id="Q_42_1"><input type="radio" id="Q_42_1_Btn" onclick="CheckMCAnswer(42,1,this)">10 thousand</li><li id="Q_42_2"><input type="radio" id="Q_42_2_Btn" onclick="CheckMCAnswer(42,2,this)">1 million</li><li id="Q_42_3"><input type="radio" id="Q_42_3_Btn" onclick="CheckMCAnswer(42,3,this)">10 million</li></ol></li>
-<li class="QuizQuestion" id="Q_43" style="display: none;"><div class="QuestionText">If you put two prisms together and pass sunlight through it, in how many ways does the light gets split into?</div><ol class="MCAnswers"><li id="Q_43_0"><input type="radio" id="Q_43_0_Btn" onclick="CheckMCAnswer(43,0,this)">0</li><li id="Q_43_1"><input type="radio" id="Q_43_1_Btn" onclick="CheckMCAnswer(43,1,this)">Not countable</li><li id="Q_43_2"><input type="radio" id="Q_43_2_Btn" onclick="CheckMCAnswer(43,2,this)">8</li><li id="Q_43_3"><input type="radio" id="Q_43_3_Btn" onclick="CheckMCAnswer(43,3,this)">14</li></ol></li>
-<li class="QuizQuestion" id="Q_44" style="display: none;"><div class="QuestionText">Does the moon rise on Amavasya (New Moon)?<br /></div><ol class="MCAnswers"><li id="Q_44_0"><input type="radio" id="Q_44_0_Btn" onclick="CheckMCAnswer(44,0,this)">Yes</li><li id="Q_44_1"><input type="radio" id="Q_44_1_Btn" onclick="CheckMCAnswer(44,1,this)">No</li></ol></li>
-<li class="QuizQuestion" id="Q_45" style="display: none;"><div class="QuestionText">Will you weigh the same in the Northern hemisphere and southern hemisphere?<br /></div><ol class="MCAnswers"><li id="Q_45_0"><input type="radio" id="Q_45_0_Btn" onclick="CheckMCAnswer(45,0,this)">Yes</li><li id="Q_45_1"><input type="radio" id="Q_45_1_Btn" onclick="CheckMCAnswer(45,1,this)">No</li></ol></li>
-<li class="QuizQuestion" id="Q_46" style="display: none;"><div class="QuestionText">Which spacecraft has gone outside the solar system?<br /></div><ol class="MCAnswers"><li id="Q_46_0"><input type="radio" id="Q_46_0_Btn" onclick="CheckMCAnswer(46,0,this)">Cassini</li><li id="Q_46_1"><input type="radio" id="Q_46_1_Btn" onclick="CheckMCAnswer(46,1,this)">Voyager</li><li id="Q_46_2"><input type="radio" id="Q_46_2_Btn" onclick="CheckMCAnswer(46,2,this)">Juno</li><li id="Q_46_3"><input type="radio" id="Q_46_3_Btn" onclick="CheckMCAnswer(46,3,this)">New Horizon</li></ol></li>
-<li class="QuizQuestion" id="Q_47" style="display: none;"><div class="QuestionText">Which spacecraft has landed on a comet?<br /></div><ol class="MCAnswers"><li id="Q_47_0"><input type="radio" id="Q_47_0_Btn" onclick="CheckMCAnswer(47,0,this)">Rosetta</li><li id="Q_47_1"><input type="radio" id="Q_47_1_Btn" onclick="CheckMCAnswer(47,1,this)">Cassini</li><li id="Q_47_2"><input type="radio" id="Q_47_2_Btn" onclick="CheckMCAnswer(47,2,this)">Juno</li><li id="Q_47_3"><input type="radio" id="Q_47_3_Btn" onclick="CheckMCAnswer(47,3,this)">New Horizon</li></ol></li>
-<li class="QuizQuestion" id="Q_48" style="display: none;"><div class="QuestionText">Which planet has the most moon?<br /></div><ol class="MCAnswers"><li id="Q_48_0"><input type="radio" id="Q_48_0_Btn" onclick="CheckMCAnswer(48,0,this)">Jupiter</li><li id="Q_48_1"><input type="radio" id="Q_48_1_Btn" onclick="CheckMCAnswer(48,1,this)">Saturn</li><li id="Q_48_2"><input type="radio" id="Q_48_2_Btn" onclick="CheckMCAnswer(48,2,this)">Uranus</li><li id="Q_48_3"><input type="radio" id="Q_48_3_Btn" onclick="CheckMCAnswer(48,3,this)">Neptune</li></ol></li>
-<li class="QuizQuestion" id="Q_49" style="display: none;"><div class="QuestionText">What is the biggest moon in the solar system?<br /></div><ol class="MCAnswers"><li id="Q_49_0"><input type="radio" id="Q_49_0_Btn" onclick="CheckMCAnswer(49,0,this)">Ganymede</li><li id="Q_49_1"><input type="radio" id="Q_49_1_Btn" onclick="CheckMCAnswer(49,1,this)">Io</li><li id="Q_49_2"><input type="radio" id="Q_49_2_Btn" onclick="CheckMCAnswer(49,2,this)">Juno</li><li id="Q_49_3"><input type="radio" id="Q_49_3_Btn" onclick="CheckMCAnswer(49,3,this)">Titan</li></ol></li></ol>
+<li class="QuizQuestion" id="Q_0" style="display: none;"><div class="QuestionText">What is the name of the 5th planet in our solar system?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_0_0"><input type="radio" id="Q_0_0_Btn" onclick="CheckMCAnswer(0,0,this)">Mercury</li><li id="Q_0_1"><input type="radio" id="Q_0_1_Btn" onclick="CheckMCAnswer(0,1,this)">Mars</li><li id="Q_0_2"><input type="radio" id="Q_0_2_Btn" onclick="CheckMCAnswer(0,2,this)">Saturn</li><li id="Q_0_3"><input type="radio" id="Q_0_3_Btn" onclick="CheckMCAnswer(0,3,this)">Jupiter</li></ol></li>
+<li class="QuizQuestion" id="Q_1" style="display: none;"><div class="QuestionText">How does a solar eclipse occur?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_1_0"><input type="radio" id="Q_1_0_Btn" onclick="CheckMCAnswer(1,0,this)">Sun comes between the Moon and Earth</li><li id="Q_1_1"><input type="radio" id="Q_1_1_Btn" onclick="CheckMCAnswer(1,1,this)">Earth comes between the Moon and Sun</li><li id="Q_1_2"><input type="radio" id="Q_1_2_Btn" onclick="CheckMCAnswer(1,2,this)">Sun is hidden by the Earth's shadow</li><li id="Q_1_3"><input type="radio" id="Q_1_3_Btn" onclick="CheckMCAnswer(1,3,this)">Moon comes between the Sun and Earth</li></ol></li>
+<li class="QuizQuestion" id="Q_2" style="display: none;"><div class="QuestionText">Who discovered Earth rotates around the Sun?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_2_0"><input type="radio" id="Q_2_0_Btn" onclick="CheckMCAnswer(2,0,this)">Galileo Galilei</li><li id="Q_2_1"><input type="radio" id="Q_2_1_Btn" onclick="CheckMCAnswer(2,1,this)">Nicolaus Copernicus</li><li id="Q_2_2"><input type="radio" id="Q_2_2_Btn" onclick="CheckMCAnswer(2,2,this)">Johannes Kepler</li><li id="Q_2_3"><input type="radio" id="Q_2_3_Btn" onclick="CheckMCAnswer(2,3,this)">Ptolemy</li></ol></li>
+<li class="QuizQuestion" id="Q_3" style="display: none;"><div class="QuestionText">Who proposed that planets move in elliptical orbits?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_3_0"><input type="radio" id="Q_3_0_Btn" onclick="CheckMCAnswer(3,0,this)">Nicolaus Copernicus</li><li id="Q_3_1"><input type="radio" id="Q_3_1_Btn" onclick="CheckMCAnswer(3,1,this)">Johannes Kepler</li><li id="Q_3_2"><input type="radio" id="Q_3_2_Btn" onclick="CheckMCAnswer(3,2,this)">Galileo Galilei</li><li id="Q_3_3"><input type="radio" id="Q_3_3_Btn" onclick="CheckMCAnswer(3,3,this)">Ptolemy</li></ol></li>
+<li class="QuizQuestion" id="Q_4" style="display: none;"><div class="QuestionText">What is the size of the Moon relative to Earth?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_4_0"><input type="radio" id="Q_4_0_Btn" onclick="CheckMCAnswer(4,0,this)">1/4</li><li id="Q_4_1"><input type="radio" id="Q_4_1_Btn" onclick="CheckMCAnswer(4,1,this)">1/5</li><li id="Q_4_2"><input type="radio" id="Q_4_2_Btn" onclick="CheckMCAnswer(4,2,this)">1/3</li><li id="Q_4_3"><input type="radio" id="Q_4_3_Btn" onclick="CheckMCAnswer(4,3,this)">1/6</li></ol></li>
+<li class="QuizQuestion" id="Q_5" style="display: none;"><div class="QuestionText">What fraction of Earth's gravity does the moon have?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_5_0"><input type="radio" id="Q_5_0_Btn" onclick="CheckMCAnswer(5,0,this)">1/4</li><li id="Q_5_1"><input type="radio" id="Q_5_1_Btn" onclick="CheckMCAnswer(5,1,this)">1/5</li><li id="Q_5_2"><input type="radio" id="Q_5_2_Btn" onclick="CheckMCAnswer(5,2,this)">1/6</li><li id="Q_5_3"><input type="radio" id="Q_5_3_Btn" onclick="CheckMCAnswer(5,3,this)">1/9</li></ol></li>
+<li class="QuizQuestion" id="Q_6" style="display: none;"><div class="QuestionText">What is the difference between ``Meteoroids" and ``Meteorites"?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_6_0"><input type="radio" id="Q_6_0_Btn" onclick="CheckMCAnswer(6,0,this)">Meteoroids are space rocks once they hit Earth</li><li id="Q_6_1"><input type="radio" id="Q_6_1_Btn" onclick="CheckMCAnswer(6,1,this)">Meteorites are space rocks once they hit Earth</li><li id="Q_6_2"><input type="radio" id="Q_6_2_Btn" onclick="CheckMCAnswer(6,2,this)">Both are the same</li><li id="Q_6_3"><input type="radio" id="Q_6_3_Btn" onclick="CheckMCAnswer(6,3,this)">Meteoroids are made of rocks and meteorites are made of ice.</li></ol></li>
+<li class="QuizQuestion" id="Q_7" style="display: none;"><div class="QuestionText"> What are comets mainly composed of ? &nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_7_0"><input type="radio" id="Q_7_0_Btn" onclick="CheckMCAnswer(7,0,this)">Ice and Rocks</li><li id="Q_7_1"><input type="radio" id="Q_7_1_Btn" onclick="CheckMCAnswer(7,1,this)">Liquid Water and Ice</li><li id="Q_7_2"><input type="radio" id="Q_7_2_Btn" onclick="CheckMCAnswer(7,2,this)">Hydrogen gas and Rocks</li><li id="Q_7_3"><input type="radio" id="Q_7_3_Btn" onclick="CheckMCAnswer(7,3,this)">Liquid Methene</li></ol></li>
+<li class="QuizQuestion" id="Q_8" style="display: none;"><div class="QuestionText">What is the nearest star to the Sun?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_8_0"><input type="radio" id="Q_8_0_Btn" onclick="CheckMCAnswer(8,0,this)">Sirius A</li><li id="Q_8_1"><input type="radio" id="Q_8_1_Btn" onclick="CheckMCAnswer(8,1,this)">Proxima Centauri</li><li id="Q_8_2"><input type="radio" id="Q_8_2_Btn" onclick="CheckMCAnswer(8,2,this)">Alpha Centauri</li><li id="Q_8_3"><input type="radio" id="Q_8_3_Btn" onclick="CheckMCAnswer(8,3,this)">Pole Star</li></ol></li>
+<li class="QuizQuestion" id="Q_9" style="display: none;"><div class="QuestionText">Which are the two planets between which asteroid belt located?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_9_0"><input type="radio" id="Q_9_0_Btn" onclick="CheckMCAnswer(9,0,this)">Mars and Jupiter</li><li id="Q_9_1"><input type="radio" id="Q_9_1_Btn" onclick="CheckMCAnswer(9,1,this)">Earth and Venus</li><li id="Q_9_2"><input type="radio" id="Q_9_2_Btn" onclick="CheckMCAnswer(9,2,this)">Earth and Mars</li><li id="Q_9_3"><input type="radio" id="Q_9_3_Btn" onclick="CheckMCAnswer(9,3,this)">Jupiter and Saturn</li></ol></li>
+<li class="QuizQuestion" id="Q_10" style="display: none;"><div class="QuestionText">Which one is the Mars?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_10_0"><input type="radio" id="Q_10_0_Btn" onclick="CheckMCAnswer(10,0,this)"><img src="mars.jpg" width="100" height="100"/></li><li id="Q_10_1"><input type="radio" id="Q_10_1_Btn" onclick="CheckMCAnswer(10,1,this)"><img src="venus.jpg" width="100" height="100"/></li><li id="Q_10_2"><input type="radio" id="Q_10_2_Btn" onclick="CheckMCAnswer(10,2,this)"><img src="mercury.jpg" width="100" height="100"/></li><li id="Q_10_3"><input type="radio" id="Q_10_3_Btn" onclick="CheckMCAnswer(10,3,this)"><img src="moon.jpg" width="100" height="100"/></li></ol></li>
+<li class="QuizQuestion" id="Q_11" style="display: none;"><div class="QuestionText">Pluto is a&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_11_0"><input type="radio" id="Q_11_0_Btn" onclick="CheckMCAnswer(11,0,this)">Planet</li><li id="Q_11_1"><input type="radio" id="Q_11_1_Btn" onclick="CheckMCAnswer(11,1,this)">Moon</li><li id="Q_11_2"><input type="radio" id="Q_11_2_Btn" onclick="CheckMCAnswer(11,2,this)">Dwarf Planet</li><li id="Q_11_3"><input type="radio" id="Q_11_3_Btn" onclick="CheckMCAnswer(11,3,this)">Astroid</li></ol></li>
+<li class="QuizQuestion" id="Q_12" style="display: none;"><div class="QuestionText">Electromagnetic spectrum in increasing order of wavelength&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_12_0"><input type="radio" id="Q_12_0_Btn" onclick="CheckMCAnswer(12,0,this)">Gamma-ray, UV, Visible, Infrared</li><li id="Q_12_1"><input type="radio" id="Q_12_1_Btn" onclick="CheckMCAnswer(12,1,this)">Visible, Gamma-ray, X-ray, Radio</li><li id="Q_12_2"><input type="radio" id="Q_12_2_Btn" onclick="CheckMCAnswer(12,2,this)">Infrared, Radio, Microwave, Visible</li><li id="Q_12_3"><input type="radio" id="Q_12_3_Btn" onclick="CheckMCAnswer(12,3,this)">X-ray, Infrared, Visible, Radio</li></ol></li>
+<li class="QuizQuestion" id="Q_13" style="display: none;"><div class="QuestionText">What is the fuel of most of the stars?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_13_0"><input type="radio" id="Q_13_0_Btn" onclick="CheckMCAnswer(13,0,this)">Hydrogen fusion in their cores</li><li id="Q_13_1"><input type="radio" id="Q_13_1_Btn" onclick="CheckMCAnswer(13,1,this)">Uranium fusion in their cores</li><li id="Q_13_2"><input type="radio" id="Q_13_2_Btn" onclick="CheckMCAnswer(13,2,this)">Hydrogen burning in their cores</li><li id="Q_13_3"><input type="radio" id="Q_13_3_Btn" onclick="CheckMCAnswer(13,3,this)">Oxygen burning in their cores</li></ol></li>
+<li class="QuizQuestion" id="Q_14" style="display: none;"><div class="QuestionText">What is our own galaxy?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_14_0"><input type="radio" id="Q_14_0_Btn" onclick="CheckMCAnswer(14,0,this)">Milky Way</li><li id="Q_14_1"><input type="radio" id="Q_14_1_Btn" onclick="CheckMCAnswer(14,1,this)">M87</li><li id="Q_14_2"><input type="radio" id="Q_14_2_Btn" onclick="CheckMCAnswer(14,2,this)">Andromeda</li><li id="Q_14_3"><input type="radio" id="Q_14_3_Btn" onclick="CheckMCAnswer(14,3,this)">Small Magellanic Cloud</li></ol></li>
+<li class="QuizQuestion" id="Q_15" style="display: none;"><div class="QuestionText">How are the stars formed?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_15_0"><input type="radio" id="Q_15_0_Btn" onclick="CheckMCAnswer(15,0,this)">Gravitational accumulation of gas and dust</li><li id="Q_15_1"><input type="radio" id="Q_15_1_Btn" onclick="CheckMCAnswer(15,1,this)">By colliding planets</li><li id="Q_15_2"><input type="radio" id="Q_15_2_Btn" onclick="CheckMCAnswer(15,2,this)">By colliding gas and dust clouds</li><li id="Q_15_3"><input type="radio" id="Q_15_3_Btn" onclick="CheckMCAnswer(15,3,this)">Condensation of hydrogen gas</li></ol></li>
+<li class="QuizQuestion" id="Q_16" style="display: none;"><div class="QuestionText">What is the age of the observable universe approximately?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_16_0"><input type="radio" id="Q_16_0_Btn" onclick="CheckMCAnswer(16,0,this)">12 billion years</li><li id="Q_16_1"><input type="radio" id="Q_16_1_Btn" onclick="CheckMCAnswer(16,1,this)">10 billion years</li><li id="Q_16_2"><input type="radio" id="Q_16_2_Btn" onclick="CheckMCAnswer(16,2,this)">14 billion years</li><li id="Q_16_3"><input type="radio" id="Q_16_3_Btn" onclick="CheckMCAnswer(16,3,this)">11 billion years</li></ol></li>
+<li class="QuizQuestion" id="Q_17" style="display: none;"><div class="QuestionText">How old is the Sun?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_17_0"><input type="radio" id="Q_17_0_Btn" onclick="CheckMCAnswer(17,0,this)">4.6 million years</li><li id="Q_17_1"><input type="radio" id="Q_17_1_Btn" onclick="CheckMCAnswer(17,1,this)">4.6 billion years</li><li id="Q_17_2"><input type="radio" id="Q_17_2_Btn" onclick="CheckMCAnswer(17,2,this)">6.4 billion years</li><li id="Q_17_3"><input type="radio" id="Q_17_3_Btn" onclick="CheckMCAnswer(17,3,this)">6.4 million years</li></ol></li>
+<li class="QuizQuestion" id="Q_18" style="display: none;"><div class="QuestionText">How old is the Earth?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_18_0"><input type="radio" id="Q_18_0_Btn" onclick="CheckMCAnswer(18,0,this)">5.4 million years</li><li id="Q_18_1"><input type="radio" id="Q_18_1_Btn" onclick="CheckMCAnswer(18,1,this)">4.5 billion years</li><li id="Q_18_2"><input type="radio" id="Q_18_2_Btn" onclick="CheckMCAnswer(18,2,this)">4.5 million years</li><li id="Q_18_3"><input type="radio" id="Q_18_3_Btn" onclick="CheckMCAnswer(18,3,this)">5.4 billion years</li></ol></li>
+<li class="QuizQuestion" id="Q_19" style="display: none;"><div class="QuestionText">If a planet goes very near a black hole it will....&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_19_0"><input type="radio" id="Q_19_0_Btn" onclick="CheckMCAnswer(19,0,this)">Get sucked in by its gravity</li><li id="Q_19_1"><input type="radio" id="Q_19_1_Btn" onclick="CheckMCAnswer(19,1,this)">Orbit around it faster and faster until it reaches the speed of light</li><li id="Q_19_2"><input type="radio" id="Q_19_2_Btn" onclick="CheckMCAnswer(19,2,this)">Get torn apart by tidal forces while orbiting it</li><li id="Q_19_3"><input type="radio" id="Q_19_3_Btn" onclick="CheckMCAnswer(19,3,this)">Become a star</li></ol></li>
+<li class="QuizQuestion" id="Q_20" style="display: none;"><div class="QuestionText">How the size of universe is changing?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_20_0"><input type="radio" id="Q_20_0_Btn" onclick="CheckMCAnswer(20,0,this)">Contracting</li><li id="Q_20_1"><input type="radio" id="Q_20_1_Btn" onclick="CheckMCAnswer(20,1,this)">Expanding</li><li id="Q_20_2"><input type="radio" id="Q_20_2_Btn" onclick="CheckMCAnswer(20,2,this)">Not changing</li><li id="Q_20_3"><input type="radio" id="Q_20_3_Btn" onclick="CheckMCAnswer(20,3,this)">Oscillating</li></ol></li>
+<li class="QuizQuestion" id="Q_21" style="display: none;"><div class="QuestionText">How do you differentiate between planets and stars with the naked eye?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_21_0"><input type="radio" id="Q_21_0_Btn" onclick="CheckMCAnswer(21,0,this)">Stars twinkle planets don't</li><li id="Q_21_1"><input type="radio" id="Q_21_1_Btn" onclick="CheckMCAnswer(21,1,this)">Planets twinkle stars don't</li><li id="Q_21_2"><input type="radio" id="Q_21_2_Btn" onclick="CheckMCAnswer(21,2,this)">There is no way to do so</li><li id="Q_21_3"><input type="radio" id="Q_21_3_Btn" onclick="CheckMCAnswer(21,3,this)">Planets are colored while stars are white</li></ol></li>
+<li class="QuizQuestion" id="Q_22" style="display: none;"><div class="QuestionText">How far is the Sun from the center of the Milky Way?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_22_0"><input type="radio" id="Q_22_0_Btn" onclick="CheckMCAnswer(22,0,this)">8 Kiloparsec</li><li id="Q_22_1"><input type="radio" id="Q_22_1_Btn" onclick="CheckMCAnswer(22,1,this)">8 Megaparsec</li><li id="Q_22_2"><input type="radio" id="Q_22_2_Btn" onclick="CheckMCAnswer(22,2,this)">4 Kiloparsec</li><li id="Q_22_3"><input type="radio" id="Q_22_3_Btn" onclick="CheckMCAnswer(22,3,this)">4 Parsec</li></ol></li>
+<li class="QuizQuestion" id="Q_23" style="display: none;"><div class="QuestionText">Why the stars twinkle in the night sky?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_23_0"><input type="radio" id="Q_23_0_Btn" onclick="CheckMCAnswer(23,0,this)">Refraction of light through Earth's turbulent atmosphere</li><li id="Q_23_1"><input type="radio" id="Q_23_1_Btn" onclick="CheckMCAnswer(23,1,this)">Reflection of light through Earth's turbulent atmosphere</li><li id="Q_23_2"><input type="radio" id="Q_23_2_Btn" onclick="CheckMCAnswer(23,2,this)">Blinking of eyes</li><li id="Q_23_3"><input type="radio" id="Q_23_3_Btn" onclick="CheckMCAnswer(23,3,this)">Stars brighting and dimming</li></ol></li>
+<li class="QuizQuestion" id="Q_24" style="display: none;"><div class="QuestionText">Who was the first person to land on the moon?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_24_0"><input type="radio" id="Q_24_0_Btn" onclick="CheckMCAnswer(24,0,this)">Alan Shepard</li><li id="Q_24_1"><input type="radio" id="Q_24_1_Btn" onclick="CheckMCAnswer(24,1,this)">Neil Armstrong</li><li id="Q_24_2"><input type="radio" id="Q_24_2_Btn" onclick="CheckMCAnswer(24,2,this)">Yuri Gagarin</li><li id="Q_24_3"><input type="radio" id="Q_24_3_Btn" onclick="CheckMCAnswer(24,3,this)">Rakesh Sharma</li></ol></li>
+<li class="QuizQuestion" id="Q_25" style="display: none;"><div class="QuestionText">How many moons does Jupiter have?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_25_0"><input type="radio" id="Q_25_0_Btn" onclick="CheckMCAnswer(25,0,this)">79</li><li id="Q_25_1"><input type="radio" id="Q_25_1_Btn" onclick="CheckMCAnswer(25,1,this)">16</li><li id="Q_25_2"><input type="radio" id="Q_25_2_Btn" onclick="CheckMCAnswer(25,2,this)">26</li><li id="Q_25_3"><input type="radio" id="Q_25_3_Btn" onclick="CheckMCAnswer(25,3,this)">82</li></ol></li>
+<li class="QuizQuestion" id="Q_26" style="display: none;"><div class="QuestionText">What are Saturn's rings made of?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_26_0"><input type="radio" id="Q_26_0_Btn" onclick="CheckMCAnswer(26,0,this)">Particles of rock</li><li id="Q_26_1"><input type="radio" id="Q_26_1_Btn" onclick="CheckMCAnswer(26,1,this)">Ice of Methene</li><li id="Q_26_2"><input type="radio" id="Q_26_2_Btn" onclick="CheckMCAnswer(26,2,this)">Particles of water ice</li><li id="Q_26_3"><input type="radio" id="Q_26_3_Btn" onclick="CheckMCAnswer(26,3,this)">Debris of satellites</li></ol></li>
+<li class="QuizQuestion" id="Q_27" style="display: none;"><div class="QuestionText">Who invented the astronomical telescope?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_27_0"><input type="radio" id="Q_27_0_Btn" onclick="CheckMCAnswer(27,0,this)">Galileo Galilei</li><li id="Q_27_1"><input type="radio" id="Q_27_1_Btn" onclick="CheckMCAnswer(27,1,this)">Nicolaus Copernicus</li><li id="Q_27_2"><input type="radio" id="Q_27_2_Btn" onclick="CheckMCAnswer(27,2,this)">Johannes Kepler</li><li id="Q_27_3"><input type="radio" id="Q_27_3_Btn" onclick="CheckMCAnswer(27,3,this)">Ptolemy</li></ol></li>
+<li class="QuizQuestion" id="Q_28" style="display: none;"><div class="QuestionText">What is the brightest star in the night sky seen from a naked eye?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_28_0"><input type="radio" id="Q_28_0_Btn" onclick="CheckMCAnswer(28,0,this)">Pole Star</li><li id="Q_28_1"><input type="radio" id="Q_28_1_Btn" onclick="CheckMCAnswer(28,1,this)">Sirius A</li><li id="Q_28_2"><input type="radio" id="Q_28_2_Btn" onclick="CheckMCAnswer(28,2,this)">Proxima Centauri</li><li id="Q_28_3"><input type="radio" id="Q_28_3_Btn" onclick="CheckMCAnswer(28,3,this)">Vega</li></ol></li>
+<li class="QuizQuestion" id="Q_29" style="display: none;"><div class="QuestionText">Which planet is known "morning star" ?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_29_0"><input type="radio" id="Q_29_0_Btn" onclick="CheckMCAnswer(29,0,this)">Venus</li><li id="Q_29_1"><input type="radio" id="Q_29_1_Btn" onclick="CheckMCAnswer(29,1,this)">Mars</li><li id="Q_29_2"><input type="radio" id="Q_29_2_Btn" onclick="CheckMCAnswer(29,2,this)">Jupiter</li><li id="Q_29_3"><input type="radio" id="Q_29_3_Btn" onclick="CheckMCAnswer(29,3,this)">Saturn</li></ol></li>
+<li class="QuizQuestion" id="Q_30" style="display: none;"><div class="QuestionText">If you were standing on the moon, what color would the sky be?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_30_0"><input type="radio" id="Q_30_0_Btn" onclick="CheckMCAnswer(30,0,this)">Sky blue</li><li id="Q_30_1"><input type="radio" id="Q_30_1_Btn" onclick="CheckMCAnswer(30,1,this)">Yellow</li><li id="Q_30_2"><input type="radio" id="Q_30_2_Btn" onclick="CheckMCAnswer(30,2,this)">Red</li><li id="Q_30_3"><input type="radio" id="Q_30_3_Btn" onclick="CheckMCAnswer(30,3,this)">Black</li></ol></li>
+<li class="QuizQuestion" id="Q_31" style="display: none;"><div class="QuestionText">Which planet is called the Red Planet?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_31_0"><input type="radio" id="Q_31_0_Btn" onclick="CheckMCAnswer(31,0,this)">Mars</li><li id="Q_31_1"><input type="radio" id="Q_31_1_Btn" onclick="CheckMCAnswer(31,1,this)">Venus</li><li id="Q_31_2"><input type="radio" id="Q_31_2_Btn" onclick="CheckMCAnswer(31,2,this)">Mercury</li><li id="Q_31_3"><input type="radio" id="Q_31_3_Btn" onclick="CheckMCAnswer(31,3,this)">Neptune</li></ol></li>
+<li class="QuizQuestion" id="Q_32" style="display: none;"><div class="QuestionText">What is the planet closest to the sun?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_32_0"><input type="radio" id="Q_32_0_Btn" onclick="CheckMCAnswer(32,0,this)">Mercury</li><li id="Q_32_1"><input type="radio" id="Q_32_1_Btn" onclick="CheckMCAnswer(32,1,this)">Earth</li><li id="Q_32_2"><input type="radio" id="Q_32_2_Btn" onclick="CheckMCAnswer(32,2,this)">Mars</li><li id="Q_32_3"><input type="radio" id="Q_32_3_Btn" onclick="CheckMCAnswer(32,3,this)">Venus</li></ol></li>
+<li class="QuizQuestion" id="Q_33" style="display: none;"><div class="QuestionText">Saturn is the second largest planet in our solar system. Why is it famous for?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_33_0"><input type="radio" id="Q_33_0_Btn" onclick="CheckMCAnswer(33,0,this)">Beautiful rainbow</li><li id="Q_33_1"><input type="radio" id="Q_33_1_Btn" onclick="CheckMCAnswer(33,1,this)">Beautiful ring</li><li id="Q_33_2"><input type="radio" id="Q_33_2_Btn" onclick="CheckMCAnswer(33,2,this)">Water</li><li id="Q_33_3"><input type="radio" id="Q_33_3_Btn" onclick="CheckMCAnswer(33,3,this)">Diamonds</li></ol></li>
+<li class="QuizQuestion" id="Q_34" style="display: none;"><div class="QuestionText">What do we call scientists who focus on observations of the skies?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_34_0"><input type="radio" id="Q_34_0_Btn" onclick="CheckMCAnswer(34,0,this)">Astronauts</li><li id="Q_34_1"><input type="radio" id="Q_34_1_Btn" onclick="CheckMCAnswer(34,1,this)">Astronomers</li><li id="Q_34_2"><input type="radio" id="Q_34_2_Btn" onclick="CheckMCAnswer(34,2,this)">Physicists</li><li id="Q_34_3"><input type="radio" id="Q_34_3_Btn" onclick="CheckMCAnswer(34,3,this)">Mathematicians</li></ol></li>
+<li class="QuizQuestion" id="Q_35" style="display: none;"><div class="QuestionText">What is the highest mountain on Mars?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_35_0"><input type="radio" id="Q_35_0_Btn" onclick="CheckMCAnswer(35,0,this)">Olympus Mons</li><li id="Q_35_1"><input type="radio" id="Q_35_1_Btn" onclick="CheckMCAnswer(35,1,this)">Ascraeus Mons</li><li id="Q_35_2"><input type="radio" id="Q_35_2_Btn" onclick="CheckMCAnswer(35,2,this)">Mons Ardeshir</li><li id="Q_35_3"><input type="radio" id="Q_35_3_Btn" onclick="CheckMCAnswer(35,3,this)">Mons Blanc</li></ol></li>
+<li class="QuizQuestion" id="Q_36" style="display: none;"><div class="QuestionText"> Which one of these is the brightest nebula in the sky?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_36_0"><input type="radio" id="Q_36_0_Btn" onclick="CheckMCAnswer(36,0,this)">Eagle Nebula</li><li id="Q_36_1"><input type="radio" id="Q_36_1_Btn" onclick="CheckMCAnswer(36,1,this)">Eta Carinae Nebula</li><li id="Q_36_2"><input type="radio" id="Q_36_2_Btn" onclick="CheckMCAnswer(36,2,this)">Orion Nebula</li><li id="Q_36_3"><input type="radio" id="Q_36_3_Btn" onclick="CheckMCAnswer(36,3,this)">Dumbbell Nebula</li></ol></li>
+<li class="QuizQuestion" id="Q_37" style="display: none;"><div class="QuestionText">Which one is the The Great Red Spot of Jupiter?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_37_0"><input type="radio" id="Q_37_0_Btn" onclick="CheckMCAnswer(37,0,this)"><img src="redspot.jpeg" width="100" height="100"/></li><li id="Q_37_1"><input type="radio" id="Q_37_1_Btn" onclick="CheckMCAnswer(37,1,this)"><img src="saturn_hexagon.webp" width="100" height="100"/></li><li id="Q_37_2"><input type="radio" id="Q_37_2_Btn" onclick="CheckMCAnswer(37,2,this)"><img src="io.jpg" width="100" height="100"/></li><li id="Q_37_3"><input type="radio" id="Q_37_3_Btn" onclick="CheckMCAnswer(37,3,this)"><img src="olympus.webp" width="100" height="100"/></li></ol></li>
+<li class="QuizQuestion" id="Q_38" style="display: none;"><div class="QuestionText">Astrophysicists sometimes study the temperature of stars. Which of these stars would be the hottest?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_38_0"><input type="radio" id="Q_38_0_Btn" onclick="CheckMCAnswer(38,0,this)">Red</li><li id="Q_38_1"><input type="radio" id="Q_38_1_Btn" onclick="CheckMCAnswer(38,1,this)">Yellow</li><li id="Q_38_2"><input type="radio" id="Q_38_2_Btn" onclick="CheckMCAnswer(38,2,this)">Blue</li><li id="Q_38_3"><input type="radio" id="Q_38_3_Btn" onclick="CheckMCAnswer(38,3,this)">White</li></ol></li>
+<li class="QuizQuestion" id="Q_39" style="display: none;"><div class="QuestionText">What is a nebula?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_39_0"><input type="radio" id="Q_39_0_Btn" onclick="CheckMCAnswer(39,0,this)">A cloud of gas and dust</li><li id="Q_39_1"><input type="radio" id="Q_39_1_Btn" onclick="CheckMCAnswer(39,1,this)">Collection of planets</li><li id="Q_39_2"><input type="radio" id="Q_39_2_Btn" onclick="CheckMCAnswer(39,2,this)">A cloud of water and methene ice</li><li id="Q_39_3"><input type="radio" id="Q_39_3_Btn" onclick="CheckMCAnswer(39,3,this)">Collection of Stars</li></ol></li>
+<li class="QuizQuestion" id="Q_40" style="display: none;"><div class="QuestionText">For how many days of the year in Pune the Sun is exactly overhead casting no shadows?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_40_0"><input type="radio" id="Q_40_0_Btn" onclick="CheckMCAnswer(40,0,this)">2 days</li><li id="Q_40_1"><input type="radio" id="Q_40_1_Btn" onclick="CheckMCAnswer(40,1,this)">7 days</li><li id="Q_40_2"><input type="radio" id="Q_40_2_Btn" onclick="CheckMCAnswer(40,2,this)">1 day</li><li id="Q_40_3"><input type="radio" id="Q_40_3_Btn" onclick="CheckMCAnswer(40,3,this)">3 days</li></ol></li>
+<li class="QuizQuestion" id="Q_41" style="display: none;"><div class="QuestionText">On which planet humans can never land because there is no land surface?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_41_0"><input type="radio" id="Q_41_0_Btn" onclick="CheckMCAnswer(41,0,this)">Mars</li><li id="Q_41_1"><input type="radio" id="Q_41_1_Btn" onclick="CheckMCAnswer(41,1,this)">Jupiter</li><li id="Q_41_2"><input type="radio" id="Q_41_2_Btn" onclick="CheckMCAnswer(41,2,this)">Mercury</li><li id="Q_41_3"><input type="radio" id="Q_41_3_Btn" onclick="CheckMCAnswer(41,3,this)">Venus</li></ol></li>
+<li class="QuizQuestion" id="Q_42" style="display: none;"><div class="QuestionText">What is the maximum number of earth you can fit inside a sun?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_42_0"><input type="radio" id="Q_42_0_Btn" onclick="CheckMCAnswer(42,0,this)">10</li><li id="Q_42_1"><input type="radio" id="Q_42_1_Btn" onclick="CheckMCAnswer(42,1,this)">10 thousand</li><li id="Q_42_2"><input type="radio" id="Q_42_2_Btn" onclick="CheckMCAnswer(42,2,this)">1 million</li><li id="Q_42_3"><input type="radio" id="Q_42_3_Btn" onclick="CheckMCAnswer(42,3,this)">10 million</li></ol></li>
+<li class="QuizQuestion" id="Q_43" style="display: none;"><div class="QuestionText">If you put two prisms together and pass sunlight through it, in how many ways does the light gets split into?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_43_0"><input type="radio" id="Q_43_0_Btn" onclick="CheckMCAnswer(43,0,this)">0</li><li id="Q_43_1"><input type="radio" id="Q_43_1_Btn" onclick="CheckMCAnswer(43,1,this)">Not countable</li><li id="Q_43_2"><input type="radio" id="Q_43_2_Btn" onclick="CheckMCAnswer(43,2,this)">8</li><li id="Q_43_3"><input type="radio" id="Q_43_3_Btn" onclick="CheckMCAnswer(43,3,this)">14</li></ol></li>
+<li class="QuizQuestion" id="Q_44" style="display: none;"><div class="QuestionText">Does the moon rise on Amavasya (New Moon)?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_44_0"><input type="radio" id="Q_44_0_Btn" onclick="CheckMCAnswer(44,0,this)">Yes</li><li id="Q_44_1"><input type="radio" id="Q_44_1_Btn" onclick="CheckMCAnswer(44,1,this)">No</li></ol></li>
+<li class="QuizQuestion" id="Q_45" style="display: none;"><div class="QuestionText">Will you weigh the same in the Northern hemisphere and southern hemisphere?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_45_0"><input type="radio" id="Q_45_0_Btn" onclick="CheckMCAnswer(45,0,this)">Yes</li><li id="Q_45_1"><input type="radio" id="Q_45_1_Btn" onclick="CheckMCAnswer(45,1,this)">No</li></ol></li>
+<li class="QuizQuestion" id="Q_46" style="display: none;"><div class="QuestionText">Which spacecraft has gone outside the solar system?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_46_0"><input type="radio" id="Q_46_0_Btn" onclick="CheckMCAnswer(46,0,this)">Cassini</li><li id="Q_46_1"><input type="radio" id="Q_46_1_Btn" onclick="CheckMCAnswer(46,1,this)">Voyager</li><li id="Q_46_2"><input type="radio" id="Q_46_2_Btn" onclick="CheckMCAnswer(46,2,this)">Juno</li><li id="Q_46_3"><input type="radio" id="Q_46_3_Btn" onclick="CheckMCAnswer(46,3,this)">New Horizon</li></ol></li>
+<li class="QuizQuestion" id="Q_47" style="display: none;"><div class="QuestionText">Which spacecraft has landed on a comet?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_47_0"><input type="radio" id="Q_47_0_Btn" onclick="CheckMCAnswer(47,0,this)">Rosetta</li><li id="Q_47_1"><input type="radio" id="Q_47_1_Btn" onclick="CheckMCAnswer(47,1,this)">Cassini</li><li id="Q_47_2"><input type="radio" id="Q_47_2_Btn" onclick="CheckMCAnswer(47,2,this)">Juno</li><li id="Q_47_3"><input type="radio" id="Q_47_3_Btn" onclick="CheckMCAnswer(47,3,this)">New Horizon</li></ol></li>
+<li class="QuizQuestion" id="Q_48" style="display: none;"><div class="QuestionText">Which planet has the most moon?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_48_0"><input type="radio" id="Q_48_0_Btn" onclick="CheckMCAnswer(48,0,this)">Jupiter</li><li id="Q_48_1"><input type="radio" id="Q_48_1_Btn" onclick="CheckMCAnswer(48,1,this)">Saturn</li><li id="Q_48_2"><input type="radio" id="Q_48_2_Btn" onclick="CheckMCAnswer(48,2,this)">Uranus</li><li id="Q_48_3"><input type="radio" id="Q_48_3_Btn" onclick="CheckMCAnswer(48,3,this)">Neptune</li></ol></li>
+<li class="QuizQuestion" id="Q_49" style="display: none;"><div class="QuestionText">What is the biggest moon in the solar system?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_49_0"><input type="radio" id="Q_49_0_Btn" onclick="CheckMCAnswer(49,0,this)">Ganymede</li><li id="Q_49_1"><input type="radio" id="Q_49_1_Btn" onclick="CheckMCAnswer(49,1,this)">Io</li><li id="Q_49_2"><input type="radio" id="Q_49_2_Btn" onclick="CheckMCAnswer(49,2,this)">Juno</li><li id="Q_49_3"><input type="radio" id="Q_49_3_Btn" onclick="CheckMCAnswer(49,3,this)">Titan</li></ol></li></ol>
 
+</div>
 
 </div>
 
-</div>
 
 <div class="Feedback" id="FeedbackDiv">
 <div class="FeedbackText" id="FeedbackContent"></div>
 <button id="FeedbackOKButton" class="FuncButton" onclick="HideFeedback(); return false;">&#160;Continue&#160;</button>
 </div>
 </div>
+
+
 
 <div class="Instruct" id="InstructDiv">
 <div class="InstructText" id="InstructContent"></div>
@@ -2504,7 +2557,7 @@ function DownTime(){
 
 <div class="TimeOutback" id="TimeOutDiv">
 <div class="TimeOutText" id="TimeOutContent"></div>
-<button id="TimeOutButton" class="FuncButton" onclick="SubmitQuiz(); return false;">&#160;OK&#160;</button>
+<button id="TimeOutButton" class="FuncButton" onclick="HideFeedbackEnd(); return false;">&#160;OK&#160;</button>
 </div>
 </div>
 
@@ -2528,6 +2581,8 @@ function DownTime(){
         });
     });
 </script>
+
+
 <div id="Timer"><span id="TimerText" style="font-size:10mm"></span></div>
 
 <input type="submit" id="SubmitQuizButton" value="Submit" onclick="SubmitQuiz(); return false;" style="margin-left: 45vw; margin-right: 45vw; margin-bottom:4vmin; font-size:3vmin; width: fit-copntent; overflow: auto;"/>

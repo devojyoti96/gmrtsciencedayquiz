@@ -251,9 +251,9 @@ select{
 
 div.Feedback {
 	background-image: linear-gradient(to bottom right, #666699 11%, #ffffff 100%);
-	min-width: 97.5vw;
-	max-width: 100vw;
-	width: fit-content;
+	min-width: 98vw;
+	max-width: 98vw;
+	width: 98vw;
 	height: fit-content;
 	z-index: 1;
 	border-style: shadow;
@@ -267,12 +267,14 @@ div.Feedback {
 	display: none;
 	clear: both;
 	word-break: break-word;
+	white-space: break-space;
+	margin-right:1vw;
 }
 div.Instruct {
 	background-image: linear-gradient(to bottom right, #666699 11%, #ffffff 100%);
 	min-width: 97.5vw;
-	max-width: 90vw;
-	width: fit-content;
+	max-width: 99vw;
+	width:  fit-content;
 	height: fit-content;
 	z-index: 1;
 	border-style: shadow;
@@ -286,22 +288,29 @@ div.Instruct {
 	display: none;
 	clear: both;
 	white-space: break-spaces;
+	white-space: break-space;
 }
 
 div.TimeOutback{
-	background-color: var(--strPageBGColor);
-	left: 33%;
-	width: 34%;
-	top: 33%;
+	background-image: linear-gradient(to bottom right, #666699 11%, #ffffff 100%);
+	min-width: 98vw;
+	max-width: 98vw;
+	width: 98vw;
+	height: fit-content;
 	z-index: 1;
-	border-style: solid;
-	border-width: 1px;
-	padding: 5px;
+	border-style: shadow;
+	border-width: 0.1vw;
+	border-radius: 1%;
+	padding: 1%;
 	text-align: center;
 	color: var(--strTitleColor);
 	position: absolute;
+	justify-content: center;
 	display: none;
-	font-size: 1em;
+	clear: both;
+	word-break: break-word;
+	white-space: break-space;
+	margin-right:1vw;
 }
 
 
@@ -897,6 +906,28 @@ function ShowMessage(Feedback){
 //
 }
 
+var topZ1 = 1000;
+
+function ShowEndMessage(Feedback){
+	var Output = Feedback + '<br /><br />';
+	document.getElementById('TimeOutContent').innerHTML = Output;
+	var FDiv = document.getElementById('TimeOutDiv');
+	topZ1++;
+	FDiv.style.zIndex = topZ1;
+	FDiv.style.top = TopSettingWithScrollOffset(30) + 'px';
+	FDiv.style.display = 'block';
+	ShowElements(false, 'input');
+	ShowElements(false, 'select');
+	ShowElements(false, 'object');
+	//ShowElements(true, 'object', 'FeedbackContent');
+
+//Focus the OK button
+	//setTimeout("document.getElementById('FeedbackButton').focus()", 50);
+	
+//
+}
+
+
 function ShowInstructions(Feedback){
 	var Output = '<h1 style="font-size: 5vmin;"> Instructions</h1><h2 style="font-size: 3vmin">'+Feedback + '</h2>';
 	document.getElementById('InstructContent').innerHTML = Output;
@@ -954,6 +985,14 @@ function HideFeedback(){
 	ShowElements(true, 'select');
 	ShowElements(true, 'object');
 	ChangeQ(1)
+}
+
+function HideFeedbackEnd(){
+	document.getElementById('TimeOutDiv').style.display = 'none';
+	ShowElements(true, 'input');
+	ShowElements(true, 'select');
+	ShowElements(true, 'object');
+	//ChangeQ(1)
 }
 
 function HideInstruct(){
@@ -1684,8 +1723,10 @@ I[29][3][1]=new Array('Aditya-L1','The Aditya-1 mission was conceived as a 400kg
 I[29][3][2]=new Array('Mangalyaan','The Aditya-1 mission was conceived as a 400kg class satellite carrying several instruments to observe the Sun. It is expected to be launched this year.',0,0,1);
 I[29][3][3]=new Array('Chandrayaan-2','The Aditya-1 mission was conceived as a 400kg class satellite carrying several instruments to observe the Sun. It is expected to be launched this year.',0,0,1);
 
-function StartUp(){
 
+var I_copy = JSON.parse(JSON.stringify(I));
+function StartUp(){
+	closebyid('ShowtriviaButton');
 //If there's only one question, no need for question navigation controls
 	if (QsToShow < 2){
 		document.getElementById('QNav').style.display = 'none';
@@ -1788,6 +1829,12 @@ function CreateStatusArray(){
 			State[QNum] = null;
 		}
 	}
+}
+
+
+function showtriviaatend(QNum){
+	Feedback = I_copy[QNum][3][0][1];
+	ShowEndMessage(Feedback);
 }
 
 
@@ -2107,11 +2154,19 @@ function TimesUp(){
 }
 
 function closebyid(id){
-	var elem = document.getElementById(id);
-	elem.parentNode.removeChild(elem);
-	//if (typeof(elem) != 'undefined' && elem != null){
-		
-	//}
+	var a='[id='
+	var c=']'
+	id=a.concat(id)
+	id=id.concat(c)
+	$(id).hide();
+}
+
+function openbyid(id){
+	var a='[id='
+	var c=']'
+	id=a.concat(id)
+	id=id.concat(c)
+	$(id).show();
 }
 
 function disablebyid(id){
@@ -2166,7 +2221,7 @@ function SubmitQuiz(){
 			}
 		}
 	}
-
+	openbyid('ShowtriviaButton');
 	ShowHideQuestionsatEnd();
 	CheckFinished();
 	CompleteEmptyCheckBoxes();
@@ -2272,36 +2327,37 @@ function DownTime(){
 
 </div>
 <ol class="QuizQuestions" id="Questions">
-<li class="QuizQuestion" id="Q_0" style="display: none;"><div class="QuestionText">Which device is used to image the Sun?<br /></div><ol class="MCAnswers"><li id="Q_0_0"><input type="radio" id="Q_0_0_Btn" onclick="CheckMCAnswer(0,0,this)">Pinhole Camera</li><li id="Q_0_1"><input type="radio" id="Q_0_1_Btn" onclick="CheckMCAnswer(0,1,this)">Prisom</li><li id="Q_0_2"><input type="radio" id="Q_0_2_Btn" onclick="CheckMCAnswer(0,2,this)">Lens</li><li id="Q_0_3"><input type="radio" id="Q_0_3_Btn" onclick="CheckMCAnswer(0,3,this)">Glass Slab</li></ol></li>
-<li class="QuizQuestion" id="Q_1" style="display: none;"><div class="QuestionText">The shape of the earth is not a sphere exactly. It is bulging along</div><ol class="MCAnswers"><li id="Q_1_0"><input type="radio" id="Q_1_0_Btn" onclick="CheckMCAnswer(1,0,this)">Equator</li><li id="Q_1_1"><input type="radio" id="Q_1_1_Btn" onclick="CheckMCAnswer(1,1,this)">Pole</li><li id="Q_1_2"><input type="radio" id="Q_1_2_Btn" onclick="CheckMCAnswer(1,2,this)">Marina Trench</li><li id="Q_1_3"><input type="radio" id="Q_1_3_Btn" onclick="CheckMCAnswer(1,3,this)">The Everest</li></ol></li>
-<li class="QuizQuestion" id="Q_2" style="display: none;"><div class="QuestionText">National science day is celebrated to commemorate the discovery of</div><ol class="MCAnswers"><li id="Q_2_0"><input type="radio" id="Q_2_0_Btn" onclick="CheckMCAnswer(2,0,this)">Raman Effect</li><li id="Q_2_1"><input type="radio" id="Q_2_1_Btn" onclick="CheckMCAnswer(2,1,this)">Doppler Effect</li><li id="Q_2_2"><input type="radio" id="Q_2_2_Btn" onclick="CheckMCAnswer(2,2,this)">Saha Ionization</li><li id="Q_2_3"><input type="radio" id="Q_2_3_Btn" onclick="CheckMCAnswer(2,3,this)">Bose Condensation</li></ol></li>
-<li class="QuizQuestion" id="Q_3" style="display: none;"><div class="QuestionText">The planet which has no moon is<br /></div><ol class="MCAnswers"><li id="Q_3_0"><input type="radio" id="Q_3_0_Btn" onclick="CheckMCAnswer(3,0,this)">Mercury</li><li id="Q_3_1"><input type="radio" id="Q_3_1_Btn" onclick="CheckMCAnswer(3,1,this)">Earth</li><li id="Q_3_2"><input type="radio" id="Q_3_2_Btn" onclick="CheckMCAnswer(3,2,this)">Jupiter</li><li id="Q_3_3"><input type="radio" id="Q_3_3_Btn" onclick="CheckMCAnswer(3,3,this)">Mars</li></ol></li>
-<li class="QuizQuestion" id="Q_4" style="display: none;"><div class="QuestionText">What is the Kuiper belt and where is it found?<br /></div><ol class="MCAnswers"><li id="Q_4_0"><input type="radio" id="Q_4_0_Btn" onclick="CheckMCAnswer(4,0,this)">Chunk of rocky objects, between the orbit of Mars and Jupiter</li><li id="Q_4_1"><input type="radio" id="Q_4_1_Btn" onclick="CheckMCAnswer(4,1,this)">Ring of icy objects, beyond the orbit of Neptune</li><li id="Q_4_2"><input type="radio" id="Q_4_2_Btn" onclick="CheckMCAnswer(4,2,this)">Ring of icy objects, between the orbit of Mars and Jupiter</li><li id="Q_4_3"><input type="radio" id="Q_4_3_Btn" onclick="CheckMCAnswer(4,3,this)">Chunk of rocky objects, beyond the orbit of Neptune</li></ol></li>
-<li class="QuizQuestion" id="Q_5" style="display: none;"><div class="QuestionText">First human being to travel into space is<br /></div><ol class="MCAnswers"><li id="Q_5_0"><input type="radio" id="Q_5_0_Btn" onclick="CheckMCAnswer(5,0,this)">Neil Armstrong</li><li id="Q_5_1"><input type="radio" id="Q_5_1_Btn" onclick="CheckMCAnswer(5,1,this)">John Glenn</li><li id="Q_5_2"><input type="radio" id="Q_5_2_Btn" onclick="CheckMCAnswer(5,2,this)">Yuri gagarin</li><li id="Q_5_3"><input type="radio" id="Q_5_3_Btn" onclick="CheckMCAnswer(5,3,this)">Kalpana Chawla</li></ol></li>
-<li class="QuizQuestion" id="Q_6" style="display: none;"><div class="QuestionText">When does the Vernal Equinox happen?</div><ol class="MCAnswers"><li id="Q_6_0"><input type="radio" id="Q_6_0_Btn" onclick="CheckMCAnswer(6,0,this)">March 21</li><li id="Q_6_1"><input type="radio" id="Q_6_1_Btn" onclick="CheckMCAnswer(6,1,this)">December 21</li><li id="Q_6_2"><input type="radio" id="Q_6_2_Btn" onclick="CheckMCAnswer(6,2,this)">June 21</li><li id="Q_6_3"><input type="radio" id="Q_6_3_Btn" onclick="CheckMCAnswer(6,3,this)">September 23</li></ol></li>
-<li class="QuizQuestion" id="Q_7" style="display: none;"><div class="QuestionText">The pole star is in the constellation of<br /></div><ol class="MCAnswers"><li id="Q_7_0"><input type="radio" id="Q_7_0_Btn" onclick="CheckMCAnswer(7,0,this)">Ursa major</li><li id="Q_7_1"><input type="radio" id="Q_7_1_Btn" onclick="CheckMCAnswer(7,1,this)">Orion</li><li id="Q_7_2"><input type="radio" id="Q_7_2_Btn" onclick="CheckMCAnswer(7,2,this)">Ursa minor</li><li id="Q_7_3"><input type="radio" id="Q_7_3_Btn" onclick="CheckMCAnswer(7,3,this)">Scorpius</li></ol></li>
-<li class="QuizQuestion" id="Q_8" style="display: none;"><div class="QuestionText">Lightyear is the unit of<br /></div><ol class="MCAnswers"><li id="Q_8_0"><input type="radio" id="Q_8_0_Btn" onclick="CheckMCAnswer(8,0,this)">Density</li><li id="Q_8_1"><input type="radio" id="Q_8_1_Btn" onclick="CheckMCAnswer(8,1,this)">Length</li><li id="Q_8_2"><input type="radio" id="Q_8_2_Btn" onclick="CheckMCAnswer(8,2,this)">Mass</li><li id="Q_8_3"><input type="radio" id="Q_8_3_Btn" onclick="CheckMCAnswer(8,3,this)">Time</li></ol></li>
-<li class="QuizQuestion" id="Q_9" style="display: none;"><div class="QuestionText">Solar eclipse can take place in which phase of moon</div><ol class="MCAnswers"><li id="Q_9_0"><input type="radio" id="Q_9_0_Btn" onclick="CheckMCAnswer(9,0,this)">Full moon</li><li id="Q_9_1"><input type="radio" id="Q_9_1_Btn" onclick="CheckMCAnswer(9,1,this)">New moon</li><li id="Q_9_2"><input type="radio" id="Q_9_2_Btn" onclick="CheckMCAnswer(9,2,this)">Crescent</li><li id="Q_9_3"><input type="radio" id="Q_9_3_Btn" onclick="CheckMCAnswer(9,3,this)">First quarter</li></ol></li>
-<li class="QuizQuestion" id="Q_10" style="display: none;"><div class="QuestionText">What is the shape of our galaxy?</div><ol class="MCAnswers"><li id="Q_10_0"><input type="radio" id="Q_10_0_Btn" onclick="CheckMCAnswer(10,0,this)">Circular</li><li id="Q_10_1"><input type="radio" id="Q_10_1_Btn" onclick="CheckMCAnswer(10,1,this)">Rectangular</li><li id="Q_10_2"><input type="radio" id="Q_10_2_Btn" onclick="CheckMCAnswer(10,2,this)">Spiral</li><li id="Q_10_3"><input type="radio" id="Q_10_3_Btn" onclick="CheckMCAnswer(10,3,this)">Triangular</li></ol></li>
-<li class="QuizQuestion" id="Q_11" style="display: none;"><div class="QuestionText">What do you call a system where two stars are close enough to each other to significantly affect each other's orbits?</div><ol class="MCAnswers"><li id="Q_11_0"><input type="radio" id="Q_11_0_Btn" onclick="CheckMCAnswer(11,0,this)">Binary Star</li><li id="Q_11_1"><input type="radio" id="Q_11_1_Btn" onclick="CheckMCAnswer(11,1,this)">Sister Star</li><li id="Q_11_2"><input type="radio" id="Q_11_2_Btn" onclick="CheckMCAnswer(11,2,this)">Tertiary Star</li><li id="Q_11_3"><input type="radio" id="Q_11_3_Btn" onclick="CheckMCAnswer(11,3,this)">Cousin Star</li></ol></li>
-<li class="QuizQuestion" id="Q_12" style="display: none;"><div class="QuestionText">How many star constellations does the sun seem to pass through in year?</div><ol class="MCAnswers"><li id="Q_12_0"><input type="radio" id="Q_12_0_Btn" onclick="CheckMCAnswer(12,0,this)">1</li><li id="Q_12_1"><input type="radio" id="Q_12_1_Btn" onclick="CheckMCAnswer(12,1,this)">13</li><li id="Q_12_2"><input type="radio" id="Q_12_2_Btn" onclick="CheckMCAnswer(12,2,this)">30</li><li id="Q_12_3"><input type="radio" id="Q_12_3_Btn" onclick="CheckMCAnswer(12,3,this)">23</li></ol></li>
-<li class="QuizQuestion" id="Q_13" style="display: none;"><div class="QuestionText">Which of these chemical elements is the most abundant in the<br />sun?</div><ol class="MCAnswers"><li id="Q_13_0"><input type="radio" id="Q_13_0_Btn" onclick="CheckMCAnswer(13,0,this)">Hydrogen</li><li id="Q_13_1"><input type="radio" id="Q_13_1_Btn" onclick="CheckMCAnswer(13,1,this)">Nitrogen</li><li id="Q_13_2"><input type="radio" id="Q_13_2_Btn" onclick="CheckMCAnswer(13,2,this)">Helium</li><li id="Q_13_3"><input type="radio" id="Q_13_3_Btn" onclick="CheckMCAnswer(13,3,this)">Carbon</li></ol></li>
-<li class="QuizQuestion" id="Q_14" style="display: none;"><div class="QuestionText">What is the name of the first satellite sent into space?</div><ol class="MCAnswers"><li id="Q_14_0"><input type="radio" id="Q_14_0_Btn" onclick="CheckMCAnswer(14,0,this)">Sputnik 1</li><li id="Q_14_1"><input type="radio" id="Q_14_1_Btn" onclick="CheckMCAnswer(14,1,this)">Voyager 1</li><li id="Q_14_2"><input type="radio" id="Q_14_2_Btn" onclick="CheckMCAnswer(14,2,this)">Apollo 11</li><li id="Q_14_3"><input type="radio" id="Q_14_3_Btn" onclick="CheckMCAnswer(14,3,this)">Soyuz</li></ol></li>
-<li class="QuizQuestion" id="Q_15" style="display: none;"><div class="QuestionText">If there were no atmosphere, what would be the color of sky?</div><ol class="MCAnswers"><li id="Q_15_0"><input type="radio" id="Q_15_0_Btn" onclick="CheckMCAnswer(15,0,this)">Black</li><li id="Q_15_1"><input type="radio" id="Q_15_1_Btn" onclick="CheckMCAnswer(15,1,this)">Sky Blue</li><li id="Q_15_2"><input type="radio" id="Q_15_2_Btn" onclick="CheckMCAnswer(15,2,this)">Yellow</li><li id="Q_15_3"><input type="radio" id="Q_15_3_Btn" onclick="CheckMCAnswer(15,3,this)">White</li></ol></li>
-<li class="QuizQuestion" id="Q_16" style="display: none;"><div class="QuestionText">Which is the 13th zodiac constellation?</div><ol class="MCAnswers"><li id="Q_16_0"><input type="radio" id="Q_16_0_Btn" onclick="CheckMCAnswer(16,0,this)">Aquarius</li><li id="Q_16_1"><input type="radio" id="Q_16_1_Btn" onclick="CheckMCAnswer(16,1,this)">Orion</li><li id="Q_16_2"><input type="radio" id="Q_16_2_Btn" onclick="CheckMCAnswer(16,2,this)">Cepheus</li><li id="Q_16_3"><input type="radio" id="Q_16_3_Btn" onclick="CheckMCAnswer(16,3,this)">Ophiuchus</li></ol></li>
-<li class="QuizQuestion" id="Q_17" style="display: none;"><div class="QuestionText">Where does the sun&#x2019;s black body spectrum peak? </div><ol class="MCAnswers"><li id="Q_17_0"><input type="radio" id="Q_17_0_Btn" onclick="CheckMCAnswer(17,0,this)">Yellow</li><li id="Q_17_1"><input type="radio" id="Q_17_1_Btn" onclick="CheckMCAnswer(17,1,this)">Blue</li><li id="Q_17_2"><input type="radio" id="Q_17_2_Btn" onclick="CheckMCAnswer(17,2,this)">Red</li><li id="Q_17_3"><input type="radio" id="Q_17_3_Btn" onclick="CheckMCAnswer(17,3,this)">Orange</li></ol></li>
-<li class="QuizQuestion" id="Q_18" style="display: none;"><div class="QuestionText">Astronomers recently imaged a black hole of the M87 galaxy. This galaxy is a type of:</div><ol class="MCAnswers"><li id="Q_18_0"><input type="radio" id="Q_18_0_Btn" onclick="CheckMCAnswer(18,0,this)">Spiral galaxy</li><li id="Q_18_1"><input type="radio" id="Q_18_1_Btn" onclick="CheckMCAnswer(18,1,this)">Elliptical galaxy</li><li id="Q_18_2"><input type="radio" id="Q_18_2_Btn" onclick="CheckMCAnswer(18,2,this)">Barred spiral galaxy</li><li id="Q_18_3"><input type="radio" id="Q_18_3_Btn" onclick="CheckMCAnswer(18,3,this)">Lenticular galaxy</li></ol></li>
-<li class="QuizQuestion" id="Q_19" style="display: none;"><div class="QuestionText">Which one among these is a facility to detect gravitational waves?</div><ol class="MCAnswers"><li id="Q_19_0"><input type="radio" id="Q_19_0_Btn" onclick="CheckMCAnswer(19,0,this)">LIGO</li><li id="Q_19_1"><input type="radio" id="Q_19_1_Btn" onclick="CheckMCAnswer(19,1,this)">INO</li><li id="Q_19_2"><input type="radio" id="Q_19_2_Btn" onclick="CheckMCAnswer(19,2,this)">ASTROSAT</li><li id="Q_19_3"><input type="radio" id="Q_19_3_Btn" onclick="CheckMCAnswer(19,3,this)">HST</li></ol></li>
-<li class="QuizQuestion" id="Q_20" style="display: none;"><div class="QuestionText">The first stars that were born in the universe </div><ol class="MCAnswers"><li id="Q_20_0"><input type="radio" id="Q_20_0_Btn" onclick="CheckMCAnswer(20,0,this)">Population III star</li><li id="Q_20_1"><input type="radio" id="Q_20_1_Btn" onclick="CheckMCAnswer(20,1,this)">Population I star</li><li id="Q_20_2"><input type="radio" id="Q_20_2_Btn" onclick="CheckMCAnswer(20,2,this)">Population II star</li><li id="Q_20_3"><input type="radio" id="Q_20_3_Btn" onclick="CheckMCAnswer(20,3,this)">Magnetic star</li></ol></li>
-<li class="QuizQuestion" id="Q_21" style="display: none;"><div class="QuestionText">A galaxy is made of </div><ol class="MCAnswers"><li id="Q_21_0"><input type="radio" id="Q_21_0_Btn" onclick="CheckMCAnswer(21,0,this)">Stars</li><li id="Q_21_1"><input type="radio" id="Q_21_1_Btn" onclick="CheckMCAnswer(21,1,this)">Dust</li><li id="Q_21_2"><input type="radio" id="Q_21_2_Btn" onclick="CheckMCAnswer(21,2,this)">Stellar remnants</li><li id="Q_21_3"><input type="radio" id="Q_21_3_Btn" onclick="CheckMCAnswer(21,3,this)">All of these</li></ol></li>
-<li class="QuizQuestion" id="Q_22" style="display: none;"><div class="QuestionText">A famous paradox, &#x201C;the night sky is dark&#x201D;. What is the name of this?</div><ol class="MCAnswers"><li id="Q_22_0"><input type="radio" id="Q_22_0_Btn" onclick="CheckMCAnswer(22,0,this)">Red sky paradox</li><li id="Q_22_1"><input type="radio" id="Q_22_1_Btn" onclick="CheckMCAnswer(22,1,this)">Olbers paradox</li><li id="Q_22_2"><input type="radio" id="Q_22_2_Btn" onclick="CheckMCAnswer(22,2,this)">Twin paradox</li><li id="Q_22_3"><input type="radio" id="Q_22_3_Btn" onclick="CheckMCAnswer(22,3,this)">The infinity paradox</li></ol></li>
-<li class="QuizQuestion" id="Q_23" style="display: none;"><div class="QuestionText">Write the name of the galaxy supercluster that was discovered by Indian astronomers ?</div><ol class="MCAnswers"><li id="Q_23_0"><input type="radio" id="Q_23_0_Btn" onclick="CheckMCAnswer(23,0,this)">Dhruva Supercluster</li><li id="Q_23_1"><input type="radio" id="Q_23_1_Btn" onclick="CheckMCAnswer(23,1,this)">Kaveri Supercluster</li><li id="Q_23_2"><input type="radio" id="Q_23_2_Btn" onclick="CheckMCAnswer(23,2,this)">Saraswati Supercluster</li><li id="Q_23_3"><input type="radio" id="Q_23_3_Btn" onclick="CheckMCAnswer(23,3,this)">Bibha Supercluster</li></ol></li>
-<li class="QuizQuestion" id="Q_24" style="display: none;"><div class="QuestionText">Vera Rubin looked at the rotation curve of many galaxies and then hinted about the existence of</div><ol class="MCAnswers"><li id="Q_24_0"><input type="radio" id="Q_24_0_Btn" onclick="CheckMCAnswer(24,0,this)">Dark matter</li><li id="Q_24_1"><input type="radio" id="Q_24_1_Btn" onclick="CheckMCAnswer(24,1,this)">Black hole</li><li id="Q_24_2"><input type="radio" id="Q_24_2_Btn" onclick="CheckMCAnswer(24,2,this)">Dark enerygy</li><li id="Q_24_3"><input type="radio" id="Q_24_3_Btn" onclick="CheckMCAnswer(24,3,this)">Cosmic Microwave Background</li></ol></li>
-<li class="QuizQuestion" id="Q_25" style="display: none;"><div class="QuestionText">What is the India's first space astronomy observatory?</div><ol class="MCAnswers"><li id="Q_25_0"><input type="radio" id="Q_25_0_Btn" onclick="CheckMCAnswer(25,0,this)">Chandrayaan 1</li><li id="Q_25_1"><input type="radio" id="Q_25_1_Btn" onclick="CheckMCAnswer(25,1,this)">Mangalyaan</li><li id="Q_25_2"><input type="radio" id="Q_25_2_Btn" onclick="CheckMCAnswer(25,2,this)">AstroSat</li><li id="Q_25_3"><input type="radio" id="Q_25_3_Btn" onclick="CheckMCAnswer(25,3,this)">Aryabhatta</li></ol></li>
-<li class="QuizQuestion" id="Q_26" style="display: none;"><div class="QuestionText">Who is the father of Indian radio astronomy?</div><ol class="MCAnswers"><li id="Q_26_0"><input type="radio" id="Q_26_0_Btn" onclick="CheckMCAnswer(26,0,this)">Vikram Saravai</li><li id="Q_26_1"><input type="radio" id="Q_26_1_Btn" onclick="CheckMCAnswer(26,1,this)">Govind Swarup</li><li id="Q_26_2"><input type="radio" id="Q_26_2_Btn" onclick="CheckMCAnswer(26,2,this)">Homi Bhaba</li><li id="Q_26_3"><input type="radio" id="Q_26_3_Btn" onclick="CheckMCAnswer(26,3,this)">S. Chandrasekhar</li></ol></li>
-<li class="QuizQuestion" id="Q_27" style="display: none;"><div class="QuestionText">Which space telescope has launched recently to look the very early universe?</div><ol class="MCAnswers"><li id="Q_27_0"><input type="radio" id="Q_27_0_Btn" onclick="CheckMCAnswer(27,0,this)">Hubble Space Telescope</li><li id="Q_27_1"><input type="radio" id="Q_27_1_Btn" onclick="CheckMCAnswer(27,1,this)">Aditya-L1</li><li id="Q_27_2"><input type="radio" id="Q_27_2_Btn" onclick="CheckMCAnswer(27,2,this)">AstroSat</li><li id="Q_27_3"><input type="radio" id="Q_27_3_Btn" onclick="CheckMCAnswer(27,3,this)">James Webb Space Telescope</li></ol></li>
-<li class="QuizQuestion" id="Q_28" style="display: none;"><div class="QuestionText">What is an exoplanet?</div><ol class="MCAnswers"><li id="Q_28_0"><input type="radio" id="Q_28_0_Btn" onclick="CheckMCAnswer(28,0,this)">Planet similar to Earth</li><li id="Q_28_1"><input type="radio" id="Q_28_1_Btn" onclick="CheckMCAnswer(28,1,this)">Planet outside solar system</li><li id="Q_28_2"><input type="radio" id="Q_28_2_Btn" onclick="CheckMCAnswer(28,2,this)">Planet smaller than Earth</li><li id="Q_28_3"><input type="radio" id="Q_28_3_Btn" onclick="CheckMCAnswer(28,3,this)">Extremely large planet</li></ol></li>
-<li class="QuizQuestion" id="Q_29" style="display: none;"><div class="QuestionText">Which is going to be India's first space based solar observatory?</div><ol class="MCAnswers"><li id="Q_29_0"><input type="radio" id="Q_29_0_Btn" onclick="CheckMCAnswer(29,0,this)">AstroSat</li><li id="Q_29_1"><input type="radio" id="Q_29_1_Btn" onclick="CheckMCAnswer(29,1,this)">Aditya-L1</li><li id="Q_29_2"><input type="radio" id="Q_29_2_Btn" onclick="CheckMCAnswer(29,2,this)">Mangalyaan</li><li id="Q_29_3"><input type="radio" id="Q_29_3_Btn" onclick="CheckMCAnswer(29,3,this)">Chandrayaan-2</li></ol></li></ol>
+<li class="QuizQuestion" id="Q_0" style="display: none;"><div class="QuestionText">Which device is used to image the Sun?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(0); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_0_0"><input type="radio" id="Q_0_0_Btn" onclick="CheckMCAnswer(0,0,this)">Pinhole Camera</li><li id="Q_0_1"><input type="radio" id="Q_0_1_Btn" onclick="CheckMCAnswer(0,1,this)">Prisom</li><li id="Q_0_2"><input type="radio" id="Q_0_2_Btn" onclick="CheckMCAnswer(0,2,this)">Lens</li><li id="Q_0_3"><input type="radio" id="Q_0_3_Btn" onclick="CheckMCAnswer(0,3,this)">Glass Slab</li></ol></li>
+
+<li class="QuizQuestion" id="Q_1" style="display: none;"><div class="QuestionText">The shape of the earth is not a sphere exactly. It is bulging along?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(1); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_1_0"><input type="radio" id="Q_1_0_Btn" onclick="CheckMCAnswer(1,0,this)">Equator</li><li id="Q_1_1"><input type="radio" id="Q_1_1_Btn" onclick="CheckMCAnswer(1,1,this)">Pole</li><li id="Q_1_2"><input type="radio" id="Q_1_2_Btn" onclick="CheckMCAnswer(1,2,this)">Marina Trench</li><li id="Q_1_3"><input type="radio" id="Q_1_3_Btn" onclick="CheckMCAnswer(1,3,this)">The Everest</li></ol></li>
+<li class="QuizQuestion" id="Q_2" style="display: none;"><div class="QuestionText">National science day is celebrated to commemorate the discovery of?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(2); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_2_0"><input type="radio" id="Q_2_0_Btn" onclick="CheckMCAnswer(2,0,this)">Raman Effect</li><li id="Q_2_1"><input type="radio" id="Q_2_1_Btn" onclick="CheckMCAnswer(2,1,this)">Doppler Effect</li><li id="Q_2_2"><input type="radio" id="Q_2_2_Btn" onclick="CheckMCAnswer(2,2,this)">Saha Ionization</li><li id="Q_2_3"><input type="radio" id="Q_2_3_Btn" onclick="CheckMCAnswer(2,3,this)">Bose Condensation</li></ol></li>
+<li class="QuizQuestion" id="Q_3" style="display: none;"><div class="QuestionText">The planet which has no moon is?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(3); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_3_0"><input type="radio" id="Q_3_0_Btn" onclick="CheckMCAnswer(3,0,this)">Mercury</li><li id="Q_3_1"><input type="radio" id="Q_3_1_Btn" onclick="CheckMCAnswer(3,1,this)">Earth</li><li id="Q_3_2"><input type="radio" id="Q_3_2_Btn" onclick="CheckMCAnswer(3,2,this)">Jupiter</li><li id="Q_3_3"><input type="radio" id="Q_3_3_Btn" onclick="CheckMCAnswer(3,3,this)">Mars</li></ol></li>
+<li class="QuizQuestion" id="Q_4" style="display: none;"><div class="QuestionText">What is the Kuiper belt and where is it found?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(4); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_4_0"><input type="radio" id="Q_4_0_Btn" onclick="CheckMCAnswer(4,0,this)">Chunk of rocky objects, between the orbit of Mars and Jupiter</li><li id="Q_4_1"><input type="radio" id="Q_4_1_Btn" onclick="CheckMCAnswer(4,1,this)">Ring of icy objects, beyond the orbit of Neptune</li><li id="Q_4_2"><input type="radio" id="Q_4_2_Btn" onclick="CheckMCAnswer(4,2,this)">Ring of icy objects, between the orbit of Mars and Jupiter</li><li id="Q_4_3"><input type="radio" id="Q_4_3_Btn" onclick="CheckMCAnswer(4,3,this)">Chunk of rocky objects, beyond the orbit of Neptune</li></ol></li>
+<li class="QuizQuestion" id="Q_5" style="display: none;"><div class="QuestionText">First human being to travel into space is?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(5); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_5_0"><input type="radio" id="Q_5_0_Btn" onclick="CheckMCAnswer(5,0,this)">Neil Armstrong</li><li id="Q_5_1"><input type="radio" id="Q_5_1_Btn" onclick="CheckMCAnswer(5,1,this)">John Glenn</li><li id="Q_5_2"><input type="radio" id="Q_5_2_Btn" onclick="CheckMCAnswer(5,2,this)">Yuri gagarin</li><li id="Q_5_3"><input type="radio" id="Q_5_3_Btn" onclick="CheckMCAnswer(5,3,this)">Kalpana Chawla</li></ol></li>
+<li class="QuizQuestion" id="Q_6" style="display: none;"><div class="QuestionText">When does the Vernal Equinox happen?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(6); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_6_0"><input type="radio" id="Q_6_0_Btn" onclick="CheckMCAnswer(6,0,this)">March 21</li><li id="Q_6_1"><input type="radio" id="Q_6_1_Btn" onclick="CheckMCAnswer(6,1,this)">December 21</li><li id="Q_6_2"><input type="radio" id="Q_6_2_Btn" onclick="CheckMCAnswer(6,2,this)">June 21</li><li id="Q_6_3"><input type="radio" id="Q_6_3_Btn" onclick="CheckMCAnswer(6,3,this)">September 23</li></ol></li>
+<li class="QuizQuestion" id="Q_7" style="display: none;"><div class="QuestionText">The pole star is in the constellation of?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(7); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_7_0"><input type="radio" id="Q_7_0_Btn" onclick="CheckMCAnswer(7,0,this)">Ursa major</li><li id="Q_7_1"><input type="radio" id="Q_7_1_Btn" onclick="CheckMCAnswer(7,1,this)">Orion</li><li id="Q_7_2"><input type="radio" id="Q_7_2_Btn" onclick="CheckMCAnswer(7,2,this)">Ursa minor</li><li id="Q_7_3"><input type="radio" id="Q_7_3_Btn" onclick="CheckMCAnswer(7,3,this)">Scorpius</li></ol></li>
+<li class="QuizQuestion" id="Q_8" style="display: none;"><div class="QuestionText">Lightyear is the unit of?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(8); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_8_0"><input type="radio" id="Q_8_0_Btn" onclick="CheckMCAnswer(8,0,this)">Density</li><li id="Q_8_1"><input type="radio" id="Q_8_1_Btn" onclick="CheckMCAnswer(8,1,this)">Length</li><li id="Q_8_2"><input type="radio" id="Q_8_2_Btn" onclick="CheckMCAnswer(8,2,this)">Mass</li><li id="Q_8_3"><input type="radio" id="Q_8_3_Btn" onclick="CheckMCAnswer(8,3,this)">Time</li></ol></li>
+<li class="QuizQuestion" id="Q_9" style="display: none;"><div class="QuestionText">Solar eclipse can take place in which phase of moon?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(9); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_9_0"><input type="radio" id="Q_9_0_Btn" onclick="CheckMCAnswer(9,0,this)">Full moon</li><li id="Q_9_1"><input type="radio" id="Q_9_1_Btn" onclick="CheckMCAnswer(9,1,this)">New moon</li><li id="Q_9_2"><input type="radio" id="Q_9_2_Btn" onclick="CheckMCAnswer(9,2,this)">Crescent</li><li id="Q_9_3"><input type="radio" id="Q_9_3_Btn" onclick="CheckMCAnswer(9,3,this)">First quarter</li></ol></li>
+<li class="QuizQuestion" id="Q_10" style="display: none;"><div class="QuestionText">What is the shape of our galaxy?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(10); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_10_0"><input type="radio" id="Q_10_0_Btn" onclick="CheckMCAnswer(10,0,this)">Circular</li><li id="Q_10_1"><input type="radio" id="Q_10_1_Btn" onclick="CheckMCAnswer(10,1,this)">Rectangular</li><li id="Q_10_2"><input type="radio" id="Q_10_2_Btn" onclick="CheckMCAnswer(10,2,this)">Spiral</li><li id="Q_10_3"><input type="radio" id="Q_10_3_Btn" onclick="CheckMCAnswer(10,3,this)">Triangular</li></ol></li>
+<li class="QuizQuestion" id="Q_11" style="display: none;"><div class="QuestionText">What do you call a system where two stars are close enough to each other to significantly affect each other's orbits?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(11); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_11_0"><input type="radio" id="Q_11_0_Btn" onclick="CheckMCAnswer(11,0,this)">Binary Star</li><li id="Q_11_1"><input type="radio" id="Q_11_1_Btn" onclick="CheckMCAnswer(11,1,this)">Sister Star</li><li id="Q_11_2"><input type="radio" id="Q_11_2_Btn" onclick="CheckMCAnswer(11,2,this)">Tertiary Star</li><li id="Q_11_3"><input type="radio" id="Q_11_3_Btn" onclick="CheckMCAnswer(11,3,this)">Cousin Star</li></ol></li>
+<li class="QuizQuestion" id="Q_12" style="display: none;"><div class="QuestionText">How many star constellations does the sun seem to pass through in year?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(12); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_12_0"><input type="radio" id="Q_12_0_Btn" onclick="CheckMCAnswer(12,0,this)">1</li><li id="Q_12_1"><input type="radio" id="Q_12_1_Btn" onclick="CheckMCAnswer(12,1,this)">13</li><li id="Q_12_2"><input type="radio" id="Q_12_2_Btn" onclick="CheckMCAnswer(12,2,this)">30</li><li id="Q_12_3"><input type="radio" id="Q_12_3_Btn" onclick="CheckMCAnswer(12,3,this)">23</li></ol></li>
+<li class="QuizQuestion" id="Q_13" style="display: none;"><div class="QuestionText">Which of these chemical elements is the most abundant in the<br />sun?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(13); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_13_0"><input type="radio" id="Q_13_0_Btn" onclick="CheckMCAnswer(13,0,this)">Hydrogen</li><li id="Q_13_1"><input type="radio" id="Q_13_1_Btn" onclick="CheckMCAnswer(13,1,this)">Nitrogen</li><li id="Q_13_2"><input type="radio" id="Q_13_2_Btn" onclick="CheckMCAnswer(13,2,this)">Helium</li><li id="Q_13_3"><input type="radio" id="Q_13_3_Btn" onclick="CheckMCAnswer(13,3,this)">Carbon</li></ol></li>
+<li class="QuizQuestion" id="Q_14" style="display: none;"><div class="QuestionText">What is the name of the first satellite sent into space?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(14); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_14_0"><input type="radio" id="Q_14_0_Btn" onclick="CheckMCAnswer(14,0,this)">Sputnik 1</li><li id="Q_14_1"><input type="radio" id="Q_14_1_Btn" onclick="CheckMCAnswer(14,1,this)">Voyager 1</li><li id="Q_14_2"><input type="radio" id="Q_14_2_Btn" onclick="CheckMCAnswer(14,2,this)">Apollo 11</li><li id="Q_14_3"><input type="radio" id="Q_14_3_Btn" onclick="CheckMCAnswer(14,3,this)">Soyuz</li></ol></li>
+<li class="QuizQuestion" id="Q_15" style="display: none;"><div class="QuestionText">If there were no atmosphere, what would be the color of sky?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(15); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_15_0"><input type="radio" id="Q_15_0_Btn" onclick="CheckMCAnswer(15,0,this)">Black</li><li id="Q_15_1"><input type="radio" id="Q_15_1_Btn" onclick="CheckMCAnswer(15,1,this)">Sky Blue</li><li id="Q_15_2"><input type="radio" id="Q_15_2_Btn" onclick="CheckMCAnswer(15,2,this)">Yellow</li><li id="Q_15_3"><input type="radio" id="Q_15_3_Btn" onclick="CheckMCAnswer(15,3,this)">White</li></ol></li>
+<li class="QuizQuestion" id="Q_16" style="display: none;"><div class="QuestionText">Which is the 13th zodiac constellation?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(16); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_16_0"><input type="radio" id="Q_16_0_Btn" onclick="CheckMCAnswer(16,0,this)">Aquarius</li><li id="Q_16_1"><input type="radio" id="Q_16_1_Btn" onclick="CheckMCAnswer(16,1,this)">Orion</li><li id="Q_16_2"><input type="radio" id="Q_16_2_Btn" onclick="CheckMCAnswer(16,2,this)">Cepheus</li><li id="Q_16_3"><input type="radio" id="Q_16_3_Btn" onclick="CheckMCAnswer(16,3,this)">Ophiuchus</li></ol></li>
+<li class="QuizQuestion" id="Q_17" style="display: none;"><div class="QuestionText">Where does the sun&#x2019;s black body spectrum peak? ?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(17); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_17_0"><input type="radio" id="Q_17_0_Btn" onclick="CheckMCAnswer(17,0,this)">Yellow</li><li id="Q_17_1"><input type="radio" id="Q_17_1_Btn" onclick="CheckMCAnswer(17,1,this)">Blue</li><li id="Q_17_2"><input type="radio" id="Q_17_2_Btn" onclick="CheckMCAnswer(17,2,this)">Red</li><li id="Q_17_3"><input type="radio" id="Q_17_3_Btn" onclick="CheckMCAnswer(17,3,this)">Orange</li></ol></li>
+<li class="QuizQuestion" id="Q_18" style="display: none;"><div class="QuestionText">Astronomers recently imaged a black hole of the M87 galaxy. This galaxy is a type of:?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(18); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_18_0"><input type="radio" id="Q_18_0_Btn" onclick="CheckMCAnswer(18,0,this)">Spiral galaxy</li><li id="Q_18_1"><input type="radio" id="Q_18_1_Btn" onclick="CheckMCAnswer(18,1,this)">Elliptical galaxy</li><li id="Q_18_2"><input type="radio" id="Q_18_2_Btn" onclick="CheckMCAnswer(18,2,this)">Barred spiral galaxy</li><li id="Q_18_3"><input type="radio" id="Q_18_3_Btn" onclick="CheckMCAnswer(18,3,this)">Lenticular galaxy</li></ol></li>
+<li class="QuizQuestion" id="Q_19" style="display: none;"><div class="QuestionText">Which one among these is a facility to detect gravitational waves?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(19); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_19_0"><input type="radio" id="Q_19_0_Btn" onclick="CheckMCAnswer(19,0,this)">LIGO</li><li id="Q_19_1"><input type="radio" id="Q_19_1_Btn" onclick="CheckMCAnswer(19,1,this)">INO</li><li id="Q_19_2"><input type="radio" id="Q_19_2_Btn" onclick="CheckMCAnswer(19,2,this)">ASTROSAT</li><li id="Q_19_3"><input type="radio" id="Q_19_3_Btn" onclick="CheckMCAnswer(19,3,this)">HST</li></ol></li>
+<li class="QuizQuestion" id="Q_20" style="display: none;"><div class="QuestionText">The first stars that were born in the universe ?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(20); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_20_0"><input type="radio" id="Q_20_0_Btn" onclick="CheckMCAnswer(20,0,this)">Population III star</li><li id="Q_20_1"><input type="radio" id="Q_20_1_Btn" onclick="CheckMCAnswer(20,1,this)">Population I star</li><li id="Q_20_2"><input type="radio" id="Q_20_2_Btn" onclick="CheckMCAnswer(20,2,this)">Population II star</li><li id="Q_20_3"><input type="radio" id="Q_20_3_Btn" onclick="CheckMCAnswer(20,3,this)">Magnetic star</li></ol></li>
+<li class="QuizQuestion" id="Q_21" style="display: none;"><div class="QuestionText">A galaxy is made of ?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(21); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_21_0"><input type="radio" id="Q_21_0_Btn" onclick="CheckMCAnswer(21,0,this)">Stars</li><li id="Q_21_1"><input type="radio" id="Q_21_1_Btn" onclick="CheckMCAnswer(21,1,this)">Dust</li><li id="Q_21_2"><input type="radio" id="Q_21_2_Btn" onclick="CheckMCAnswer(21,2,this)">Stellar remnants</li><li id="Q_21_3"><input type="radio" id="Q_21_3_Btn" onclick="CheckMCAnswer(21,3,this)">All of these</li></ol></li>
+<li class="QuizQuestion" id="Q_22" style="display: none;"><div class="QuestionText">A famous paradox, &#x201C;the night sky is dark&#x201D;. What is the name of this?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(22); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_22_0"><input type="radio" id="Q_22_0_Btn" onclick="CheckMCAnswer(22,0,this)">Red sky paradox</li><li id="Q_22_1"><input type="radio" id="Q_22_1_Btn" onclick="CheckMCAnswer(22,1,this)">Olbers paradox</li><li id="Q_22_2"><input type="radio" id="Q_22_2_Btn" onclick="CheckMCAnswer(22,2,this)">Twin paradox</li><li id="Q_22_3"><input type="radio" id="Q_22_3_Btn" onclick="CheckMCAnswer(22,3,this)">The infinity paradox</li></ol></li>
+<li class="QuizQuestion" id="Q_23" style="display: none;"><div class="QuestionText">Write the name of the galaxy supercluster that was discovered by Indian astronomers ?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(23); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_23_0"><input type="radio" id="Q_23_0_Btn" onclick="CheckMCAnswer(23,0,this)">Dhruva Supercluster</li><li id="Q_23_1"><input type="radio" id="Q_23_1_Btn" onclick="CheckMCAnswer(23,1,this)">Kaveri Supercluster</li><li id="Q_23_2"><input type="radio" id="Q_23_2_Btn" onclick="CheckMCAnswer(23,2,this)">Saraswati Supercluster</li><li id="Q_23_3"><input type="radio" id="Q_23_3_Btn" onclick="CheckMCAnswer(23,3,this)">Bibha Supercluster</li></ol></li>
+<li class="QuizQuestion" id="Q_24" style="display: none;"><div class="QuestionText">Vera Rubin looked at the rotation curve of many galaxies and then hinted about the existence of?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(24); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_24_0"><input type="radio" id="Q_24_0_Btn" onclick="CheckMCAnswer(24,0,this)">Dark matter</li><li id="Q_24_1"><input type="radio" id="Q_24_1_Btn" onclick="CheckMCAnswer(24,1,this)">Black hole</li><li id="Q_24_2"><input type="radio" id="Q_24_2_Btn" onclick="CheckMCAnswer(24,2,this)">Dark enerygy</li><li id="Q_24_3"><input type="radio" id="Q_24_3_Btn" onclick="CheckMCAnswer(24,3,this)">Cosmic Microwave Background</li></ol></li>
+<li class="QuizQuestion" id="Q_25" style="display: none;"><div class="QuestionText">What is the India's first space astronomy observatory?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(25); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_25_0"><input type="radio" id="Q_25_0_Btn" onclick="CheckMCAnswer(25,0,this)">Chandrayaan 1</li><li id="Q_25_1"><input type="radio" id="Q_25_1_Btn" onclick="CheckMCAnswer(25,1,this)">Mangalyaan</li><li id="Q_25_2"><input type="radio" id="Q_25_2_Btn" onclick="CheckMCAnswer(25,2,this)">AstroSat</li><li id="Q_25_3"><input type="radio" id="Q_25_3_Btn" onclick="CheckMCAnswer(25,3,this)">Aryabhatta</li></ol></li>
+<li class="QuizQuestion" id="Q_26" style="display: none;"><div class="QuestionText">Who is the father of Indian radio astronomy?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(26); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_26_0"><input type="radio" id="Q_26_0_Btn" onclick="CheckMCAnswer(26,0,this)">Vikram Saravai</li><li id="Q_26_1"><input type="radio" id="Q_26_1_Btn" onclick="CheckMCAnswer(26,1,this)">Govind Swarup</li><li id="Q_26_2"><input type="radio" id="Q_26_2_Btn" onclick="CheckMCAnswer(26,2,this)">Homi Bhaba</li><li id="Q_26_3"><input type="radio" id="Q_26_3_Btn" onclick="CheckMCAnswer(26,3,this)">S. Chandrasekhar</li></ol></li>
+<li class="QuizQuestion" id="Q_27" style="display: none;"><div class="QuestionText">Which space telescope has launched recently to look the very early universe?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(27); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_27_0"><input type="radio" id="Q_27_0_Btn" onclick="CheckMCAnswer(27,0,this)">Hubble Space Telescope</li><li id="Q_27_1"><input type="radio" id="Q_27_1_Btn" onclick="CheckMCAnswer(27,1,this)">Aditya-L1</li><li id="Q_27_2"><input type="radio" id="Q_27_2_Btn" onclick="CheckMCAnswer(27,2,this)">AstroSat</li><li id="Q_27_3"><input type="radio" id="Q_27_3_Btn" onclick="CheckMCAnswer(27,3,this)">James Webb Space Telescope</li></ol></li>
+<li class="QuizQuestion" id="Q_28" style="display: none;"><div class="QuestionText">What is an exoplanet?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(28); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_28_0"><input type="radio" id="Q_28_0_Btn" onclick="CheckMCAnswer(28,0,this)">Planet similar to Earth</li><li id="Q_28_1"><input type="radio" id="Q_28_1_Btn" onclick="CheckMCAnswer(28,1,this)">Planet outside solar system</li><li id="Q_28_2"><input type="radio" id="Q_28_2_Btn" onclick="CheckMCAnswer(28,2,this)">Planet smaller than Earth</li><li id="Q_28_3"><input type="radio" id="Q_28_3_Btn" onclick="CheckMCAnswer(28,3,this)">Extremely large planet</li></ol></li>
+<li class="QuizQuestion" id="Q_29" style="display: none;"><div class="QuestionText">Which is going to be India's first space based solar observatory?&nbsp;&nbsp;&nbsp;&nbsp;<button id="ShowtriviaButton" class="FuncButton" onclick="showtriviaatend(29); return false; " name="showendtrivia" style="font-size: 2vmin;">Show trivia</button></div><ol class="MCAnswers"><li id="Q_29_0"><input type="radio" id="Q_29_0_Btn" onclick="CheckMCAnswer(29,0,this)">AstroSat</li><li id="Q_29_1"><input type="radio" id="Q_29_1_Btn" onclick="CheckMCAnswer(29,1,this)">Aditya-L1</li><li id="Q_29_2"><input type="radio" id="Q_29_2_Btn" onclick="CheckMCAnswer(29,2,this)">Mangalyaan</li><li id="Q_29_3"><input type="radio" id="Q_29_3_Btn" onclick="CheckMCAnswer(29,3,this)">Chandrayaan-2</li></ol></li></ol>
 
 </div>
 
@@ -2322,7 +2378,7 @@ function DownTime(){
 
 <div class="TimeOutback" id="TimeOutDiv">
 <div class="TimeOutText" id="TimeOutContent"></div>
-<button id="TimeOutButton" class="FuncButton" onclick="SubmitQuiz(); return false;">&#160;OK&#160;</button>
+<button id="TimeOutButton" class="FuncButton" onclick="HideFeedbackEnd(); return false;">&#160;OK&#160;</button>
 </div>
 </div>
 
