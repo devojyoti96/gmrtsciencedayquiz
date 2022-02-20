@@ -69,7 +69,6 @@ input[type="radio"]:checked {
 	background-color: #555555;
 }
 
-
 body{
 	font-family: var(--strFontFace);
 	background-color: var(--strPageBGColor);
@@ -79,11 +78,12 @@ body{
 	margin-left: 0%;
 	font-size: var(--strFontSize);
 	padding-bottom: 10%;
-	background-repeat: repeat-y;
+	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: scroll;
 	display: inline-block;
-	overflow: auto;
+	overflow-x: hidden;
+  	text-overflow: ellipsis;
 }
 
 
@@ -246,19 +246,25 @@ select{
 
 div.Feedback {
 	background-image: linear-gradient(to bottom right, #666699 11%, #ffffff 100%);
-	left: 25vw;
-	width: 50vw;
-	height: 40vh;
+	min-width: 90vw;
+	max-width: 100vw;
+	width: fit-content;
+	height: fit-content;
 	z-index: 1;
 	border-style: shadow;
 	border-width: 0.1vw;
-	border-radius: 4%;
-	padding: 0.5vh;
+	border-radius: 1%;
+	padding: 1%;
 	text-align: center;
 	color: var(--strTitleColor);
 	position: absolute;
+	justify-content: center;
 	display: none;
+	clear: both;
+	text-overflow: ellipsis;
+	white-space: pre-line;
 }
+
 
 
 
@@ -849,7 +855,7 @@ function FocusAButton(){
 var topZ = 1000;
 
 function ShowMessage(Feedback){
-	var Output = '<h1 style="color:blac; font-size: 5vmin;"> Instructions</h1><h2 style="font-size: 2vmin;">'+Feedback + '</h2>';
+	var Output = '<h1 style="font-size: 5vmin;"> Instructions</h1><h2 style="font-size: 3vmin">'+Feedback + '</h2>';
 	document.getElementById('FeedbackContent').innerHTML = Output;
 	var FDiv = document.getElementById('FeedbackDiv');
 	topZ++;
@@ -1920,14 +1926,14 @@ function DownTime(){
 
 <div class="Feedback" id="FeedbackDiv">
 <div class="FeedbackText" id="FeedbackContent"></div>
-<button id="FeedbackOKButton" class="FuncButton" onclick="HideFeedback(); return false;" style="font-size: 3vh">&#160;Ok&#160;</button>
+<button id="FeedbackOKButton" class="FuncButton" onclick="HideFeedback(); return false;" style="font-size: 2vmin">OK</button>
 </div>
 </div>
 
 <!-- EndTopNavButtons -->
 
 <div class="Titles">
-	<h2 class="ExerciseSubtitle" style="font-size:5vh" >Welcome !</h2><br><h2 class="ExerciseSubtitle" style="font-size:5vh">We have put together some fun physics and astronomy questions through this quiz for you trivia geeks! Test your knowledge and learn something new with every question.</h2> <br><h2 class="ExerciseSubtitle" style="font-size:5vh">Click the <font face="verdana"; color=#A9E8F0>"Start Quiz"</font> button and get started!</h2><br><a style="font-size:5vh" href="javascript:ShowMessage('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use Next Question button and revisit the unattempted questions using Previous Question button. After each question some trivia facts about that question will be displayed. Select the Submit button to end the round. At the end it will show all the correct answers by filled circles and your answer by oval. Click on Next Round button to move on to the next round.');" target="_self"><font face="verdana"; color=white>Read the instructions before you start</font></a><br><br>
+	<h2 class="ExerciseSubtitle" style="font-size:5vh" >Welcome !</h2><br><h2 class="ExerciseSubtitle" style="font-size:5vh">We have put together some fun physics and astronomy questions through this quiz for you trivia geeks! Test your knowledge and learn something new with every question.</h2> <br><h2 class="ExerciseSubtitle" style="font-size:5vh">Click the <font face="verdana"; color=#A9E8F0>"Start Quiz"</font> button and get started!</h2><br><a style="font-size:5vh" href="javascript:ShowMessage('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use Next Question button and revisit the unattempted questions using Previous Question button. After each question some trivia facts about that question will be displayed. Select the Submit button to end the round. At the end it will show all the correct answers by green circles, and wrong answeres by red circles. Your answer is marked by oval shape green or red color. Click on Next Round button to move on to the next round.');" target="_self"><font face="verdana"; color=white>Read the instructions before you start</font></a><br><br>
 
 
 <button class="NavButton" onclick="location='science_day_quiz.html'; return false;" style="font-size:3vh">Start Quiz</button>
@@ -1967,7 +1973,7 @@ function DownTime(){
 
 <div class="navbar">
   <a href="http://gmrtscienceday.ncra.tifr.res.in/" target="_self">Home</a>
-  <a href="javascript:ShowMessage('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use Next Question button and revisit the unattempted questions using Previous Question button. After each question some trivia facts about that question will be displayed. Select the Submit button to end the round. At the end it will show all the correct answers by filled circles and your answer by oval. Click on Next Round button to move on to the next round.');" target="_self">Instructions</a>
+  <a href="javascript:ShowMessage('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use Next Question button and revisit the unattempted questions using Previous Question button. After each question some trivia facts about that question will be displayed. Select the Submit button to end the round. At the end it will show all the correct answers by green circles, and wrong answeres by red circles. Your answer is marked by oval shape green or red color. Click on Next Round button to move on to the next round.');" target="_self">Instructions</a>
 </div>
 
 

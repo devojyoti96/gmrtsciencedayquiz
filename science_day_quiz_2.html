@@ -56,12 +56,12 @@
 
 input[type="radio"] {
 	appearance: none;
-	width: 20px;
-	height: 20px;
-	border: 2px solid #555555;
+	width: 2vmin;
+	height: 2vmin;
+	border: 0.2vmin solid #555555;
 	border-radius: 100%;
 	background-clip: content-box;
-	padding: 3px;
+	padding: 0.1vmin;
 }
 
 input[type="radio"]:checked {
@@ -79,12 +79,14 @@ body{
 	margin-right: 0%;
 	margin-left: 0%;
 	font-size: var(--strFontSize);
-	padding-bottom: 10%;
+	padding-bottom: 1%;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: scroll;
-	display: inline-block;
+	display: block;
 	overflow-x: hidden;
+	max-width: 100vw;
+	min-height: 100vh;
 }
 
 
@@ -127,13 +129,14 @@ div.StdDiv, div.ExerciseContainer, div.ReadingContainer{
 	text-align: center;
 	font-size: 1em;
 	color: var(--strTextColor);
-	padding: 0.5em;
+	padding: 0.5%;
 	border-style: solid;
 	border-width: 1px 1px 1px 1px;
 	border-color: var(--strTextColor);
 	margin-bottom: 1px;
 	opacity: 0.7;
 	font-size: 23px;
+	max-width: 100vw;
 }
 
 div.ReadingContainer, div.ExerciseContainer{
@@ -243,35 +246,43 @@ select{
 }
 
 div.Feedback {
-	background-color: #CAD3D9;
-	left: 33%;
-	width: 34%;
-	top: 33%;
+	background-image: linear-gradient(to bottom right, #666699 11%, #ffffff 100%);
+	min-width: 100vw;
+	max-width: 100vw;
+	width: fit-content;
+	height: fit-content;
 	z-index: 1;
-	border-style: solid;
-	border-width: 1px;
-	padding: 5px;
+	border-style: shadow;
+	border-width: 0.1vw;
+	border-radius: 1%;
+	padding: 1%;
 	text-align: center;
 	color: var(--strTitleColor);
 	position: absolute;
+	justify-content: center;
 	display: none;
-	font-size: 1em;
+	clear: both;
+	white-space: break-spaces;
 }
 
 div.Instruct {
-	background-color: #CAD3D9;
-	left: 33%;
-	width: 34%;
-	top: 33%;
+	background-image: linear-gradient(to bottom right, #666699 11%, #ffffff 100%);
+	min-width: 97.5vw;
+	max-width: 90vw;
+	width: fit-content;
+	height: fit-content;
 	z-index: 1;
-	border-style: solid;
-	border-width: 1px;
-	padding: 5px;
+	border-style: shadow;
+	border-width: 0.1vw;
+	border-radius: 1%;
+	padding: 1%;
 	text-align: center;
 	color: var(--strTitleColor);
 	position: absolute;
+	justify-content: center;
 	display: none;
-	font-size: 1em;
+	clear: both;
+	white-space: break-spaces;
 }
 
 div.TimeOutback{
@@ -589,6 +600,7 @@ input[type=submit]:hover {
 ol.QuizQuestions{
 	text-align: left;
 	list-style-type: none;
+	font-size: 2.7vmin;
 }
 
 li.QuizQuestion{
@@ -883,7 +895,7 @@ function ShowMessage(Feedback){
 }
 
 function ShowInstructions(Feedback){
-	var Output = '<font face="verdana"; size=250%; color=black>Instructions</font><br>' +Feedback + '<br /><br />';
+	var Output = '<h1 style="font-size: 5vmin;"> Instructions</h1><h2 style="font-size: 3vmin">'+Feedback + '</h2>';
 	document.getElementById('InstructContent').innerHTML = Output;
 	var FDiv = document.getElementById('InstructDiv');
 	topZ++;
@@ -1061,7 +1073,8 @@ function Shuffle(InArray){
 	return InArray;
 }
 
-function WriteToInstructions(Feedback) {
+function WriteToInstructions(Feedback) {	
+	document.getElementById('InstructionsDiv').style.fontSize='3vmin'
 	document.getElementById('InstructionsDiv').innerHTML = Feedback;
 
 }
@@ -1234,10 +1247,10 @@ var CompletedSoFar = 'Correct answers so far : ';
 var ExerciseCompleted = 'You have completed the quiz';
 var ShowCompletedSoFar = true;
 
-var ContinuousScoring = false;
+var ContinuousScoring = true;
 var CorrectFirstTime = 'Questions answered correctly first time: ';
 var ShowCorrectFirstTime = false;
-var ShuffleQs = true;
+var ShuffleQs = false;
 var ShuffleAs = true;
 var DefaultRight = 'Correct!';
 var DefaultWrong = 'Sorry! Wrong Answer.';
@@ -1270,10 +1283,10 @@ function CompleteEmptyFeedback(){
   			//if (I[QNum][3][ANum][1].length < 1){
 			tempvar = I[QNum][3][ANum][1];
 			if (I[QNum][3][ANum][2] > 0){
-				I[QNum][3][ANum][1] = '<font size="10">Correct!<br></font>' + tempvar;
+				I[QNum][3][ANum][1] = '<h1 style="font-size: 3vmin;">Correct!</h1>' + tempvar;
 			}
 			else{
-				I[QNum][3][ANum][1] =  '<font size="10">Sorry! Wrong Answer <br></font>' + tempvar;
+				I[QNum][3][ANum][1] =  '<h1 style="font-size: 3vmin;">Sorry! Wrong Answer </h1>' + tempvar;
 			}
   			//}
   		}
@@ -1631,10 +1644,10 @@ I[25]=new Array();I[25][0]=100;
 I[25][1]='';
 I[25][2]='0';
 I[25][3]=new Array();
-I[25][3][0]=new Array('Chandrayaan 1','AstroSat is the first dedicated Indian astronomy mission aimed at studying celestial sources in X-ray, optical and UV spectral bands simultaneously. <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Astrosat-1_in_deployed_configuration_001.png/450px-Astrosat-1_in_deployed_configuration_001.png" width="100" height="100"/>',0,0,1);
-I[25][3][1]=new Array('Mangalyaan','AstroSat is the first dedicated Indian astronomy mission aimed at studying celestial sources in X-ray, optical and UV spectral bands simultaneously. <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Astrosat-1_in_deployed_configuration_001.png/450px-Astrosat-1_in_deployed_configuration_001.png" width="100" height="100"/>',0,0,1);
-I[25][3][2]=new Array('AstroSat','AstroSat is the first dedicated Indian astronomy mission aimed at studying celestial sources in X-ray, optical and UV spectral bands simultaneously. <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Astrosat-1_in_deployed_configuration_001.png/450px-Astrosat-1_in_deployed_configuration_001.png" width="100" height="100"/>',1,100,1);
-I[25][3][3]=new Array('Aryabhatta','AstroSat is the first dedicated Indian astronomy mission aimed at studying celestial sources in X-ray, optical and UV spectral bands simultaneously. <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Astrosat-1_in_deployed_configuration_001.png/450px-Astrosat-1_in_deployed_configuration_001.png" width="100" height="100"/>',0,0,1);
+I[25][3][0]=new Array('Chandrayaan 1','AstroSat is the first dedicated Indian astronomy mission aimed at studying celestial sources in X-ray, optical and UV spectral bands simultaneously. <br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Astrosat-1_in_deployed_configuration_001.png/450px-Astrosat-1_in_deployed_configuration_001.png" width="100" height="100"/>',0,0,1);
+I[25][3][1]=new Array('Mangalyaan','AstroSat is the first dedicated Indian astronomy mission aimed at studying celestial sources in X-ray, optical and UV spectral bands simultaneously.<br> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Astrosat-1_in_deployed_configuration_001.png/450px-Astrosat-1_in_deployed_configuration_001.png" width="100" height="100"/>',0,0,1);
+I[25][3][2]=new Array('AstroSat','AstroSat is the first dedicated Indian astronomy mission aimed at studying celestial sources in X-ray, optical and UV spectral bands simultaneously. <br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Astrosat-1_in_deployed_configuration_001.png/450px-Astrosat-1_in_deployed_configuration_001.png" width="100" height="100"/>',1,100,1);
+I[25][3][3]=new Array('Aryabhatta','AstroSat is the first dedicated Indian astronomy mission aimed at studying celestial sources in X-ray, optical and UV spectral bands simultaneously.<br> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Astrosat-1_in_deployed_configuration_001.png/450px-Astrosat-1_in_deployed_configuration_001.png" width="100" height="100"/>',0,0,1);
 I[26]=new Array();I[26][0]=100;
 I[26][1]='';
 I[26][2]='0';
@@ -1837,7 +1850,7 @@ function CheckMCAnswer(QNum, ANum, Btn){
 //New for 6.2.2.1
 			QsDone = CheckQuestionsCompleted();
 			if ((ContinuousScoring == true)||(Finished == true)){
-				Feedback += '<br />' + YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone;
+				//Feedback += '<br />' + YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone;
 				WriteToInstructions(YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone);
 			}
 			else{
@@ -1866,7 +1879,7 @@ function CheckMCAnswer(QNum, ANum, Btn){
 		if (ContinuousScoring == true){
 			CalculateOverallScore();
 			if ((ContinuousScoring == true)||(Finished == true)){
-				Feedback += '<br />' + YourScoreIs + ' ' + Score +  'out of 5.' + '<br />' + QsDone;
+				//Feedback += '<br />' + YourScoreIs + ' ' + Score +  'out of 5.' + '<br />' + QsDone;
 				WriteToInstructions(YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone);
 			}
 		}
@@ -2106,10 +2119,11 @@ function disablebyid(id){
 }
 
 
-function checkedbyid(id){
+function checkedbyid(id,color){
 	var elem = document.getElementById(id);
 	if (typeof(elem) != 'undefined' && elem != null){
 		elem.checked = true;
+		elem.style.backgroundColor = color;		     
 	}
 		
 }
@@ -2121,9 +2135,11 @@ function CompleteEmptyCheckBoxes(){
   		for (ANum = 0; ANum<totalANum; ANum++){
 		if (I[QNum][3][ANum][2] > 0){
 			tempid='Q_'+QNum.toString()+'_'+ANum.toString()+'_Btn';
-			checkedbyid(tempid);
+			checkedbyid(tempid,'green');
 		}
 		else{
+			tempid='Q_'+QNum.toString()+'_'+ANum.toString()+'_Btn';
+		        checkedbyid(tempid,'red');
 		}
 
   		}
@@ -2212,7 +2228,7 @@ function DownTime(){
 
 <div class="NavButtonBar" id="TopNavBar">
 
-<a style="text-decoration:none; color:yellow; font-size:5vh;  font-family: 'Lucida Console', 'Courier New'; " href="index.html" target="_self"> GMRT National Science Day 2022 - Astronomy Quiz Trivia</a>
+<a style="text-decoration:none; color:yellow; font-size:5vh;  font-family: 'Lucida Console', 'Courier New'; " href="index.html" target="_self"> GMRT National Science Day 2022 - Astronomy Trivia Quiz</a>
 
 </div>
 
@@ -2240,11 +2256,11 @@ function DownTime(){
 
 
 <div id="OneByOneReadout">
-<button id="PrevQButton" class="FuncButton" onclick="ChangeQ(-1); return false;" name="prequestion">Previous Question</button>
+<button id="PrevQButton" class="FuncButton" onclick="ChangeQ(-1); return false;" name="prequestion" style="font-size: 3vmin;">Previous Question</button>
 
-<span id="QNumReadout" class="QNum" style="color:#406378; font-size: 100%"></span>
+<span id="QNumReadout" class="QNum" style="color:#406378; font-size: 3vmin"></span>
 
-<button id="NextQButton" class="FuncButton" onclick="ChangeQ(1); return false; " name="nextquestion">Next Question</button>
+<button id="NextQButton" class="FuncButton" onclick="ChangeQ(1); return false; " name="nextquestion" style="font-size: 3vmin;">Next Question</button>
 <br />
 </div>
 
@@ -2284,6 +2300,7 @@ function DownTime(){
 </div>
 
 </div>
+
 
 <div class="Feedback" id="FeedbackDiv">
 <div class="FeedbackText" id="FeedbackContent"></div>
@@ -2327,7 +2344,7 @@ function DownTime(){
 
 <div id="Timer"><span id="TimerText" style="font-size:10mm"></span></div>
 
-<input type="submit" id="SubmitQuizButton" value="Submit" onclick="SubmitQuiz(); return false;" style="margin-left: 44vw; margin-bottom:1vw; font-size:3vh; overflow: auto;"/>
+<input type="submit" id="SubmitQuizButton" value="Submit" onclick="SubmitQuiz(); return false;" style="margin-left: 45vw; margin-right: 45vw; margin-bottom:4vmin; font-size:3vmin; width: fit-copntent; overflow: auto;"/>
 
 <style>
 .navbar {
@@ -2346,7 +2363,7 @@ function DownTime(){
   text-align: center;
   padding: 1.2vh 1.2vw;
   text-decoration: none;
-  font-size: calc((3vw+3vh)/2.0);
+  font-size: 3vh;
 }
 
 
@@ -2366,8 +2383,8 @@ function DownTime(){
 
 <div class="navbar">
   <a href="http://gmrtscienceday.ncra.tifr.res.in/" target="_self">Home</a>
-  <a href="javascript:ShowInstruction('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use Next Question button and revisit the unattempted questions using Previous Question button. After each question some trivia facts about that question will be displayed. Select the Submit button to end the round. At the end it will show all the correct answers by filled circles and your answer by oval. Click on Next Round button to move on to the next round.');" target="_self">Instructions</a>
-  <a href="index.html" target="_self">Quiz Trivia</a>
+  <a href="javascript:ShowInstructions('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use Next Question button and revisit the unattempted questions using Previous Question button. After each question some trivia facts about that question will be displayed. Select the Submit button to end the round. At the end it will show all the correct answers by green circles, and wrong answeres by red circles. Your answer is marked by oval shape green or red color. Click on Next Round button to move on to the next round.');" target="_self">Instructions</a>
+  <a href="index.html" target="_self">Trivia Quiz</a>
    <a href="science_day_quiz.html" target="_self">Next Round</a>
 </div>
 
