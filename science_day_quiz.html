@@ -54,6 +54,8 @@
 	--form-control-color: rebeccapurple;
 }
 
+
+
 input[type="radio"] {
 	appearance: none;
 	width: 2vmin;
@@ -67,9 +69,6 @@ input[type="radio"] {
 input[type="radio"]:checked {
 	background-color: #555555;
 }
-
-
-
 
 
 body{
@@ -88,8 +87,14 @@ body{
 	overflow-x: hidden;
 	max-width: 100vw;
 	min-height: 100vh;
+	-ms-overflow-style: none;
+ 	scrollbar-width: none;
 }
 
+
+body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
 
 p{
 	text-align: left;
@@ -249,7 +254,7 @@ select{
 div.Feedback {
 	background-image: linear-gradient(to bottom right, #666699 11%, #ffffff 100%);
 	min-width: 97.5vw;
-	max-width: 90vw;
+	max-width: 100vw;
 	width: fit-content;
 	height: fit-content;
 	z-index: 1;
@@ -263,7 +268,7 @@ div.Feedback {
 	justify-content: center;
 	display: none;
 	clear: both;
-	white-space: break-spaces;
+	word-break: break-word;
 }
 
 div.Instruct {
@@ -560,30 +565,30 @@ textarea{
 }
 
 input[type=submit] {
-border-radius: 0.3em;
-padding: 0.7em;
-min-width: 3em;
-border-left-color: #07663B;
-border-top-color: #07663B;
-border-right-color: #044025;
-border-bottom-color: #044025; 
-background-color: #30B6A6;
-color: white;
-border-width: 1pt;
-cursor: pointer;	
-box-shadow: 0.2em 0.3em 0.2em #D3EBE0;
-margin: 0px 60px 0px;
+	border-style: solid;
+	border-radius: 0.3em;
+	padding: 0.7em;
+	min-width: 3em;
+	border-left-color: #0D6915;
+	border-top-color: #0D6915);
+	border-right-color: #AFE9E6;
+	border-bottom-color: #AFE9E6; 
+	background-image: linear-gradient(to right bottom, #0d6915, #00753b, #007f5b, #008978, #0e9290, #369c9e, #50a5ab, #67afb7, #79bdc2, #8bccce, #9ddada, #afe9e6);
+	color: white;
+	border-width: 1pt;
+	cursor: pointer;	
+	box-shadow: 0.15em 0.15em 0.15em #A9E8F0;
+	margin: 0px 60px 0px;
 }
 
 input[type=submit]:hover {
-	border-left-color: #07663B;
-	border-top-color: #07663B;
-	border-right-color: #044025;
-	border-bottom-color: #044025; 
-	background-color: #1D8190;
-	transition: background-color 0.1s;
-	box-shadow: 0.2em 0.3em 0.2em #C5E4E8;
-	color: #C5E4E8;
+	color: white;
+	border-left-color:#8052B3;
+	border-top-color: #8052B3);
+	border-right-color: #BDB8C0;
+	border-bottom-color: #BDB8C0;
+	box-shadow: 0.15em 0.15em 0.15em #EAD5F9; 
+	background-image: linear-gradient(to right bottom, #8052b3, #845cb3, #8866b2, #8d70b1, #9179b0, #9781b1, #9c89b1, #a191b2, #a89bb5, #b0a4b9, #b6aebc, #bdb8c0);
 }
 
 .PartialAnswer{
@@ -656,6 +661,7 @@ div.ShortAnswer{
 	background-color: var(--strTextColor);
 }
 
+
 /*BeginNavBarStyle*/
 
 
@@ -675,15 +681,15 @@ div.NavButtonBar{
 	border-radius: 0.3em;
 	padding: 0.7em;
 	min-width: 3em;
-	border-left-color: var(--strNavLightColor);
-	border-top-color: var(--strNavLightColor);
-	border-right-color: var(--strNavShadeColor);
-	border-bottom-color: var(--strNavShadeColor); 
-	background-color: #E8B217;
-	color: #692506;
+	border-left-color: #0D6915;
+	border-top-color: #0D6915);
+	border-right-color: #AFE9E6;
+	border-bottom-color: #AFE9E6; 
+	background-image: linear-gradient(to right bottom, #0d6915, #00753b, #007f5b, #008978, #0e9290, #369c9e, #50a5ab, #67afb7, #79bdc2, #8bccce, #9ddada, #afe9e6);
+	color: white;
 	border-width: 1pt;
 	cursor: pointer;	
-	box-shadow: 0.2em 0.3em 0.2em var(--strNavShadeColor);
+	box-shadow: 0.15em 0.15em 0.15em #A9E8F0;
 	margin: 0px 60px 0px;
 }
 
@@ -692,9 +698,13 @@ div.NavButtonBar{
 }
 
 .NavButton:hover{
-	 background-color: #977728;
-  	color: white;
- 	 transition: background-color 0.1s;
+	color: white;
+	border-left-color:#8052B3;
+	border-top-color: #8052B3);
+	border-right-color: #BDB8C0;
+	border-bottom-color: #BDB8C0;
+	box-shadow: 0.15em 0.15em 0.15em #EAD5F9; 
+	background-image: linear-gradient(to right bottom, #8052b3, #845cb3, #8866b2, #8d70b1, #9179b0, #9781b1, #9c89b1, #a191b2, #a89bb5, #b0a4b9, #b6aebc, #bdb8c0);
 }
 
 /*EndNavBarStyle*/
@@ -1255,7 +1265,7 @@ var ShuffleQs = true;
 var ShuffleAs = true;
 var DefaultRight = 'Correct!';
 var DefaultWrong = 'Sorry! Wrong Answer.';
-var QsToShow = 105;
+var QsToShow = 5;
 var Score = 0;
 var Finished = false;
 var Qs = null;
@@ -1284,10 +1294,10 @@ function CompleteEmptyFeedback(){
   			//if (I[QNum][3][ANum][1].length < 1){
 			tempvar = I[QNum][3][ANum][1];
 			if (I[QNum][3][ANum][2] > 0){
-				I[QNum][3][ANum][1] = '<h1 style="font-size: 3vmin;">Correct!</h1>' + tempvar;
+				I[QNum][3][ANum][1] = '<h1 style="font-size: 5vmin;">Correct!</h1>' + tempvar;
 			}
 			else{
-				I[QNum][3][ANum][1] =  '<h1 style="font-size: 3vmin;">Sorry! Wrong Answer </h1>' + tempvar;
+				I[QNum][3][ANum][1] =  '<h1 style="font-size: 5vmin;">Sorry! Wrong Answer </h1>' + tempvar;
 			}
   			//}
   		}
@@ -1503,7 +1513,7 @@ I[7][2]='0';
 I[7][3]=new Array();
 I[7][3][0]=new Array('Ice and Rocks','Comets are mostly made of ice and dust (like a dirty snowball), with a few chunks of rock and possibly some organic (carbon) compounds. The ices that make the bulk of a comet include water ice, dry ice (solid carbon dioxide), frozen ammonia, solid methane and several common atmospheric gases in solid form such as oxygen. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=D1o91Wf75pM\');return false;">Click here to know more about comets.</a>',1,100,1);
 I[7][3][1]=new Array('Liquid Water and Ice','Comets are mostly made of ice and dust (like a dirty snowball), with a few chunks of rock and possibly some organic (carbon) compounds. The ices that make the bulk of a comet include water ice, dry ice (solid carbon dioxide), frozen ammonia, solid methane and several common atmospheric gases in solid form such as oxygen. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=D1o91Wf75pM\');return false;">Click here to know more about comets.</a>',0,0,1);
-I[7][3][2]=new Array('Hydrogen gas and Rocks','Comets are mostly made of ice and dust (like a dirty snowball), with a few chunks of rock and possibly some organic (carbon) compounds. The ices that make the bulk of a comet include water ice, dry ice (solid carbon dioxide), frozen ammonia, solid methane and several common atmospheric gases in solid form such as oxygen. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=D1o91Wf75pM\');return false;">Click here to know more about comets.</a>',0,0,1);
+I[7][3][2]=new Array('Hydrogen gas and Rocks','Comets are mostly made of ice and dust (like a dirty snowball), with a few chunks of rock and possibly some organic (carbon) compounds. The ices that make the bulk of a comet include water ice, dry ice (solid carbon dioxide), frozen ammonia, solid methane, and several common atmospheric gases in solid form such as oxygen. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=D1o91Wf75pM\');return false;">Click here to know more about comets.</a>',0,0,1);
 I[7][3][3]=new Array('Liquid Methene','Comets are mostly made of ice and dust (like a dirty snowball), with a few chunks of rock and possibly some organic (carbon) compounds. The ices that make the bulk of a comet include water ice, dry ice (solid carbon dioxide), frozen ammonia, solid methane and several common atmospheric gases in solid form such as oxygen. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=D1o91Wf75pM\');return false;">Click here to know more about comets.</a>',0,0,1);
 I[8]=new Array();I[8][0]=100;
 I[8][1]='';
@@ -1520,7 +1530,7 @@ I[9][3]=new Array();
 I[9][3][0]=new Array('Mars and Jupiter','The asteroid belt is a torus-shaped region in the Solar System, located roughly between the orbits of the planets Jupiter and Mars. It contains a great many solid, irregularly shaped bodies, of many sizes, but much smaller than planets, called asteroids or minor planets. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=vD-jbm79kUE\');return false;">Look at the astroid belt here.</a>',1,100,1);
 I[9][3][1]=new Array('Earth and Venus','The asteroid belt is a torus-shaped region in the Solar System, located roughly between the orbits of the planets Jupiter and Mars. It contains a great many solid, irregularly shaped bodies, of many sizes, but much smaller than planets, called asteroids or minor planets. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=vD-jbm79kUE\');return false;">Look at the astroid belt here.</a>',0,0,1);
 I[9][3][2]=new Array('Earth and Mars','The asteroid belt is a torus-shaped region in the Solar System, located roughly between the orbits of the planets Jupiter and Mars. It contains a great many solid, irregularly shaped bodies, of many sizes, but much smaller than planets, called asteroids or minor planets. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=vD-jbm79kUE\');return false;">Look at the astroid belt here.</a>',0,0,1);
-I[9][3][3]=new Array('Jupiter and Saturn','The asteroid belt is a torus-shaped region in the Solar System, located roughly between the orbits of the planets Jupiter and Mars. It contains a great many solid, irregularly shaped bodies, of many sizes, but much smaller than planets, called asteroids or minor planets. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=vD-jbm79kUE\');return false;">Look at the astroid belt here.</a>',0,0,1);
+I[9][3][3]=new Array('Jupiter and Saturn','The asteroid belt is a torus-shaped region in the Solar System, located roughly between the orbits of the planets Jupiter and Mars. It contains a great many solid, irregularly shaped bodies, of many sizes, but much smaller than planets, called asteroids or minor planets. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=vD-jbm79kUE\');return false;">Look at the asteroid belt here.</a>',0,0,1);
 I[10]=new Array();I[10][0]=100;
 I[10][1]='';
 I[10][2]='0';
@@ -1549,18 +1559,18 @@ I[13]=new Array();I[13][0]=100;
 I[13][1]='';
 I[13][2]='0';
 I[13][3]=new Array();
-I[13][3][0]=new Array('Hydrogen fusion in their cores','Stars are fueled by the nuclear fusion of hydrogen to form helium deep in their interiors. The outflow of energy from the central regions of the star provides the pressure necessary to keep the star from collapsing under its own weight, and the energy by which it shines.',1,100,1);
-I[13][3][1]=new Array('Uranium fusion in their cores','Stars are fueled by the nuclear fusion of hydrogen to form helium deep in their interiors. The outflow of energy from the central regions of the star provides the pressure necessary to keep the star from collapsing under its own weight, and the energy by which it shines.',0,0,1);
-I[13][3][2]=new Array('Hydrogen burning in their cores','Stars are fueled by the nuclear fusion of hydrogen to form helium deep in their interiors. The outflow of energy from the central regions of the star provides the pressure necessary to keep the star from collapsing under its own weight, and the energy by which it shines.',0,0,1);
-I[13][3][3]=new Array('Oxygen burning in their cores','Stars are fueled by the nuclear fusion of hydrogen to form helium deep in their interiors. The outflow of energy from the central regions of the star provides the pressure necessary to keep the star from collapsing under its own weight, and the energy by which it shines.',0,0,1);
+I[13][3][0]=new Array('Hydrogen fusion in their cores','Stars are fueled by the nuclear fusion of hydrogen to form helium deep in their interiors. The outflow of energy from the central regions of the star provides the pressure necessary to keep the star from collapsing under its weight, and the energy by which it shines.',1,100,1);
+I[13][3][1]=new Array('Uranium fusion in their cores','Stars are fueled by the nuclear fusion of hydrogen to form helium deep in their interiors. The outflow of energy from the central regions of the star provides the pressure necessary to keep the star from collapsing under its weight, and the energy by which it shines.',0,0,1);
+I[13][3][2]=new Array('Hydrogen burning in their cores','Stars are fueled by the nuclear fusion of hydrogen to form helium deep in their interiors. The outflow of energy from the central regions of the star provides the pressure necessary to keep the star from collapsing under its weight, and the energy by which it shines.',0,0,1);
+I[13][3][3]=new Array('Oxygen burning in their cores','Stars are fueled by the nuclear fusion of hydrogen to form helium deep in their interiors. The outflow of energy from the central regions of the star provides the pressure necessary to keep the star from collapsing under its weight, and the energy by which it shines.',0,0,1);
 I[14]=new Array();I[14][0]=100;
 I[14][1]='';
 I[14][2]='0';
 I[14][3]=new Array();
-I[14][3][0]=new Array('Milky Way','Milky Way Galaxy, roughly 150,000 light-years in diameter, that contains Earth\u2019s solar system. It includes the multitude of stars whose light is seen as the Milky Way, the irregular luminous band that encircles the sky, defining the plane of the galactic disk. Its precise constituents, shape, and true size and mass are still not known. It contains large amounts of dark matter and a massive black hole at its core (see Sagittarius A). The Sun lies in one of the Galaxy\u2019s spiral arms, about 27,000 light-years from the centre.',1,100,1);
-I[14][3][1]=new Array('M87','Milky Way Galaxy, roughly 150,000 light-years in diameter, that contains Earth\u2019s solar system. It includes the multitude of stars whose light is seen as the Milky Way, the irregular luminous band that encircles the sky, defining the plane of the galactic disk. Its precise constituents, shape, and true size and mass are still not known. It contains large amounts of dark matter and a massive black hole at its core (see Sagittarius A). The Sun lies in one of the Galaxy\u2019s spiral arms, about 27,000 light-years from the centre.',0,0,1);
+I[14][3][0]=new Array('Milky Way','Milky Way Galaxy, roughly 150,000 light-years in diameter, that contains Earth\u2019s solar system. It includes the multitude of stars whose light is seen as the Milky Way, the irregular luminous band that encircles the sky, defining the plane of the galactic disk. Its precise constituents, shape, and true size and mass are still not known. It contains large amounts of dark matter and a massive black hole at its core (see Sagittarius A). The Sun lies in one of the Galaxy\u2019s spiral arms, about 27,000 light-years from the center.',1,100,1);
+I[14][3][1]=new Array('M87','Milky Way Galaxy, roughly 150,000 light-years in diameter, that contains Earth\u2019s solar system. It includes the multitude of stars whose light is seen as the Milky Way, the irregular luminous band that encircles the sky, defining the plane of the galactic disk. Its precise constituents, shape, and true size and mass are still not known. It contains large amounts of dark matter and a massive black hole at its core (see Sagittarius A). The Sun lies in one of the Galaxy\u2019s spiral arms, about 27,000 light-years from the center.',0,0,1);
 I[14][3][2]=new Array('Andromeda','Milky Way Galaxy, roughly 150,000 light-years in diameter, that contains Earth\u2019s solar system. It includes the multitude of stars whose light is seen as the Milky Way, the irregular luminous band that encircles the sky, defining the plane of the galactic disk. Its precise constituents, shape, and true size and mass are still not known. It contains large amounts of dark matter and a massive black hole at its core (see Sagittarius A). The Sun lies in one of the Galaxy\u2019s spiral arms, about 27,000 light-years from the centre.',0,0,1);
-I[14][3][3]=new Array('Small Magellanic Cloud','Milky Way Galaxy, roughly 150,000 light-years in diameter, that contains Earth\u2019s solar system. It includes the multitude of stars whose light is seen as the Milky Way, the irregular luminous band that encircles the sky, defining the plane of the galactic disk. Its precise constituents, shape, and true size and mass are still not known. It contains large amounts of dark matter and a massive black hole at its core (see Sagittarius A). The Sun lies in one of the Galaxy\u2019s spiral arms, about 27,000 light-years from the centre.',0,0,1);
+I[14][3][3]=new Array('Small Magellanic Cloud','Milky Way Galaxy, roughly 150,000 light-years in diameter, that contains Earth\u2019s solar system. It includes the multitude of stars whose light is seen as the Milky Way, the irregular luminous band that encircles the sky, defining the plane of the galactic disk. Its precise constituents, shape, and true size and mass are still not known. It contains large amounts of dark matter and a massive black hole at its core (see Sagittarius A). The Sun lies in one of the Galaxy\u2019s spiral arms, about 27,000 light-years from the center.',0,0,1);
 I[15]=new Array();I[15][0]=100;
 I[15][1]='';
 I[15][2]='0';
@@ -1621,10 +1631,10 @@ I[22]=new Array();I[22][0]=100;
 I[22][1]='';
 I[22][2]='0';
 I[22][3]=new Array();
-I[22][3][0]=new Array('8 Kiloparsec','The Milky Way is about 1,000,000,000,000,000,000 km (about 100,000 light years or about 30 kpc) across. The Sun does not lie near the center of our Galaxy. It lies about 8 kpc from the center on what is known as the Orion Arm of the Milky Way.',1,100,1);
-I[22][3][1]=new Array('8 Megaparsec','The Milky Way is about 1,000,000,000,000,000,000 km (about 100,000 light years or about 30 kpc) across. The Sun does not lie near the center of our Galaxy. It lies about 8 kpc from the center on what is known as the Orion Arm of the Milky Way.',0,0,1);
-I[22][3][2]=new Array('4 Kiloparsec','The Milky Way is about 1,000,000,000,000,000,000 km (about 100,000 light years or about 30 kpc) across. The Sun does not lie near the center of our Galaxy. It lies about 8 kpc from the center on what is known as the Orion Arm of the Milky Way.',0,0,1);
-I[22][3][3]=new Array('4 Parsec','The Milky Way is about 1,000,000,000,000,000,000 km (about 100,000 light years or about 30 kpc) across. The Sun does not lie near the center of our Galaxy. It lies about 8 kpc from the center on what is known as the Orion Arm of the Milky Way.',0,0,1);
+I[22][3][0]=new Array('8 Kiloparsec','The Milky Way is about 1,000,000,000,000,000,000 km (about 100,000 light-years or about 30 kpc) across. The Sun does not lie near the center of our Galaxy. It lies about 8 kpc from the center on what is known as the Orion Arm of the Milky Way.',1,100,1);
+I[22][3][1]=new Array('8 Megaparsec','The Milky Way is about 1,000,000,000,000,000,000 km (about 100,000 light-years or about 30 kpc) across. The Sun does not lie near the center of our Galaxy. It lies about 8 kpc from the center on what is known as the Orion Arm of the Milky Way.',0,0,1);
+I[22][3][2]=new Array('4 Kiloparsec','The Milky Way is about 1,000,000,000,000,000,000 km (about 100,000 light-years or about 30 kpc) across. The Sun does not lie near the center of our Galaxy. It lies about 8 kpc from the center on what is known as the Orion Arm of the Milky Way.',0,0,1);
+I[22][3][3]=new Array('4 Parsec','The Milky Way is about 1,000,000,000,000,000,000 km (about 100,000 light-years or about 30 kpc) across. The Sun does not lie near the center of our Galaxy. It lies about 8 kpc from the center on what is known as the Orion Arm of the Milky Way.',0,0,1);
 I[23]=new Array();I[23][0]=100;
 I[23][1]='';
 I[23][2]='0';
@@ -1632,7 +1642,7 @@ I[23][3]=new Array();
 I[23][3][0]=new Array('Refraction of light through Earth\'s turbulent atmosphere','The stars twinkle in the night sky because of the effects of our atmosphere. When starlight enters our atmosphere it is affected by winds in the atmosphere and by areas with different temperatures and densities. This causes the light from the star to twinkle when seen from the ground. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=dwSL1M74R-g\');return false;">Click here to know more about it.</a>',1,100,1);
 I[23][3][1]=new Array('Reflection of light through Earth\'s turbulent atmosphere','The stars twinkle in the night sky because of the effects of our atmosphere. When starlight enters our atmosphere it is affected by winds in the atmosphere and by areas with different temperatures and densities. This causes the light from the star to twinkle when seen from the ground. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=dwSL1M74R-g\');return false;">Click here to know more about it.</a>',0,0,1);
 I[23][3][2]=new Array('Blinking of eyes','The stars twinkle in the night sky because of the effects of our atmosphere. When starlight enters our atmosphere it is affected by winds in the atmosphere and by areas with different temperatures and densities. This causes the light from the star to twinkle when seen from the ground. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=dwSL1M74R-g\');return false;">Click here to know more about it.</a>',0,0,1);
-I[23][3][3]=new Array('Stars brighting and dimming','The stars twinkle in the night sky because of the effects of our atmosphere. When starlight enters our atmosphere it is affected by winds in the atmosphere and by areas with different temperatures and densities. This causes the light from the star to twinkle when seen from the ground. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=dwSL1M74R-g\');return false;">Click here to know more about it.</a>',0,0,1);
+I[23][3][3]=new Array('Stars brightening and dimming','The stars twinkle in the night sky because of the effects of our atmosphere. When starlight enters our atmosphere it is affected by winds in the atmosphere and by areas with different temperatures and densities. This causes the light from the star to twinkle when seen from the ground. <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://www.youtube.com/watch?v=dwSL1M74R-g\');return false;">Click here to know more about it.</a>',0,0,1);
 I[24]=new Array();I[24][0]=100;
 I[24][1]='';
 I[24][2]='0';
@@ -1661,18 +1671,18 @@ I[27]=new Array();I[27][0]=100;
 I[27][1]='';
 I[27][2]='0';
 I[27][3]=new Array();
-I[27][3][0]=new Array('Galileo Galilei','Early telescopes were primarily used for making Earth-bound observations, such as surveying and military tactics. Galileo Galilei (1564-1642) was part of a small group of astronomers who turned telescopes towards the heavens. After hearing about the "Danish perspective glass" in 1609, Galileo constructed his own telescope. He subsequently demonstrated the telescope in Venice. ',1,100,1);
-I[27][3][1]=new Array('Nicolaus Copernicus','Early telescopes were primarily used for making Earth-bound observations, such as surveying and military tactics. Galileo Galilei (1564-1642) was part of a small group of astronomers who turned telescopes towards the heavens. After hearing about the "Danish perspective glass" in 1609, Galileo constructed his own telescope. He subsequently demonstrated the telescope in Venice. ',0,0,1);
-I[27][3][2]=new Array('Johannes Kepler','Early telescopes were primarily used for making Earth-bound observations, such as surveying and military tactics. Galileo Galilei (1564-1642) was part of a small group of astronomers who turned telescopes towards the heavens. After hearing about the "Danish perspective glass" in 1609, Galileo constructed his own telescope. He subsequently demonstrated the telescope in Venice. ',0,0,1);
-I[27][3][3]=new Array('Ptolemy','Early telescopes were primarily used for making Earth-bound observations, such as surveying and military tactics. Galileo Galilei (1564-1642) was part of a small group of astronomers who turned telescopes towards the heavens. After hearing about the "Danish perspective glass" in 1609, Galileo constructed his own telescope. He subsequently demonstrated the telescope in Venice. ',0,0,1);
+I[27][3][0]=new Array('Galileo Galilei','Early telescopes were primarily used for making Earth-bound observations, such as surveying and military tactics. Galileo Galilei (1564-1642) was part of a small group of astronomers who turned telescopes towards the heavens. After hearing about the "Danish perspective glass" in 1609, Galileo constructed his telescope. He subsequently demonstrated the telescope in Venice. ',1,100,1);
+I[27][3][1]=new Array('Nicolaus Copernicus','Early telescopes were primarily used for making Earth-bound observations, such as surveying and military tactics. Galileo Galilei (1564-1642) was part of a small group of astronomers who turned telescopes towards the heavens. After hearing about the "Danish perspective glass" in 1609, Galileo constructed his telescope. He subsequently demonstrated the telescope in Venice. ',0,0,1);
+I[27][3][2]=new Array('Johannes Kepler','Early telescopes were primarily used for making Earth-bound observations, such as surveying and military tactics. Galileo Galilei (1564-1642) was part of a small group of astronomers who turned telescopes towards the heavens. After hearing about the "Danish perspective glass" in 1609, Galileo constructed his telescope. He subsequently demonstrated the telescope in Venice. ',0,0,1);
+I[27][3][3]=new Array('Ptolemy','Early telescopes were primarily used for making Earth-bound observations, such as surveying and military tactics. Galileo Galilei (1564-1642) was part of a small group of astronomers who turned telescopes towards the heavens. After hearing about the "Danish perspective glass" in 1609, Galileo constructed his telescope. He subsequently demonstrated the telescope in Venice. ',0,0,1);
 I[28]=new Array();I[28][0]=100;
 I[28][1]='';
 I[28][2]='0';
 I[28][3]=new Array();
-I[28][3][0]=new Array('Pole Star','Sirius, also known as the Dog Star or Sirius A, is the brightest star in Earth\'s night sky. The name means "glowing" in Greek \u2014 a fitting description, as only a few planets, the full moon and the International Space Station outshine this star.',0,0,1);
-I[28][3][1]=new Array('Sirius A','Sirius, also known as the Dog Star or Sirius A, is the brightest star in Earth\'s night sky. The name means "glowing" in Greek \u2014 a fitting description, as only a few planets, the full moon and the International Space Station outshine this star.',1,100,1);
-I[28][3][2]=new Array('Proxima Centauri','Sirius, also known as the Dog Star or Sirius A, is the brightest star in Earth\'s night sky. The name means "glowing" in Greek \u2014 a fitting description, as only a few planets, the full moon and the International Space Station outshine this star.',0,0,1);
-I[28][3][3]=new Array('Vega','Sirius, also known as the Dog Star or Sirius A, is the brightest star in Earth\'s night sky. The name means "glowing" in Greek \u2014 a fitting description, as only a few planets, the full moon and the International Space Station outshine this star.',0,0,1);
+I[28][3][0]=new Array('Pole Star','Sirius, also known as the Dog Star or Sirius A, is the brightest star in Earth\'s night sky. The name means "glowing" in Greek \u2014 a fitting description, as only a few planets, the full moon, and the International Space Station outshine this star.',0,0,1);
+I[28][3][1]=new Array('Sirius A','Sirius, also known as the Dog Star or Sirius A, is the brightest star in Earth\'s night sky. The name means "glowing" in Greek \u2014 a fitting description, as only a few planets, the full moon, and the International Space Station outshine this star.',1,100,1);
+I[28][3][2]=new Array('Proxima Centauri','Sirius, also known as the Dog Star or Sirius A, is the brightest star in Earth\'s night sky. The name means "glowing" in Greek \u2014 a fitting description, as only a few planets, the full moon, and the International Space Station outshine this star.',0,0,1);
+I[28][3][3]=new Array('Vega','Sirius, also known as the Dog Star or Sirius A, is the brightest star in Earth\'s night sky. The name means "glowing" in Greek \u2014 a fitting description, as only a few planets, the full moon, and the International Space Station outshine this star.',0,0,1);
 I[29]=new Array();I[29][0]=100;
 I[29][1]='';
 I[29][2]='0';
@@ -1693,10 +1703,10 @@ I[31]=new Array();I[31][0]=100;
 I[31][1]='';
 I[31][2]='0';
 I[31][3]=new Array();
-I[31][3][0]=new Array('Mars','Mars is called as Red Planet. The rocks and soil on the surface of Mars contain a dust that is primarily made up of iron (in addition to small amounts of other elements, including chlorine). Wind eroded these surface rocks and soil, and ancient volcanos blew out the iron, spreading it all over the planet. When this happened, the iron within the dust reacted with oxygen, producing a red rust color. So, Mars is red because it has a layer of rusty dust covering its entire surface! <br><img src="mars.jpg" width="100" height="100"/>',1,100,1);
-I[31][3][1]=new Array('Venus','Mars is called as Red Planet. The rocks and soil on the surface of Mars contain a dust that is primarily made up of iron (in addition to small amounts of other elements, including chlorine). Wind eroded these surface rocks and soil, and ancient volcanos blew out the iron, spreading it all over the planet. When this happened, the iron within the dust reacted with oxygen, producing a red rust color. So, Mars is red because it has a layer of rusty dust covering its entire surface! <br><img src="mars.jpg" width="100" height="100"/>',0,0,1);
-I[31][3][2]=new Array('Mercury','Mars is called as Red Planet. The rocks and soil on the surface of Mars contain a dust that is primarily made up of iron (in addition to small amounts of other elements, including chlorine). Wind eroded these surface rocks and soil, and ancient volcanos blew out the iron, spreading it all over the planet. When this happened, the iron within the dust reacted with oxygen, producing a red rust color. So, Mars is red because it has a layer of rusty dust covering its entire surface! <br><img src="mars.jpg" width="100" height="100"/>',0,0,1);
-I[31][3][3]=new Array('Neptune','Mars is called as Red Planet. The rocks and soil on the surface of Mars contain a dust that is primarily made up of iron (in addition to small amounts of other elements, including chlorine). Wind eroded these surface rocks and soil, and ancient volcanos blew out the iron, spreading it all over the planet. When this happened, the iron within the dust reacted with oxygen, producing a red rust color. So, Mars is red because it has a layer of rusty dust covering its entire surface! <br><img src="mars.jpg" width="100" height="100"/>',0,0,1);
+I[31][3][0]=new Array('Mars','Mars is called as Red Planet. The rocks and soil on the surface of Mars contain a cloud of dust that is primarily made up of iron (in addition to small amounts of other elements, including chlorine). Wind eroded these surface rocks and soil, and ancient volcanos blew out the iron, spreading it all over the planet. When this happened, the iron within the dust reacted with oxygen, producing a red rust color. So, Mars is red because it has a layer of rusty dust covering its entire surface! <br><img src="mars.jpg" width="100" height="100"/>',1,100,1);
+I[31][3][1]=new Array('Venus','Mars is called as Red Planet. The rocks and soil on the surface of Mars contain a cloud of dust that is primarily made up of iron (in addition to small amounts of other elements, including chlorine). Wind eroded these surface rocks and soil, and ancient volcanos blew out the iron, spreading it all over the planet. When this happened, the iron within the dust reacted with oxygen, producing a red rust color. So, Mars is red because it has a layer of rusty dust covering its entire surface! <br><img src="mars.jpg" width="100" height="100"/>',0,0,1);
+I[31][3][2]=new Array('Mercury','Mars is called as Red Planet. The rocks and soil on the surface of Mars contain a cloud of dust that is primarily made up of iron (in addition to small amounts of other elements, including chlorine). Wind eroded these surface rocks and soil, and ancient volcanos blew out the iron, spreading it all over the planet. When this happened, the iron within the dust reacted with oxygen, producing a red rust color. So, Mars is red because it has a layer of rusty dust covering its entire surface! <br><img src="mars.jpg" width="100" height="100"/>',0,0,1);
+I[31][3][3]=new Array('Neptune','Mars is called as Red Planet. The rocks and soil on the surface of Mars contain a cloud of dust that is primarily made up of iron (in addition to small amounts of other elements, including chlorine). Wind eroded these surface rocks and soil, and ancient volcanos blew out the iron, spreading it all over the planet. When this happened, the iron within the dust reacted with oxygen, producing a red rust color. So, Mars is red because it has a layer of rusty dust covering its entire surface! <br><img src="mars.jpg" width="100" height="100"/>',0,0,1);
 I[32]=new Array();I[32][0]=100;
 I[32][1]='';
 I[32][2]='0';
@@ -1717,10 +1727,10 @@ I[34]=new Array();I[34][0]=100;
 I[34][1]='';
 I[34][2]='0';
 I[34][3]=new Array();
-I[34][3][0]=new Array('Astronauts','An astronomer is a scientist in the field of astronomy who focuses their studies on a specific question or field outside the scope of Earth. They observe astronomical objects such as stars, planets, moons, comets and galaxies \u2013 in either observational (by analyzing the data) or theoretical astronomy.',0,0,1);
-I[34][3][1]=new Array('Astronomers','An astronomer is a scientist in the field of astronomy who focuses their studies on a specific question or field outside the scope of Earth. They observe astronomical objects such as stars, planets, moons, comets and galaxies \u2013 in either observational (by analyzing the data) or theoretical astronomy.',1,100,1);
-I[34][3][2]=new Array('Physicists','An astronomer is a scientist in the field of astronomy who focuses their studies on a specific question or field outside the scope of Earth. They observe astronomical objects such as stars, planets, moons, comets and galaxies \u2013 in either observational (by analyzing the data) or theoretical astronomy.',0,0,1);
-I[34][3][3]=new Array('Mathematicians','An astronomer is a scientist in the field of astronomy who focuses their studies on a specific question or field outside the scope of Earth. They observe astronomical objects such as stars, planets, moons, comets and galaxies \u2013 in either observational (by analyzing the data) or theoretical astronomy.',0,0,1);
+I[34][3][0]=new Array('Astronauts','An astronomer is a scientist in the field of astronomy who focuses their studies on a specific question or field outside the scope of Earth. They observe astronomical objects such as stars, planets, moons, comets, and galaxies \u2013 in either observational (by analyzing the data) or theoretical astronomy.',0,0,1);
+I[34][3][1]=new Array('Astronomers','An astronomer is a scientist in the field of astronomy who focuses their studies on a specific question or field outside the scope of Earth. They observe astronomical objects such as stars, planets, moons, comets, and galaxies \u2013 in either observational (by analyzing the data) or theoretical astronomy.',1,100,1);
+I[34][3][2]=new Array('Physicists','An astronomer is a scientist in the field of astronomy who focuses their studies on a specific question or field outside the scope of Earth. They observe astronomical objects such as stars, planets, moons, comets, and galaxies \u2013 in either observational (by analyzing the data) or theoretical astronomy.',0,0,1);
+I[34][3][3]=new Array('Mathematicians','An astronomer is a scientist in the field of astronomy who focuses their studies on a specific question or field outside the scope of Earth. They observe astronomical objects such as stars, planets, moons, comets, and galaxies \u2013 in either observational (by analyzing the data) or theoretical astronomy.',0,0,1);
 I[35]=new Array();I[35][0]=100;
 I[35][1]='';
 I[35][2]='0';
@@ -1741,10 +1751,10 @@ I[37]=new Array();I[37][0]=100;
 I[37][1]='';
 I[37][2]='0';
 I[37][3]=new Array();
-I[37][3][0]=new Array('<img src="redspot.jpeg" width="100" height="100"/>','The Great Red Spot is a persistent high-pressure region in the atmosphere of Jupiter, producing an anticyclonic storm that is one of the largest in the Solar System. Located 22 degrees south of Jupiter\'s equator, it produces wind-speeds up to 432 km/h. Observations from 1665 to 1713 are believed to be of the same storm; if this is correct, it has existed for at least 357 years.',1,100,1);
-I[37][3][1]=new Array('<img src="saturn_hexagon.webp" width="100" height="100"/>','The Great Red Spot is a persistent high-pressure region in the atmosphere of Jupiter, producing an anticyclonic storm that is one of the largest in the Solar System. Located 22 degrees south of Jupiter\'s equator, it produces wind-speeds up to 432 km/h. Observations from 1665 to 1713 are believed to be of the same storm; if this is correct, it has existed for at least 357 years.',0,0,1);
-I[37][3][2]=new Array('<img src="io.jpg" width="100" height="100"/>','The Great Red Spot is a persistent high-pressure region in the atmosphere of Jupiter, producing an anticyclonic storm that is one of the largest in the Solar System. Located 22 degrees south of Jupiter\'s equator, it produces wind-speeds up to 432 km/h. Observations from 1665 to 1713 are believed to be of the same storm; if this is correct, it has existed for at least 357 years.',0,0,1);
-I[37][3][3]=new Array('<img src="olympus.webp" width="100" height="100"/>','The Great Red Spot is a persistent high-pressure region in the atmosphere of Jupiter, producing an anticyclonic storm that is one of the largest in the Solar System. Located 22 degrees south of Jupiter\'s equator, it produces wind-speeds up to 432 km/h. Observations from 1665 to 1713 are believed to be of the same storm; if this is correct, it has existed for at least 357 years.',0,0,1);
+I[37][3][0]=new Array('<img src="redspot.jpeg" width="100" height="100"/>','The Great Red Spot is a persistent high-pressure region in the atmosphere of Jupiter, producing an anticyclonic storm that is one of the largest in the Solar System. Located 22 degrees south of Jupiter\'s equator, it produces wind speeds up to 432 km/h. Observations from 1665 to 1713 are believed to be of the same storm; if this is correct, it has existed for at least 357 years.',1,100,1);
+I[37][3][1]=new Array('<img src="saturn_hexagon.webp" width="100" height="100"/>','The Great Red Spot is a persistent high-pressure region in the atmosphere of Jupiter, producing an anticyclonic storm that is one of the largest in the Solar System. Located 22 degrees south of Jupiter\'s equator, it produces wind speeds up to 432 km/h. Observations from 1665 to 1713 are believed to be of the same storm; if this is correct, it has existed for at least 357 years.',0,0,1);
+I[37][3][2]=new Array('<img src="io.jpg" width="100" height="100"/>','The Great Red Spot is a persistent high-pressure region in the atmosphere of Jupiter, producing an anticyclonic storm that is one of the largest in the Solar System. Located 22 degrees south of Jupiter\'s equator, it produces wind speeds up to 432 km/h. Observations from 1665 to 1713 are believed to be of the same storm; if this is correct, it has existed for at least 357 years.',0,0,1);
+I[37][3][3]=new Array('<img src="olympus.webp" width="100" height="100"/>','The Great Red Spot is a persistent high-pressure region in the atmosphere of Jupiter, producing an anticyclonic storm that is one of the largest in the Solar System. Located 22 degrees south of Jupiter\'s equator, it produces wind speeds up to 432 km/h. Observations from 1665 to 1713 are believed to be of the same storm; if this is correct, it has existed for at least 357 years.',0,0,1);
 I[38]=new Array();I[38][0]=100;
 I[38][1]='';
 I[38][2]='0';
@@ -1809,10 +1819,10 @@ I[46]=new Array();I[46][0]=100;
 I[46][1]='';
 I[46][2]='0';
 I[46][3]=new Array();
-I[46][3][0]=new Array('Cassini','Two Voyager spacecrafts have left our solar system. The Voyager 2 probe, which left Earth in 1977, has become the second human-made object to leave our Solar System. It was launched 16 days before its twin craft, Voyager 1. But, Voyager 1 has reached the ‘space between the stars’ six years earlier due to its faster trajectory than Voyager 2. Both of them have entered to <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://voyager.jpl.nasa.gov/mission/status/\');return false;">interstellar space.</a>',0,0,1);
-I[46][3][1]=new Array('Voyager','Two Voyager spacecrafts have left our solar system. The Voyager 2 probe, which left Earth in 1977, has become the second human-made object to leave our Solar System. It was launched 16 days before its twin craft, Voyager 1. But, Voyager 1 has reached the ‘space between the stars’ six years earlier due to its faster trajectory than Voyager 2. Both of them have entered to <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://voyager.jpl.nasa.gov/mission/status/\');return false;">interstellar space.</a>',1,100,1);
-I[46][3][2]=new Array('Juno','Two Voyager spacecrafts have left our solar system. The Voyager 2 probe, which left Earth in 1977, has become the second human-made object to leave our Solar System. It was launched 16 days before its twin craft, Voyager 1. But, Voyager 1 has reached the ‘space between the stars’ six years earlier due to its faster trajectory than Voyager 2. Both of them have entered to <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://voyager.jpl.nasa.gov/mission/status/\');return false;">interstellar space.</a>',0,0,1);
-I[46][3][3]=new Array('New Horizon','Two Voyager spacecrafts have left our solar system. The Voyager 2 probe, which left Earth in 1977, has become the second human-made object to leave our Solar System. It was launched 16 days before its twin craft, Voyager 1. But, Voyager 1 has reached the ‘space between the stars’ six years earlier due to its faster trajectory than Voyager 2. Both of them have entered to <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://voyager.jpl.nasa.gov/mission/status/\');return false;">interstellar space.</a>',0,0,1);
+I[46][3][0]=new Array('Cassini','Two Voyager spacecraft have left our solar system. The Voyager 2 probe, which left Earth in 1977, has become the second human-made object to leave our Solar System. It was launched 16 days before its twin craft, Voyager 1. But, Voyager 1 has reached the ‘space between the stars’ six years earlier due to its faster trajectory than Voyager 2. Both of them have entered to <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://voyager.jpl.nasa.gov/mission/status/\');return false;">interstellar space.</a>',0,0,1);
+I[46][3][1]=new Array('Voyager','Two Voyager spacecraft have left our solar system. The Voyager 2 probe, which left Earth in 1977, has become the second human-made object to leave our Solar System. It was launched 16 days before its twin craft, Voyager 1. But, Voyager 1 has reached the ‘space between the stars’ six years earlier due to its faster trajectory than Voyager 2. Both of them have entered to <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://voyager.jpl.nasa.gov/mission/status/\');return false;">interstellar space.</a>',1,100,1);
+I[46][3][2]=new Array('Juno','Two Voyager spacecraft have left our solar system. The Voyager 2 probe, which left Earth in 1977, has become the second human-made object to leave our Solar System. It was launched 16 days before its twin craft, Voyager 1. But, Voyager 1 has reached the ‘space between the stars’ six years earlier due to its faster trajectory than Voyager 2. Both of them have entered to <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://voyager.jpl.nasa.gov/mission/status/\');return false;">interstellar space.</a>',0,0,1);
+I[46][3][3]=new Array('New Horizon','Two Voyager spacecraft have left our solar system. The Voyager 2 probe, which left Earth in 1977, has become the second human-made object to leave our Solar System. It was launched 16 days before its twin craft, Voyager 1. But, Voyager 1 has reached the ‘space between the stars’ six years earlier due to its faster trajectory than Voyager 2. Both of them have entered to <a style="cursor: pointer; text-decoration: underline;" onclick="window.open(\'https://voyager.jpl.nasa.gov/mission/status/\');return false;">interstellar space.</a>',0,0,1);
 I[47]=new Array();I[47][0]=100;
 I[47][1]='';
 I[47][2]='0';
@@ -1851,7 +1861,7 @@ function StartUp(){
 
 
 
-	PreloadImages('mars.jpg','https://static01.nyt.com/images/2020/09/22/science/19SCI-OUTTHERE-VENUS1/19SCI-OUTTHERE-VENUS1-mediumSquareAt3X.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mercury_in_true_color.jpg/330px-Mercury_in_true_color.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/330px-FullMoon2010.jpg','saturn_ring.jpeg','earth_rise.jpg','mars.jpg','mercury.jpg','orion.jpg','redspot.jpeg','https://www.sciencealert.com/images/2020-06/saturn-hexagon-false-colour.jpg','https://www.universetoday.com/wp-content/uploads/2010/01/Io_Feat-e1433786196804.jpg','https://www.scienceabc.com/wp-content/uploads/2019/08/3d-rendered-illustration-of-the-mars-olympus-mons-Illustration-Sebastian-KaulitzkiS.jpg','https://nineplanets.org/wp-content/uploads/2020/09/318-Earth-masses.jpg','new-moon-phase.png');
+	//PreloadImages('mars.jpg','https://static01.nyt.com/images/2020/09/22/science/19SCI-OUTTHERE-VENUS1/19SCI-OUTTHERE-VENUS1-mediumSquareAt3X.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mercury_in_true_color.jpg/330px-Mercury_in_true_color.jpg','https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/330px-FullMoon2010.jpg','saturn_ring.jpeg','earth_rise.jpg','mars.jpg','mercury.jpg','orion.jpg','redspot.jpeg','https://www.sciencealert.com/images/2020-06/saturn-hexagon-false-colour.jpg','https://www.universetoday.com/wp-content/uploads/2010/01/Io_Feat-e1433786196804.jpg','https://www.scienceabc.com/wp-content/uploads/2019/08/3d-rendered-illustration-of-the-mars-olympus-mons-Illustration-Sebastian-KaulitzkiS.jpg','https://nineplanets.org/wp-content/uploads/2020/09/318-Earth-masses.jpg','new-moon-phase.png');
 
 	//ScormStartUp();
 
@@ -2008,17 +2018,17 @@ function CheckMCAnswer(QNum, ANum, Btn){
 			QsDone = CheckQuestionsCompleted();
 			if ((ContinuousScoring == true)||(Finished == true)){
 				//Feedback += '<br />' + YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone;
-				WriteToInstructions(YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone);
+				WriteToInstructions(YourScoreIs + ' ' + Score + ' out of '+ QArray.length);// + '<br />' + QsDone);
 			}
 			else{
 				WriteToInstructions(QsDone);
 			}
 		}
 	if (typeof(QsDone) == 'undefined'){
-		WriteToInstructions(YourScoreIs + ' ' + Score + ' out of 5' + '<br />'+'0 out of 4');
+		WriteToInstructions(YourScoreIs + ' ' + Score + ' out of  '+ QArray.length);// + '<br />'+'0 out of 4');
 	}
 	else{
-		WriteToInstructions(YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone);
+		WriteToInstructions(YourScoreIs + ' ' + Score + ' out of  '+ QArray.length);// + '<br />' + QsDone);
 		}
 	}
 	else{
@@ -2037,7 +2047,7 @@ function CheckMCAnswer(QNum, ANum, Btn){
 			CalculateOverallScore();
 			if ((ContinuousScoring == true)||(Finished == true)){
 				//Feedback += '<br />' + YourScoreIs + ' ' + Score +  'out of 5.' + '<br />' + QsDone;
-				WriteToInstructions(YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone);
+				WriteToInstructions(YourScoreIs + ' ' + Score + ' out of  '+ QArray.length);// + '<br />' + QsDone);
 			}
 		}
 		else{
@@ -2330,6 +2340,8 @@ function SubmitQuiz(){
 	closebyid('QNumReadout');
 	closebyid('NextQButton');
 	closebyid('PrevQButton');
+	closebyid('SubmitQuizButton');
+	
 }
 
 
@@ -2531,13 +2543,14 @@ function DownTime(){
 }
 
 .navbar a {
-  float: left;
-  display: block;
-  color: brown;
-  text-align: center;
-  padding: 1.2vh 1.2vw;
-  text-decoration: none;
-  font-size: 3vh;
+	float: left;
+	display: block;
+	color: brown;
+	text-align: center;
+	padding: 1.2vh 1.2vw;
+	text-decoration: none;
+	font-size: 2.5vmin;
+	background-image: linear-gradient(to right bottom, #c4aa73, #c0a265, #bb9957, #b79149, #b3883b, #ad8032, #a67929, #a0711f, #966918, #8c6012, #82580a, #785003);		
 }
 
 .navbar a:hover {
@@ -2546,19 +2559,16 @@ function DownTime(){
 }
 
 
-.main {
-  padding: 16px;
-  margin-bottom: 30px;
 }
 </style>
 </head>
 <body>
 
 <div class="navbar">
-  <a href="http://gmrtscienceday.ncra.tifr.res.in/" target="_self">Home</a>
-  <a href="javascript:ShowInstructions('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use Next Question button and revisit the unattempted questions using Previous Question button. After each question some trivia facts about that question will be displayed. Take a look at the trivia before moving to the next question. Select the Submit button to end the round. At the end it will show all the correct answers by green circles, and wrong answeres by red circles. Your answer is marked by oval shape green or red color. Click on Next Round button to move on to the next round.');" target="_self">Instructions</a>
-  <a href="index.html" target="_self">Trivia Quiz</a>
-<a href="science_day_quiz_2.html" target="_self">Next Round</a>
+  <a href="http://gmrtscienceday.ncra.tifr.res.in/" target="_self" style="color:white">Home</a>
+  <a href="javascript:ShowInstructions('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use the Next Question button and revisit the unattempted questions using the Previous Question button. After each question, some trivia facts about that question will be displayed. Take a look at the trivia before moving to the next question. Select the Submit button to end the round. In the end, it will show all the correct answers by green circles, and wrong answers by red circles. Your answer is marked by oval shape green or red color. Click on the Next Round button to move on to the next round.');" target="_self" style="color:white">Instructions</a>
+  <a href="index.html" target="_self" style="color:white">Trivia Quiz</a>
+<a href="science_day_quiz_2.html" target="_self" style="color:white">Next Round</a>
 </div>
 
 

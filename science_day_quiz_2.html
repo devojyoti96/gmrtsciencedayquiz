@@ -69,7 +69,9 @@ input[type="radio"]:checked {
 }
 
 
-
+body::-webkit-scrollbar {
+  display: none;
+}
 
 body{
 	font-family: var(--strFontFace);
@@ -87,6 +89,8 @@ body{
 	overflow-x: hidden;
 	max-width: 100vw;
 	min-height: 100vh;
+	-ms-overflow-style: none;
+ 	scrollbar-width: none;
 }
 
 
@@ -142,7 +146,7 @@ div.StdDiv, div.ExerciseContainer, div.ReadingContainer{
 div.ReadingContainer, div.ExerciseContainer{
 	min-width: 15em;
 	width: 100vw;
-	height: 100%;
+	height: fit-content;
 }
 
 div#ContainerDiv{
@@ -248,7 +252,7 @@ select{
 div.Feedback {
 	background-image: linear-gradient(to bottom right, #666699 11%, #ffffff 100%);
 	min-width: 97.5vw;
-	max-width: 90vw;
+	max-width: 100vw;
 	width: fit-content;
 	height: fit-content;
 	z-index: 1;
@@ -262,9 +266,8 @@ div.Feedback {
 	justify-content: center;
 	display: none;
 	clear: both;
-	white-space: break-spaces;
+	word-break: break-word;
 }
-
 div.Instruct {
 	background-image: linear-gradient(to bottom right, #666699 11%, #ffffff 100%);
 	min-width: 97.5vw;
@@ -558,30 +561,30 @@ textarea{
 }
 
 input[type=submit] {
-border-radius: 0.3em;
-padding: 0.7em;
-min-width: 3em;
-border-left-color: #07663B;
-border-top-color: #07663B;
-border-right-color: #044025;
-border-bottom-color: #044025; 
-background-color: #30B6A6;
-color: white;
-border-width: 1pt;
-cursor: pointer;	
-box-shadow: 0.2em 0.3em 0.2em #D3EBE0;
-margin: 0px 60px 0px;
+	border-style: solid;
+	border-radius: 0.3em;
+	padding: 0.7em;
+	min-width: 3em;
+	border-left-color: #0D6915;
+	border-top-color: #0D6915);
+	border-right-color: #AFE9E6;
+	border-bottom-color: #AFE9E6; 
+	background-image: linear-gradient(to right bottom, #0d6915, #00753b, #007f5b, #008978, #0e9290, #369c9e, #50a5ab, #67afb7, #79bdc2, #8bccce, #9ddada, #afe9e6);
+	color: white;
+	border-width: 1pt;
+	cursor: pointer;	
+	box-shadow: 0.15em 0.15em 0.15em #A9E8F0;
+	margin: 0px 60px 0px;
 }
 
 input[type=submit]:hover {
-	border-left-color: #07663B;
-	border-top-color: #07663B;
-	border-right-color: #044025;
-	border-bottom-color: #044025; 
-	background-color: #1D8190;
-	transition: background-color 0.1s;
-	box-shadow: 0.2em 0.3em 0.2em #C5E4E8;
-	color: #C5E4E8;
+	color: white;
+	border-left-color:#8052B3;
+	border-top-color: #8052B3);
+	border-right-color: #BDB8C0;
+	border-bottom-color: #BDB8C0;
+	box-shadow: 0.15em 0.15em 0.15em #EAD5F9; 
+	background-image: linear-gradient(to right bottom, #8052b3, #845cb3, #8866b2, #8d70b1, #9179b0, #9781b1, #9c89b1, #a191b2, #a89bb5, #b0a4b9, #b6aebc, #bdb8c0);
 }
 
 .PartialAnswer{
@@ -1250,11 +1253,11 @@ var ShowCompletedSoFar = true;
 var ContinuousScoring = true;
 var CorrectFirstTime = 'Questions answered correctly first time: ';
 var ShowCorrectFirstTime = false;
-var ShuffleQs = false;
+var ShuffleQs = true;
 var ShuffleAs = true;
 var DefaultRight = 'Correct!';
 var DefaultWrong = 'Sorry! Wrong Answer.';
-var QsToShow = 105;
+var QsToShow = 5;
 var Score = 0;
 var Finished = false;
 var Qs = null;
@@ -1283,10 +1286,10 @@ function CompleteEmptyFeedback(){
   			//if (I[QNum][3][ANum][1].length < 1){
 			tempvar = I[QNum][3][ANum][1];
 			if (I[QNum][3][ANum][2] > 0){
-				I[QNum][3][ANum][1] = '<h1 style="font-size: 3vmin;">Correct!</h1>' + tempvar;
+				I[QNum][3][ANum][1] = '<h1 style="font-size: 5vmin;">Correct!</h1>' + tempvar;
 			}
 			else{
-				I[QNum][3][ANum][1] =  '<h1 style="font-size: 3vmin;">Sorry! Wrong Answer </h1>' + tempvar;
+				I[QNum][3][ANum][1] =  '<h1 style="font-size: 5vmin;">Sorry! Wrong Answer </h1>' + tempvar;
 			}
   			//}
   		}
@@ -1851,17 +1854,17 @@ function CheckMCAnswer(QNum, ANum, Btn){
 			QsDone = CheckQuestionsCompleted();
 			if ((ContinuousScoring == true)||(Finished == true)){
 				//Feedback += '<br />' + YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone;
-				WriteToInstructions(YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone);
+				WriteToInstructions(YourScoreIs + ' ' + Score + ' out of '+ QArray.length);// + '<br />' + QsDone);
 			}
 			else{
 				WriteToInstructions(QsDone);
 			}
 		}
 	if (typeof(QsDone) == 'undefined'){
-		WriteToInstructions(YourScoreIs + ' ' + Score + ' out of 5' + '<br />'+'0 out of 4');
+		WriteToInstructions(YourScoreIs + ' ' + Score + ' out of  '+ QArray.length);// + '<br />'+'0 out of 4');
 	}
 	else{
-		WriteToInstructions(YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone);
+		WriteToInstructions(YourScoreIs + ' ' + Score + ' out of  '+ QArray.length);// + '<br />' + QsDone);
 		}
 	}
 	else{
@@ -1880,7 +1883,7 @@ function CheckMCAnswer(QNum, ANum, Btn){
 			CalculateOverallScore();
 			if ((ContinuousScoring == true)||(Finished == true)){
 				//Feedback += '<br />' + YourScoreIs + ' ' + Score +  'out of 5.' + '<br />' + QsDone;
-				WriteToInstructions(YourScoreIs + ' ' + Score + ' out of 5' + '<br />' + QsDone);
+				WriteToInstructions(YourScoreIs + ' ' + Score + ' out of  '+ QArray.length);// + '<br />' + QsDone);
 			}
 		}
 		else{
@@ -1937,6 +1940,7 @@ function CalculateMCQuestionScore(QNum){
 	}
 }
 
+
 function GetTotalMCAnswers(QNum){
 	var Result = 0;
 	for (var ANum=0; ANum<I[QNum][3].length; ANum++){
@@ -1946,6 +1950,7 @@ function GetTotalMCAnswers(QNum){
 	}
 	return Result;
 }
+
 
 function FinalAnswer(QNum){
 	var UnchosenAnswers = 0;
@@ -2173,6 +2178,7 @@ function SubmitQuiz(){
 	closebyid('QNumReadout');
 	closebyid('NextQButton');
 	closebyid('PrevQButton');
+	closebyid('SubmitQuizButton');
 }
 
 
@@ -2357,15 +2363,15 @@ function DownTime(){
 }
 
 .navbar a {
-  float: left;
-  display: block;
-  color: brown;
-  text-align: center;
-  padding: 1.2vh 1.2vw;
-  text-decoration: none;
-  font-size: 3vh;
+	float: left;
+	display: block;
+	color: brown;
+	text-align: center;
+	padding: 1.2vh 1.2vw;
+	text-decoration: none;
+	font-size: 2.5vmin;
+	background-image: linear-gradient(to right bottom, #c4aa73, #c0a265, #bb9957, #b79149, #b3883b, #ad8032, #a67929, #a0711f, #966918, #8c6012, #82580a, #785003);		
 }
-
 
 .navbar a:hover {
   background: #C37409;
@@ -2373,21 +2379,17 @@ function DownTime(){
 }
 
 
-.main {
-  padding: 16px;
-  margin-bottom: 30px;
 }
 </style>
 </head>
 <body>
 
 <div class="navbar">
-  <a href="http://gmrtscienceday.ncra.tifr.res.in/" target="_self">Home</a>
-  <a href="javascript:ShowInstructions('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use Next Question button and revisit the unattempted questions using Previous Question button. After each question some trivia facts about that question will be displayed. Take a look at the trivia before moving to the next question. Select the Submit button to end the round. At the end it will show all the correct answers by green circles, and wrong answeres by red circles. Your answer is marked by oval shape green or red color. Click on Next Round button to move on to the next round.');" target="_self">Instructions</a>
-  <a href="index.html" target="_self">Trivia Quiz</a>
-   <a href="science_day_quiz.html" target="_self">Next Round</a>
+  <a href="http://gmrtscienceday.ncra.tifr.res.in/" target="_self" style="color:white">Home</a>
+  <a href="javascript:ShowInstructions('Each round of the quiz consists of 5 multiple choice questions with only one correct answer. Click on the button left of the options to choose your answer. If you want to skip any question use the Next Question button and revisit the unattempted questions using the Previous Question button. After each question, some trivia facts about that question will be displayed. Take a look at the trivia before moving to the next question. Select the Submit button to end the round. In the end, it will show all the correct answers by green circles, and wrong answers by red circles. Your answer is marked by oval shape green or red color. Click on the Next Round button to move on to the next round.');" target="_self" style="color:white">Instructions</a>
+  <a href="index.html" target="_self" style="color:white">Trivia Quiz</a>
+<a href="science_day_quiz.html" target="_self" style="color:white">Next Round</a>
 </div>
-
 
 
 <!-- EndBottomNavButtons -->
